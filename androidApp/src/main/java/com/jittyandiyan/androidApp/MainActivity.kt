@@ -1,20 +1,30 @@
 package com.jittyandiyan.androidApp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.jittyandiyan.shared.Greeting
-import android.widget.TextView
+import com.jittyandiyan.androidApp.databinding.ActivityMainBinding
+import com.jittyandiyan.shared.core.architecture.view.KMMActivity
+import com.jittyandiyan.shared.features.login.LoginView
+import com.jittyandiyan.shared.features.login.LoginViewModel
 
-fun greet(): String {
-    return Greeting().greeting()
-}
+class MainActivity : KMMActivity<LoginViewModel>(), LoginView {
 
-class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val tv: TextView = findViewById(R.id.text_view)
-        tv.text = greet()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
+
+    private lateinit var binding: ActivityMainBinding
+
+    //Generated Methods from LoginView
+    override fun showGreetMsg(msg: String) {
+        binding.textView.text = msg
+    }
+
+    //Generated Methods from LoginViewModel
+    override fun initializeViewModel(): LoginViewModel {
+        return LoginViewModel(this)
+    }
+
+
 }
