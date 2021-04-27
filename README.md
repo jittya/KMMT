@@ -209,8 +209,7 @@ class ProfileMicroServiceAPI : BaseAPI() {
 Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB) in Background Thead and get the result in UI Thread
 ```sh
 class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
-------
-------
+
     fun getProfileData() {
         runOnBackground<ProfileModel>{
             ProfileMicroServiceAPI()::getProfile
@@ -218,8 +217,7 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
             getView()?.showPopUpMessage("Profile", "Username : ${it.name}\n Github : ${it.github}")
         }
     }
-------
-------
+
 }
 ```
 
