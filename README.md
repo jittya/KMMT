@@ -185,4 +185,4 @@ class LoginViewController: KMMUIViewController ,LoginView {
 }
 ```
 
-*More details will come soon
+##### _Subscribe For coming details and features..._
