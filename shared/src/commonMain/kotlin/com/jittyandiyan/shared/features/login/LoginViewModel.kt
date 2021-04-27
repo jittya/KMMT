@@ -14,8 +14,8 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
 
     fun onLoginButtonClick()
     {
-        var username=getView()?.getEnteredUsername()
-        var password=getView()?.getEnteredPassword()
+        val username=getView()?.getEnteredUsername()
+        val password=getView()?.getEnteredPassword()
         checkValidation(username,password)
 
     }
