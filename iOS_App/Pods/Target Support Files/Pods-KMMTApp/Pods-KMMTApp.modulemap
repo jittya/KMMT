@@ -1,0 +1,6 @@
+framework module Pods_KMMTApp {
+  umbrella header "Pods-KMMTApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

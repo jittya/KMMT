@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26A9780A727172A93072BD3A /* Pods_KMMTAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C130946642AB0425595898 /* Pods_KMMTAppTests.framework */; };
 		3F540588263717AB000AEA16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F540587263717AB000AEA16 /* AppDelegate.swift */; };
 		3F54058A263717AB000AEA16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F540589263717AB000AEA16 /* SceneDelegate.swift */; };
 		3F54058C263717AB000AEA16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54058B263717AB000AEA16 /* ViewController.swift */; };
@@ -18,6 +19,11 @@
 		3F5405C226371921000AEA16 /* shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5405C126371921000AEA16 /* shared.framework */; };
 		3F5405C326371921000AEA16 /* shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5405C126371921000AEA16 /* shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F5405CB26371F00000AEA16 /* KMMUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5405CA26371F00000AEA16 /* KMMUIViewController.swift */; };
+		3F5405D42637F3CC000AEA16 /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5405D32637F3CC000AEA16 /* UIControlExtensions.swift */; };
+		3F540617263800A2000AEA16 /* UITextFieldX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F540616263800A2000AEA16 /* UITextFieldX.swift */; };
+		3F54062126380237000AEA16 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54062026380237000AEA16 /* Colors.swift */; };
+		95D5CEA2F5ED1E32250313CA /* Pods_KMMTApp_KMMTAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0BE59D9862A11021B0BCBC /* Pods_KMMTApp_KMMTAppUITests.framework */; };
+		F0A114C1772BD32678BAEAD5 /* Pods_KMMTApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF2E1A10C4C547BA8C36935 /* Pods_KMMTApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +58,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3F540584263717AB000AEA16 /* KMMT App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KMMT App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D798E672EE86F8FBDCB7F9C /* Pods-KMMT App-KMMT AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT App-KMMT AppUITests.release.xcconfig"; path = "Target Support Files/Pods-KMMT App-KMMT AppUITests/Pods-KMMT App-KMMT AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		30C130946642AB0425595898 /* Pods_KMMTAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMTAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A0BE59D9862A11021B0BCBC /* Pods_KMMTApp_KMMTAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMTApp_KMMTAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F540584263717AB000AEA16 /* KMMTApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMMTApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F540587263717AB000AEA16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F540589263717AB000AEA16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3F54058B263717AB000AEA16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,14 +69,29 @@
 		3F540590263717AC000AEA16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F540593263717AC000AEA16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F540595263717AC000AEA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F54059A263717AD000AEA16 /* KMMT AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KMMT AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F54059A263717AD000AEA16 /* KMMTAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KMMTAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F54059E263717AD000AEA16 /* KMMT_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMMT_AppTests.swift; sourceTree = "<group>"; };
 		3F5405A0263717AD000AEA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F5405A5263717AD000AEA16 /* KMMT AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KMMT AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F5405A5263717AD000AEA16 /* KMMTAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KMMTAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5405A9263717AD000AEA16 /* KMMT_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMMT_AppUITests.swift; sourceTree = "<group>"; };
 		3F5405AB263717AD000AEA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F5405C126371921000AEA16 /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
 		3F5405CA26371F00000AEA16 /* KMMUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMMUIViewController.swift; sourceTree = "<group>"; };
+		3F5405D32637F3CC000AEA16 /* UIControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtensions.swift; sourceTree = "<group>"; };
+		3F540616263800A2000AEA16 /* UITextFieldX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldX.swift; sourceTree = "<group>"; };
+		3F54062026380237000AEA16 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		53A1C171B7C7CC3BC8E70C58 /* Pods-KMMTApp-KMMTAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTApp-KMMTAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-KMMTApp-KMMTAppUITests/Pods-KMMTApp-KMMTAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		53ED154DD5958B1E727CF6A0 /* Pods-KMMT AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT AppTests.release.xcconfig"; path = "Target Support Files/Pods-KMMT AppTests/Pods-KMMT AppTests.release.xcconfig"; sourceTree = "<group>"; };
+		69BE0FECDF673D684DC3023F /* Pods-KMMTApp-KMMTAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTApp-KMMTAppUITests.release.xcconfig"; path = "Target Support Files/Pods-KMMTApp-KMMTAppUITests/Pods-KMMTApp-KMMTAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		72665331961E469DE4AB2BBA /* Pods-KMMT App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT App.release.xcconfig"; path = "Target Support Files/Pods-KMMT App/Pods-KMMT App.release.xcconfig"; sourceTree = "<group>"; };
+		75E462A5B99A93CF74143462 /* Pods-KMMTAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTAppTests.release.xcconfig"; path = "Target Support Files/Pods-KMMTAppTests/Pods-KMMTAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		770C05B6D83F5BAA5DAAF8BF /* Pods-KMMT AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT AppTests.debug.xcconfig"; path = "Target Support Files/Pods-KMMT AppTests/Pods-KMMT AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A111AAB282AA0ED95F139EF9 /* Pods-KMMT App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT App.debug.xcconfig"; path = "Target Support Files/Pods-KMMT App/Pods-KMMT App.debug.xcconfig"; sourceTree = "<group>"; };
+		A390526BD0BA338391A5D6A6 /* Pods-KMMT App-KMMT AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT App-KMMT AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-KMMT App-KMMT AppUITests/Pods-KMMT App-KMMT AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B4A7BBB3599BB8115A2E00AA /* Pods-KMMTApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTApp.release.xcconfig"; path = "Target Support Files/Pods-KMMTApp/Pods-KMMTApp.release.xcconfig"; sourceTree = "<group>"; };
+		BCF2E1A10C4C547BA8C36935 /* Pods_KMMTApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMTApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D77D5821D2EE4AD0942140E3 /* Pods-KMMTApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTApp.debug.xcconfig"; path = "Target Support Files/Pods-KMMTApp/Pods-KMMTApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DFD56CFD4CE45F0CE216BD3D /* Pods-KMMTAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTAppTests.debug.xcconfig"; path = "Target Support Files/Pods-KMMTAppTests/Pods-KMMTAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F5405C226371921000AEA16 /* shared.framework in Frameworks */,
+				F0A114C1772BD32678BAEAD5 /* Pods_KMMTApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26A9780A727172A93072BD3A /* Pods_KMMTAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D5CEA2F5ED1E32250313CA /* Pods_KMMTApp_KMMTAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,15 +131,16 @@
 				3F5405A8263717AD000AEA16 /* KMMT AppUITests */,
 				3F540585263717AB000AEA16 /* Products */,
 				3F5405C026371921000AEA16 /* Frameworks */,
+				DFC8AB6293DC94FBB114B648 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		3F540585263717AB000AEA16 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3F540584263717AB000AEA16 /* KMMT App.app */,
-				3F54059A263717AD000AEA16 /* KMMT AppTests.xctest */,
-				3F5405A5263717AD000AEA16 /* KMMT AppUITests.xctest */,
+				3F540584263717AB000AEA16 /* KMMTApp.app */,
+				3F54059A263717AD000AEA16 /* KMMTAppTests.xctest */,
+				3F5405A5263717AD000AEA16 /* KMMTAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,6 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				3F5405C126371921000AEA16 /* shared.framework */,
+				BCF2E1A10C4C547BA8C36935 /* Pods_KMMTApp.framework */,
+				3A0BE59D9862A11021B0BCBC /* Pods_KMMTApp_KMMTAppUITests.framework */,
+				30C130946642AB0425595898 /* Pods_KMMTAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,37 +200,86 @@
 		3F5405C926371EEE000AEA16 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				3F54061D2638020F000AEA16 /* resources */,
+				3F5406132638005C000AEA16 /* uicontrols */,
+				3F5405D22637F39B000AEA16 /* extensions */,
 				3F5405CA26371F00000AEA16 /* KMMUIViewController.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
 		};
+		3F5405D22637F39B000AEA16 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3F5405D32637F3CC000AEA16 /* UIControlExtensions.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		3F5406132638005C000AEA16 /* uicontrols */ = {
+			isa = PBXGroup;
+			children = (
+				3F540616263800A2000AEA16 /* UITextFieldX.swift */,
+			);
+			path = uicontrols;
+			sourceTree = "<group>";
+		};
+		3F54061D2638020F000AEA16 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F54062026380237000AEA16 /* Colors.swift */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		DFC8AB6293DC94FBB114B648 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A111AAB282AA0ED95F139EF9 /* Pods-KMMT App.debug.xcconfig */,
+				72665331961E469DE4AB2BBA /* Pods-KMMT App.release.xcconfig */,
+				A390526BD0BA338391A5D6A6 /* Pods-KMMT App-KMMT AppUITests.debug.xcconfig */,
+				0D798E672EE86F8FBDCB7F9C /* Pods-KMMT App-KMMT AppUITests.release.xcconfig */,
+				770C05B6D83F5BAA5DAAF8BF /* Pods-KMMT AppTests.debug.xcconfig */,
+				53ED154DD5958B1E727CF6A0 /* Pods-KMMT AppTests.release.xcconfig */,
+				D77D5821D2EE4AD0942140E3 /* Pods-KMMTApp.debug.xcconfig */,
+				B4A7BBB3599BB8115A2E00AA /* Pods-KMMTApp.release.xcconfig */,
+				53A1C171B7C7CC3BC8E70C58 /* Pods-KMMTApp-KMMTAppUITests.debug.xcconfig */,
+				69BE0FECDF673D684DC3023F /* Pods-KMMTApp-KMMTAppUITests.release.xcconfig */,
+				DFD56CFD4CE45F0CE216BD3D /* Pods-KMMTAppTests.debug.xcconfig */,
+				75E462A5B99A93CF74143462 /* Pods-KMMTAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3F540583263717AB000AEA16 /* KMMT App */ = {
+		3F540583263717AB000AEA16 /* KMMTApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F5405AE263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMT App" */;
+			buildConfigurationList = 3F5405AE263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMTApp" */;
 			buildPhases = (
+				A6A0311B0F713FADEE15328E /* [CP] Check Pods Manifest.lock */,
 				3F540580263717AB000AEA16 /* Sources */,
 				3F540581263717AB000AEA16 /* Frameworks */,
 				3F540582263717AB000AEA16 /* Resources */,
 				3F5405C426371921000AEA16 /* Embed Frameworks */,
 				3F5405C5263719D8000AEA16 /* ShellScript */,
+				1F897E16DED8380845862649 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "KMMT App";
+			name = KMMTApp;
 			productName = "KMMT App";
-			productReference = 3F540584263717AB000AEA16 /* KMMT App.app */;
+			productReference = 3F540584263717AB000AEA16 /* KMMTApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3F540599263717AD000AEA16 /* KMMT AppTests */ = {
+		3F540599263717AD000AEA16 /* KMMTAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F5405B1263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMT AppTests" */;
+			buildConfigurationList = 3F5405B1263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMTAppTests" */;
 			buildPhases = (
+				92625A8364C32CC92810664C /* [CP] Check Pods Manifest.lock */,
 				3F540596263717AD000AEA16 /* Sources */,
 				3F540597263717AD000AEA16 /* Frameworks */,
 				3F540598263717AD000AEA16 /* Resources */,
@@ -209,27 +289,29 @@
 			dependencies = (
 				3F54059C263717AD000AEA16 /* PBXTargetDependency */,
 			);
-			name = "KMMT AppTests";
+			name = KMMTAppTests;
 			productName = "KMMT AppTests";
-			productReference = 3F54059A263717AD000AEA16 /* KMMT AppTests.xctest */;
+			productReference = 3F54059A263717AD000AEA16 /* KMMTAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3F5405A4263717AD000AEA16 /* KMMT AppUITests */ = {
+		3F5405A4263717AD000AEA16 /* KMMTAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3F5405B4263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMT AppUITests" */;
+			buildConfigurationList = 3F5405B4263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMTAppUITests" */;
 			buildPhases = (
+				7AD19DFAD78342B15B43A103 /* [CP] Check Pods Manifest.lock */,
 				3F5405A1263717AD000AEA16 /* Sources */,
 				3F5405A2263717AD000AEA16 /* Frameworks */,
 				3F5405A3263717AD000AEA16 /* Resources */,
+				8ED1A479FADB99E218B180DD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				3F5405A7263717AD000AEA16 /* PBXTargetDependency */,
 			);
-			name = "KMMT AppUITests";
+			name = KMMTAppUITests;
 			productName = "KMMT AppUITests";
-			productReference = 3F5405A5263717AD000AEA16 /* KMMT AppUITests.xctest */;
+			productReference = 3F5405A5263717AD000AEA16 /* KMMTAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +336,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3F54057F263717AB000AEA16 /* Build configuration list for PBXProject "KMMT App" */;
+			buildConfigurationList = 3F54057F263717AB000AEA16 /* Build configuration list for PBXProject "KMMTApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -267,9 +349,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3F540583263717AB000AEA16 /* KMMT App */,
-				3F540599263717AD000AEA16 /* KMMT AppTests */,
-				3F5405A4263717AD000AEA16 /* KMMT AppUITests */,
+				3F540583263717AB000AEA16 /* KMMTApp */,
+				3F540599263717AD000AEA16 /* KMMTAppTests */,
+				3F5405A4263717AD000AEA16 /* KMMTAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -302,6 +384,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1F897E16DED8380845862649 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KMMTApp/Pods-KMMTApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KMMTApp/Pods-KMMTApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KMMTApp/Pods-KMMTApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3F5405C5263719D8000AEA16 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +418,89 @@
 			shellPath = /bin/sh;
 			shellScript = "cd \"$SRCROOT/..\"\n./gradlew :shared:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
 		};
+		7AD19DFAD78342B15B43A103 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KMMTApp-KMMTAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8ED1A479FADB99E218B180DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KMMTApp-KMMTAppUITests/Pods-KMMTApp-KMMTAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KMMTApp-KMMTAppUITests/Pods-KMMTApp-KMMTAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KMMTApp-KMMTAppUITests/Pods-KMMTApp-KMMTAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92625A8364C32CC92810664C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KMMTAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6A0311B0F713FADEE15328E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KMMTApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -326,7 +508,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F540617263800A2000AEA16 /* UITextFieldX.swift in Sources */,
 				3F54058C263717AB000AEA16 /* ViewController.swift in Sources */,
+				3F5405D42637F3CC000AEA16 /* UIControlExtensions.swift in Sources */,
+				3F54062126380237000AEA16 /* Colors.swift in Sources */,
 				3F5405CB26371F00000AEA16 /* KMMUIViewController.swift in Sources */,
 				3F540588263717AB000AEA16 /* AppDelegate.swift in Sources */,
 				3F54058A263717AB000AEA16 /* SceneDelegate.swift in Sources */,
@@ -354,12 +539,12 @@
 /* Begin PBXTargetDependency section */
 		3F54059C263717AD000AEA16 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3F540583263717AB000AEA16 /* KMMT App */;
+			target = 3F540583263717AB000AEA16 /* KMMTApp */;
 			targetProxy = 3F54059B263717AD000AEA16 /* PBXContainerItemProxy */;
 		};
 		3F5405A7263717AD000AEA16 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3F540583263717AB000AEA16 /* KMMT App */;
+			target = 3F540583263717AB000AEA16 /* KMMTApp */;
 			targetProxy = 3F5405A6263717AD000AEA16 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -421,6 +606,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -482,6 +668,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -502,11 +689,15 @@
 		};
 		3F5405AF263717AD000AEA16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D77D5821D2EE4AD0942140E3 /* Pods-KMMTApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../shared/build/xcode-frameworks",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "KMMT App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -521,11 +712,15 @@
 		};
 		3F5405B0263717AD000AEA16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4A7BBB3599BB8115A2E00AA /* Pods-KMMTApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../shared/build/xcode-frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../shared/build/xcode-frameworks",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "KMMT App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -540,6 +735,7 @@
 		};
 		3F5405B2263717AD000AEA16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFD56CFD4CE45F0CE216BD3D /* Pods-KMMTAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -555,12 +751,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMMT App.app/KMMT App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMMTApp.app/KMMTApp";
 			};
 			name = Debug;
 		};
 		3F5405B3263717AD000AEA16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75E462A5B99A93CF74143462 /* Pods-KMMTAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -576,12 +773,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMMT App.app/KMMT App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KMMTApp.app/KMMTApp";
 			};
 			name = Release;
 		};
 		3F5405B5263717AD000AEA16 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53A1C171B7C7CC3BC8E70C58 /* Pods-KMMTApp-KMMTAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -601,6 +799,7 @@
 		};
 		3F5405B6263717AD000AEA16 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69BE0FECDF673D684DC3023F /* Pods-KMMTApp-KMMTAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -621,7 +820,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3F54057F263717AB000AEA16 /* Build configuration list for PBXProject "KMMT App" */ = {
+		3F54057F263717AB000AEA16 /* Build configuration list for PBXProject "KMMTApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F5405AC263717AD000AEA16 /* Debug */,
@@ -630,7 +829,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F5405AE263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMT App" */ = {
+		3F5405AE263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMTApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F5405AF263717AD000AEA16 /* Debug */,
@@ -639,7 +838,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F5405B1263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMT AppTests" */ = {
+		3F5405B1263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMTAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F5405B2263717AD000AEA16 /* Debug */,
@@ -648,7 +847,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3F5405B4263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMT AppUITests" */ = {
+		3F5405B4263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMTAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3F5405B5263717AD000AEA16 /* Debug */,

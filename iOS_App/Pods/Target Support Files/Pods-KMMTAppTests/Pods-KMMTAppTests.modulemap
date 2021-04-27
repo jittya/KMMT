@@ -1,0 +1,6 @@
+framework module Pods_KMMTAppTests {
+  umbrella header "Pods-KMMTAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

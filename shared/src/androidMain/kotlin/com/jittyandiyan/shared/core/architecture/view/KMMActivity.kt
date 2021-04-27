@@ -1,10 +1,12 @@
 package com.jittyandiyan.shared.core.architecture.view
 
+import android.content.DialogInterface
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
 
-abstract class KMMActivity<ViewModel>: AppCompatActivity() where ViewModel : BaseViewModel<*>{
+abstract class KMMActivity<ViewModel> : AppCompatActivity() where ViewModel : BaseViewModel<*> {
 
     private lateinit var viewModel: ViewModel
 
@@ -23,6 +25,20 @@ abstract class KMMActivity<ViewModel>: AppCompatActivity() where ViewModel : Bas
     }
 
     abstract fun initializeViewModel(): ViewModel
+
+    fun showPopUpMessage(message: String) {
+        AlertDialog.Builder(this).setMessage(message)
+            .setPositiveButton("OK"
+            ) { dialog, which -> dialog?.dismiss() }
+            .create().show()
+    }
+
+    fun showPopUpMessage(title:String,message: String) {
+        AlertDialog.Builder(this).setTitle(title).setMessage(message)
+            .setPositiveButton("OK"
+            ) { dialog, which -> dialog?.dismiss() }
+            .create().show()
+    }
 }
 
 
