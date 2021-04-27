@@ -12,5 +12,177 @@ It uses a simplified MVVM approch that can be shared both in android and iOS eas
 
 _Primary objective of this project is to help KMM Developers & promote KMM technology_
 
+## How to use
+#### Shared Module :
+##### _Step 1 : Define View_
+
+- Create a View interface by extending from BaseView
+- Define UI binding functions in View interface
+
+```sh
+interface LoginView : BaseView {
+
+    fun setLoginPageLabel(msg:String)
+    fun setUsernameLabel(usernameLabel:String)
+    fun setPasswordLabel(passwordLabel:String)
+    fun setLoginButtonLabel(loginLabel: String)
+    
+    fun getEnteredUsername():String
+    fun getEnteredPassword():String
+
+    fun setLoginButtonClickAction(onLoginClick: KFunction0<Unit>)
+}
+```
+
+##### _Step 2 : Define ViewModel_
+-  Create a ViewModel class by extending from BaseViewModel with View as Type
+-  Define your business logic in ViewModel class
+
+```sh
+class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
+    override fun onStartViewModel() {
+        getView()?.setLoginPageLabel("Login : ${Platform().platform}")
+        getView()?.setUsernameLabel("Enter Username")
+        getView()?.setPasswordLabel("Enter Password")
+        getView()?.setLoginButtonLabel("Login")
+        getView()?.setLoginButtonClickAction(this::onLoginButtonClick)
+    }
+
+    fun onLoginButtonClick()
+    {
+        val username=getView()?.getEnteredUsername()
+        val password=getView()?.getEnteredPassword()
+        checkValidation(username,password)
+    }
+
+    fun checkValidation(username:String?,password:String?)
+    {
+        if (username.isNullOrBlank().not()&&password.isNullOrBlank().not())
+        {
+            getView()?.showPopUpMessage("Login Success","Username : $username\nPassword : $password")
+        }
+        else
+        {
+            getView()?.showPopUpMessage("Validation Failed","Username or Password is empty")
+        }
+    }
+}
+```
+#### Android Module  :
+##### _Step 3 : Define Android View_
+- Create new activity by extending from KMMActivity with ViewModel as Type
+- Implement Created View interface in activity
+- Implement all necessary methods from View & KMMActivity
+
+```sh
+class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
+    private lateinit var binding: ActivityMainBinding
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
+    
+    //Generated Methods from LoginView
+    override fun setLoginPageLabel(msg: String) {
+        binding.textView.text = msg
+    }
+
+    override fun setUsernameLabel(usernameLabel: String) {
+        binding.usernameET.hint=usernameLabel
+    }
+
+    override fun setPasswordLabel(passwordLabel: String) {
+        binding.passwordET.hint=passwordLabel
+    }
+
+    override fun getEnteredUsername(): String {
+        return binding.usernameET.text.toString()
+    }
+
+    override fun getEnteredPassword(): String {
+        return binding.passwordET.text.toString()
+    }
+
+    override fun setLoginButtonClickAction(onLoginClick: KFunction0<Unit>) {
+        binding.loginBtn.setOnClickListener {
+            onLoginClick.invoke()
+        }
+    }
+
+    override fun setLoginButtonLabel(loginLabel: String) {
+        binding.loginBtn.text=loginLabel
+    }
+
+    override fun showErrorMessageOnUsername(errorMsg: String) {
+        binding.usernameET.error = errorMsg
+    }
+
+    //Generated Methods from KMMActivity based on LoginViewModel
+    override fun initializeViewModel(): LoginViewModel {
+        return LoginViewModel(this)
+    }
+}
+```
+#### iOS Module (Xcode) :
+##### _Step 4 : Define iOS View_
+- Create new viewcontroller by extending from KMMUIViewController
+- Implement Created View interface in viewcontroller
+- Implement all necessary methods from View & KMMUIViewController
+
+```sh
+class LoginViewController: KMMUIViewController ,LoginView {
+    
+    @IBOutlet weak var usernameTF: UITextFieldX!
+    @IBOutlet weak var passwordTF: UITextFieldX!
+    @IBOutlet weak var textlabel: UILabel!
+    @IBOutlet weak var loginBtn: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+
+    //Generated Methods from LoginView
+    func setLoginPageLabel(msg: String) {
+        textlabel.text=msg
+    }
+    
+    func setUsernameLabel(usernameLabel: String) {
+        usernameTF.placeholder=usernameLabel
+    }
+    
+    func setPasswordLabel(passwordLabel: String) {
+        passwordTF.placeholder=passwordLabel
+    }
+    
+    func getEnteredUsername() -> String {
+        usernameTF.errorMessage=""
+        return usernameTF.text ?? ""
+    }
+    
+    func getEnteredPassword() -> String {
+        return passwordTF.text ?? ""
+    }
+    
+    func setLoginButtonClickAction(onLoginClick: @escaping () -> KotlinUnit) {
+        loginBtn.setClickAction(action: onLoginClick)
+    }
+    
+    func setLoginButtonLabel(loginLabel: String) {
+        loginBtn.setTitle(loginLabel, for: UIControl.State.normal)
+    }
+    
+    func showErrorMessageOnUsername(errorMsg: String) {
+        usernameTF.errorMessage=errorMsg
+    }
+    
+    //Generated Methods from KMMUIViewController
+    override func initializeViewModel() -> BaseViewModel<BaseView> {
+        return LoginViewModel(view: self).getViewModel()
+    }
+}
+```
 
 *More details will come soon
