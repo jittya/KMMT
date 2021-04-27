@@ -4,6 +4,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("kotlin-android-extensions")
+    id("kotlinx-serialization")
 }
 
 group = AppConfig.group
@@ -19,7 +20,16 @@ kotlin {
         }
     }
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation(Dependencies.Common.Coroutines.Core)
+                implementation(Dependencies.Common.Serialization.Json)
+                implementation(Dependencies.Common.Ktor.Client.Core)
+                implementation(Dependencies.Common.Ktor.Client.commonJson)
+                implementation(Dependencies.Common.Ktor.Client.commonLogging)
+                implementation(Dependencies.Common.Ktor.Client.commonSerialization)
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test-common"))
@@ -29,6 +39,10 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation(Dependencies.Android.google_android_material_Material)
+                implementation(Dependencies.Common.Ktor.Client.androidOKHttp)
+                implementation(Dependencies.Common.Coroutines.Android)
+
+
             }
         }
         val androidTest by getting {
@@ -37,7 +51,11 @@ kotlin {
                 implementation(Dependencies.Android.junit_Junit)
             }
         }
-        val iosMain by getting
+        val iosMain by getting {
+            dependencies {
+                implementation(Dependencies.Common.Ktor.Client.ios)
+            }
+        }
         val iosTest by getting
     }
 }

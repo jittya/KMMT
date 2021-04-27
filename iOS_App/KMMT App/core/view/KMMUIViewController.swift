@@ -25,6 +25,11 @@ class KMMUIViewController :UIViewController
         viewModel?.onInit()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel?.onDetached()
+    }
+    
     func getViewModel() -> BaseViewModel<BaseView>? {
            return viewModel
        }

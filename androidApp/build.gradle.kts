@@ -9,6 +9,7 @@ version = AppConfig.version
 
 dependencies {
     implementation(project(":shared"))
+    implementation("org.conscrypt:conscrypt-android:2.5.2")
     implementation(Dependencies.Android.google_android_material_Material)
     implementation(Dependencies.Android.androidx_appcompat_Appcompat)
     implementation(Dependencies.Android.androidx_constraintlayout_Constraintlayout)

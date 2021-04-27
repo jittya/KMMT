@@ -1,6 +1,5 @@
 package com.jittyandiyan.shared.core.architecture.view
 
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +17,11 @@ abstract class KMMActivity<ViewModel> : AppCompatActivity() where ViewModel : Ba
     override fun onResume() {
         super.onResume()
         viewModel.onInit()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        viewModel.onDetached()
     }
 
     fun getViewModel(): ViewModel {

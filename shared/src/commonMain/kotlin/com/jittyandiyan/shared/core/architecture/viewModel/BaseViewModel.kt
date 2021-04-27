@@ -1,9 +1,10 @@
 package com.jittyandiyan.shared.core.architecture.viewModel
 
+import com.jittyandiyan.shared.core.architecture.Async
 import com.jittyandiyan.shared.core.architecture.view.BaseView
 import com.jittyandiyan.shared.core.architecture.viewModel.viewState.ViewState
 
-abstract class BaseViewModel<View>(private var view: View) where View : BaseView {
+abstract class BaseViewModel<View>(private var view: View):Async() where View : BaseView {
 
     private var viewState = ViewState.INITIALIZED
 
@@ -18,6 +19,7 @@ abstract class BaseViewModel<View>(private var view: View) where View : BaseView
 
     fun onDetached() {
         viewState = ViewState.DETACHED
+        cancelAllRunningCoroutines("ViewModel onDetached called")
     }
 
     fun getView(): View? {
