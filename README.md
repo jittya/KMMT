@@ -71,7 +71,7 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
 #### Android Module  :
 ##### _Step 3 : Define Android View_
 - Create new activity by extending from KMMActivity with ViewModel as Type
-- Implement Created View interface in activity
+- Implement created View interface in activity
 - Implement all necessary methods from View & KMMActivity
 ##### Implement _LoginView_
 ```sh
@@ -128,7 +128,7 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
 #### iOS Module (Xcode) :
 ##### _Step 4 : Define iOS View_
 - Create new viewcontroller by extending from KMMUIViewController
-- Implement Created View interface in viewcontroller
+- Implement created View interface in viewcontroller
 - Implement all necessary methods from View & KMMUIViewController
 ##### Implement _LoginView_
 ```sh
