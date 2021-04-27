@@ -186,3 +186,47 @@ class LoginViewController: KMMUIViewController ,LoginView {
 ```
 
 ##### _Subscribe for upcoming details and features..._
+
+## ✨Features ✨
+
+#### Common Networking API builder ( [Ktor] )
+Create API Services using BaseAPI class
+```sh
+class ProfileMicroServiceAPI : BaseAPI() {
+
+    override val baseUrl: String
+        get() = "https://mocki.io/"
+
+    suspend fun getProfile(): ProfileModel {
+        return HTTPHelper().doGet<ProfileModel> {
+            apiPath("v1/e2c58213-cd6a-4e18-a170-83daf39b2f6c")
+        }
+    }
+}
+```
+
+#### Async helper in ViewModel : Background Thread Helper ( [Kotlinx.Coroutines] )
+Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB) in Background Thead and get the result in UI Thread
+```sh
+class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
+------
+------
+    fun getProfileData() {
+        runOnBackground<ProfileModel>{
+            ProfileMicroServiceAPI()::getProfile
+        }.resultOnUI {
+            getView()?.showPopUpMessage("Profile", "Username : ${it.name}\n Github : ${it.github}")
+        }
+    }
+------
+------
+}
+```
+
+##### _Subscribe for upcoming details and features..._
+
+
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+   [Ktor]: <https://github.com/ktorio/ktor>
+   [Kotlinx.Coroutines]: <https://github.com/Kotlin/kotlinx.coroutines>
