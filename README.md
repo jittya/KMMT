@@ -73,7 +73,7 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
 - Create new activity by extending from KMMActivity with ViewModel as Type
 - Implement Created View interface in activity
 - Implement all necessary methods from View & KMMActivity
-
+##### Implement _LoginView_
 ```sh
 class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
     private lateinit var binding: ActivityMainBinding
@@ -130,7 +130,7 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
 - Create new viewcontroller by extending from KMMUIViewController
 - Implement Created View interface in viewcontroller
 - Implement all necessary methods from View & KMMUIViewController
-
+##### Implement _LoginView_
 ```sh
 class LoginViewController: KMMUIViewController ,LoginView {
     
