@@ -1,10 +1,10 @@
 package com.jittyandiyan.shared.core.architecture.viewModel
 
-import com.jittyandiyan.shared.core.architecture.Async
 import com.jittyandiyan.shared.core.architecture.view.BaseView
+import com.jittyandiyan.shared.core.architecture.viewModel.async.Async
 import com.jittyandiyan.shared.core.architecture.viewModel.viewState.ViewState
 
-abstract class BaseViewModel<View>(private var view: View):Async() where View : BaseView {
+abstract class BaseViewModel<View>(private var view: View): Async() where View : BaseView {
 
     private var viewState = ViewState.INITIALIZED
 

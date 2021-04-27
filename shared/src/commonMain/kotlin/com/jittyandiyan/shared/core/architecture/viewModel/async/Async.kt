@@ -1,4 +1,4 @@
-package com.jittyandiyan.shared.core.architecture
+package com.jittyandiyan.shared.core.architecture.viewModel.async
 
 import com.jittyandiyan.shared.core.expectations.ApplicationDispatcher
 import com.jittyandiyan.shared.core.expectations.Dispatchers_Default
