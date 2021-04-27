@@ -7,15 +7,15 @@ import com.jittyandiyan.shared.features.login.LoginView
 import com.jittyandiyan.shared.features.login.LoginViewModel
 import kotlin.reflect.KFunction0
 
-class MainActivity : KMMActivity<LoginViewModel>(), LoginView {
+class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
+
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
-
-    private lateinit var binding: ActivityMainBinding
 
     //Generated Methods from LoginView
     override fun setLoginPageLabel(msg: String) {
@@ -53,7 +53,7 @@ class MainActivity : KMMActivity<LoginViewModel>(), LoginView {
     }
 
 
-    //Generated Methods from LoginViewModel
+    //Generated Methods from KMMActivity based on LoginViewModel
     override fun initializeViewModel(): LoginViewModel {
         return LoginViewModel(this)
     }

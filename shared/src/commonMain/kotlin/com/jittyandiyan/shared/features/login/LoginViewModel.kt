@@ -1,11 +1,11 @@
 package com.jittyandiyan.shared.features.login
 
-import com.jittyandiyan.shared.Greeting
+import com.jittyandiyan.shared.Platform
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
 
 class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
     override fun onStartViewModel() {
-        getView()?.setLoginPageLabel("Login : "+Greeting().greeting())
+        getView()?.setLoginPageLabel("Login : ${Platform().platform}")
         getView()?.setUsernameLabel("Enter Username")
         getView()?.setPasswordLabel("Enter Password")
         getView()?.setLoginButtonLabel("Login")
