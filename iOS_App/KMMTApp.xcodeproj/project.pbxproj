@@ -258,12 +258,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F5405AE263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMTApp" */;
 			buildPhases = (
+				3F5405C5263719D8000AEA16 /* ShellScript */,
 				A6A0311B0F713FADEE15328E /* [CP] Check Pods Manifest.lock */,
 				3F540580263717AB000AEA16 /* Sources */,
 				3F540581263717AB000AEA16 /* Frameworks */,
 				3F540582263717AB000AEA16 /* Resources */,
 				3F5405C426371921000AEA16 /* Embed Frameworks */,
-				3F5405C5263719D8000AEA16 /* ShellScript */,
 				1F897E16DED8380845862649 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (

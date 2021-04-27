@@ -5,7 +5,7 @@ import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
 
 class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
     override fun onStartViewModel() {
-        getView()?.setLoginPageLabel("Login "+Greeting().greeting())
+        getView()?.setLoginPageLabel("Login : "+Greeting().greeting())
         getView()?.setUsernameLabel("Enter Username")
         getView()?.setPasswordLabel("Enter Password")
         getView()?.setLoginButtonLabel("Login")
@@ -24,7 +24,7 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
     {
         if (username.isNullOrBlank().not()&&password.isNullOrBlank().not())
         {
-            println("Username : $username , Password : $password")
+            getView()?.showPopUpMessage("Login Success","Username : $username\nPassword : $password")
         }
         else
         {

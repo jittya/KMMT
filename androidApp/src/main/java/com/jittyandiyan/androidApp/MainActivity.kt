@@ -31,11 +31,11 @@ class MainActivity : KMMActivity<LoginViewModel>(), LoginView {
     }
 
     override fun getEnteredUsername(): String {
-        return binding.passwordET.text.toString()
+        return binding.usernameET.text.toString()
     }
 
     override fun getEnteredPassword(): String {
-        return binding.usernameET.text.toString()
+        return binding.passwordET.text.toString()
     }
 
     override fun setLoginButtonClickAction(onLoginClick: KFunction0<Unit>) {
