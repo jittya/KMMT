@@ -2,7 +2,7 @@ package com.jittyandiyan.shared.features.login
 
 import com.jittyandiyan.shared.Platform
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
-import com.jittyandiyan.shared.core.network.APIs.ProfileMicroServiceV1API
+import com.jittyandiyan.shared.core.network.APIs.ProfileMicroServiceAPI
 import com.jittyandiyan.shared.models.ProfileModel
 
 class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
@@ -25,7 +25,7 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
         if (username.isNullOrBlank().not() && password.isNullOrBlank().not()) {
 
             runOnBackground<ProfileModel>{
-                ProfileMicroServiceV1API()::getJsonFromApi
+                ProfileMicroServiceAPI()::getProfile
             }.resultOnUI {
                 getView()?.showPopUpMessage("Login Success", "Username : ${it.name}\n Github : ${it.github}")
             }
