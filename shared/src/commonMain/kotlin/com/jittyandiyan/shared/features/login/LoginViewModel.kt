@@ -13,14 +13,14 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
         getView()?.setLoginButtonClickAction(this::onLoginButtonClick)
     }
 
-    fun onLoginButtonClick() {
+    private fun onLoginButtonClick() {
         val username = getView()?.getEnteredUsername()
         val password = getView()?.getEnteredPassword()
         checkValidation(username, password)
 
     }
 
-    fun checkValidation(username: String?, password: String?) {
+    private fun checkValidation(username: String?, password: String?) {
         if (username.isNullOrBlank().not() && password.isNullOrBlank().not()) {
 
             runOnBackground(1){

@@ -27,7 +27,7 @@ class HTTPHelper {
     suspend inline fun <reified T> doGet(
          urlBuilder: URLBuilder.()-> Unit
     ): T {
-        return client.get<T> {
+        return client.get {
             url.apply(urlBuilder)
         }
     }
@@ -36,7 +36,7 @@ class HTTPHelper {
         requestBody: Any = EmptyContent,
         urlBuilder: URLBuilder.()-> Unit
     ): T {
-        return client.post<T> {
+        return client.post {
             this.body=requestBody
             url.apply(urlBuilder)
             contentType(ContentType.Application.Json)
