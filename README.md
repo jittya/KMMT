@@ -210,7 +210,7 @@ class JsonPlaceHolderServiceAPI:BaseAPI() {
 ```
 
 #### Async helper in ViewModel : Background Thread Helper ( [Kotlinx.Coroutines] )
-Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB) in Background Thead and get the result in UI Thread
+Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background Thead and get the result in UI Thread
 ```sh
 class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 
