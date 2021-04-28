@@ -3,6 +3,7 @@ package com.jittyandiyan.androidApp
 import android.os.Bundle
 import com.jittyandiyan.androidApp.databinding.ActivityMainBinding
 import com.jittyandiyan.shared.core.architecture.view.KMMActivity
+import com.jittyandiyan.shared.core.extensions.setClickAction
 import com.jittyandiyan.shared.features.login.LoginView
 import com.jittyandiyan.shared.features.login.LoginViewModel
 import kotlin.reflect.KFunction0
@@ -39,9 +40,7 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
     }
 
     override fun setLoginButtonClickAction(onLoginClick: KFunction0<Unit>) {
-        binding.loginBtn.setOnClickListener {
-            onLoginClick.invoke()
-        }
+         binding.loginBtn.setClickAction(onLoginClick)
     }
 
     override fun setLoginButtonLabel(loginLabel: String) {
