@@ -8,7 +8,7 @@
 
 
 KMMT is a KMM based project template designed to simplify the KMM development.
-It uses a simplified MVVM approch that can be shared both in android and iOS easily.
+It uses a simplified MVVM approach that can be shared both in android and iOS easily.
 
 _Primary objective of this project is to help KMM Developers & promote KMM technology_
 
@@ -81,7 +81,7 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
 - Implement created View interface in activity.
 - Implement all necessary methods from View & KMMActivity.
 
-Implement **_LoginView_**
+Implement **_LoginView & Bind UI Controls_**
 ```kotlin
 class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
     private lateinit var binding: ActivityMainBinding
@@ -133,7 +133,7 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
 - Implement created View interface in viewcontroller.
 - Implement all necessary methods from View & KMMUIViewController.
 
-Implement **_LoginView_**
+Implement **_LoginView  & Bind UI Controls_**
 ```kotlin
 class LoginViewController: KMMUIViewController ,LoginView {
     
