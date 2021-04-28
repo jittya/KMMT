@@ -189,14 +189,21 @@ class LoginViewController: KMMUIViewController ,LoginView {
 #### Common Networking API builder ( [Ktor] )
 Create API Services using BaseAPI class
 ```sh
-class ProfileMicroServiceAPI : BaseAPI() {
-
+class JsonPlaceHolderServiceAPI:BaseAPI() {
     override val baseUrl: String
-        get() = "https://mocki.io/"
+        get() = "https://jsonplaceholder.typicode.com/"
 
-    suspend fun getProfile(): ProfileModel {
+    suspend fun getPosts(postId:Int):List<PostModel>
+    {
         return HTTPHelper().doGet {
-            apiPath("v1/e2c58213-cd6a-4e18-a170-83daf39b2f6c")
+            apiPath("comments?postId=$postId")
+        }
+    }
+
+    suspend fun setPost(post:PostModel):PostModel
+    {
+        return HTTPHelper().doPost(post) {
+            apiPath("comments")
         }
     }
 }
@@ -207,12 +214,12 @@ Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB) in 
 ```sh
 class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 
-    fun getProfileData() {
-        runOnBackground {
-            ProfileMicroServiceAPI()::getProfile
-        }.resultOnUI {
-            getView()?.showPopUpMessage("Profile", "Username : ${it.name}\n Github : ${it.github}")
-        }
+    fun getPostsFromAPI() {
+        runOnBackground(1){
+                JsonPlaceHolderServiceAPI()::getPosts
+            }.resultOnUI {
+                getView()?.showPopUpMessage("First Post Details", "Username : ${it.first().name}\n email : ${it.first().email}")
+            }
     }
 
 }
