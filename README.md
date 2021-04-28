@@ -23,8 +23,8 @@ Xcode - iOS Project
 #### Shared Module (Business Logics & UI Binding Methods) :
 ##### _Step 1 : Define View_
 
-- Create a View interface by extending from BaseView
-- Define UI binding functions in View interface
+- Create a View interface by extending from BaseView.
+- Define UI binding functions in View interface.
 
 ```kotlin
 interface LoginView : BaseView {
@@ -42,8 +42,8 @@ interface LoginView : BaseView {
 ```
 
 ##### _Step 2 : Define ViewModel_
--  Create a ViewModel class by extending from BaseViewModel with View as Type
--  Define your business logic in ViewModel class
+-  Create a ViewModel class by extending from BaseViewModel with View as Type.
+-  Define your business logic in ViewModel class.
 
 ```kotlin
 class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
@@ -77,10 +77,11 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
 ```
 #### Android Module UI Binding :
 ##### _Step 3 : Define Android View_
-- Create new activity by extending from KMMActivity with ViewModel as Type
-- Implement created View interface in activity
-- Implement all necessary methods from View & KMMActivity
-##### Implement _LoginView_
+- Create new activity by extending from KMMActivity with ViewModel as Type.
+- Implement created View interface in activity.
+- Implement all necessary methods from View & KMMActivity.
+
+Implement **_LoginView_**
 ```kotlin
 class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
     private lateinit var binding: ActivityMainBinding
@@ -128,10 +129,11 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
 ```
 #### iOS Module UI Binding (Xcode) :
 ##### _Step 4 : Define iOS View_
-- Create new viewcontroller by extending from KMMUIViewController
-- Implement created View interface in viewcontroller
-- Implement all necessary methods from View & KMMUIViewController
-##### Implement _LoginView_
+- Create new viewcontroller by extending from KMMUIViewController.
+- Implement created View interface in viewcontroller.
+- Implement all necessary methods from View & KMMUIViewController.
+
+Implement **_LoginView_**
 ```kotlin
 class LoginViewController: KMMUIViewController ,LoginView {
     
@@ -186,7 +188,7 @@ class LoginViewController: KMMUIViewController ,LoginView {
 ## ✨Features ✨
 
 #### Common Networking API builder ( [Ktor] )
-Create API Services using BaseAPI class
+Create API Services using BaseAPI class.
 ```kotlin
 class JsonPlaceHolderServiceAPI : BaseAPI() {
 
@@ -208,7 +210,7 @@ class JsonPlaceHolderServiceAPI : BaseAPI() {
 ```
 
 #### Async Task Helper ( [Kotlinx.Coroutines] )
-Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background Thead and get the result in UI Thread
+Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background thead and get the result in UI thread.
 ```kotlin
 class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 
