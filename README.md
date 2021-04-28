@@ -12,6 +12,8 @@ It uses a simplified MVVM approch that can be shared both in android and iOS eas
 
 _Primary objective of this project is to help KMM Developers & promote KMM technology_
 
+[![image](https://kotlinlang.org/lp/mobile/static/sdk-811ad35a3742e58b40278b7a984fc289.svg)](https://kotlinlang.org/lp/mobile/)
+
 ##### IDE Requirements
 Intelij/Android Studio - Android & Shared Module
 
