@@ -24,7 +24,7 @@ Xcode - iOS Project
 - Create a View interface by extending from BaseView
 - Define UI binding functions in View interface
 
-```sh
+```kotlin
 interface LoginView : BaseView {
 
     fun setLoginPageLabel(msg:String)
@@ -43,7 +43,7 @@ interface LoginView : BaseView {
 -  Create a ViewModel class by extending from BaseViewModel with View as Type
 -  Define your business logic in ViewModel class
 
-```sh
+```kotlin
 class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
     override fun onStartViewModel() {
         getView()?.setLoginPageLabel("Login : ${Platform().platform}")
@@ -79,7 +79,7 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
 - Implement created View interface in activity
 - Implement all necessary methods from View & KMMActivity
 ##### Implement _LoginView_
-```sh
+```kotlin
 class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
     private lateinit var binding: ActivityMainBinding
     
@@ -130,7 +130,7 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
 - Implement created View interface in viewcontroller
 - Implement all necessary methods from View & KMMUIViewController
 ##### Implement _LoginView_
-```sh
+```kotlin
 class LoginViewController: KMMUIViewController ,LoginView {
     
     @IBOutlet weak var usernameTF: UITextFieldX!
@@ -185,7 +185,7 @@ class LoginViewController: KMMUIViewController ,LoginView {
 
 #### Common Networking API builder ( [Ktor] )
 Create API Services using BaseAPI class
-```sh
+```kotlin
 class JsonPlaceHolderServiceAPI : BaseAPI() {
 
     override val baseUrl: String
@@ -207,7 +207,7 @@ class JsonPlaceHolderServiceAPI : BaseAPI() {
 
 #### Async Task Helper ( [Kotlinx.Coroutines] )
 Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background Thead and get the result in UI Thread
-```sh
+```kotlin
 class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 
     fun getPostsFromAPI() {
