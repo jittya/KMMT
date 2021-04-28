@@ -5,6 +5,7 @@ plugins {
     id("com.android.library")
     id("kotlin-android-extensions")
     id("kotlinx-serialization")
+    id("com.squareup.sqldelight")
 }
 
 group = AppConfig.group
@@ -22,12 +23,14 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(Dependencies.Common.Coroutines.Core)
-                implementation(Dependencies.Common.Serialization.Json)
-                implementation(Dependencies.Common.Ktor.Client.Core)
-                implementation(Dependencies.Common.Ktor.Client.commonJson)
-                implementation(Dependencies.Common.Ktor.Client.commonLogging)
-                implementation(Dependencies.Common.Ktor.Client.commonSerialization)
+                implementation(Dependencies.KMM.Coroutines.Core)
+                implementation(Dependencies.KMM.Serialization.Json)
+                implementation(Dependencies.KMM.Ktor.Client.Core)
+                implementation(Dependencies.KMM.Ktor.Client.commonJson)
+                implementation(Dependencies.KMM.Ktor.Client.commonLogging)
+                implementation(Dependencies.KMM.Ktor.Client.commonSerialization)
+                implementation(Dependencies.KMM.SQLDelight.Runtime)
+                implementation(Dependencies.KMM.Koin.Core)
             }
         }
         val commonTest by getting {
@@ -39,10 +42,10 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation(Dependencies.Android.google_android_material_Material)
-                implementation(Dependencies.Common.Ktor.Client.androidOKHttp)
-                implementation(Dependencies.Common.Coroutines.Android)
-
-
+                implementation(Dependencies.KMM.Ktor.Client.androidOKHttp)
+                implementation(Dependencies.KMM.Coroutines.Android)
+                implementation(Dependencies.KMM.SQLDelight.AndroidDriver)
+                implementation(Dependencies.KMM.Koin.Android)
             }
         }
         val androidTest by getting {
@@ -53,7 +56,8 @@ kotlin {
         }
         val iosMain by getting {
             dependencies {
-                implementation(Dependencies.Common.Ktor.Client.ios)
+                implementation(Dependencies.KMM.Ktor.Client.ios)
+                implementation(Dependencies.KMM.SQLDelight.NativeDriver)
             }
         }
         val iosTest by getting
@@ -66,6 +70,12 @@ android {
     defaultConfig {
         minSdkVersion(AppConfig.Android.minSdkVersion)
         targetSdkVersion(AppConfig.Android.targetSdkVersion)
+    }
+}
+
+sqldelight {
+    database(AppConfig.dbName) {
+        packageName = AppConfig.group
     }
 }
 
@@ -83,3 +93,4 @@ val packForXcode by tasks.creating(Sync::class) {
 }
 
 tasks.getByName("build").dependsOn(packForXcode)
+

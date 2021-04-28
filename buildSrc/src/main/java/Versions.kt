@@ -7,11 +7,12 @@
 
     object Dependencies {
         //All multiplatform libraries
-        object Common {
+        object KMM {
             const val SQLDelightVersion = "1.5.0"
             const val CoroutinesVersion = "1.4.2-native-mt"
             const val KotlinSerializationVersion = "1.0.1"
             const val ktorVersion = "1.5.3"
+            const val koinVersion = "3.0.1"
         }
 
         //All Android libraries

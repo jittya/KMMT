@@ -27,15 +27,16 @@ abstract class BaseViewModel<View>(private var view: View): Async() where View :
     }
 
     fun getView(): View? {
-        if (viewState == ViewState.STARTED) {
-            return view
+        return if (viewState == ViewState.STARTED) {
+            view
         } else {
-            return null
+            null
         }
     }
 
     fun getViewModel():BaseViewModel<BaseView>
     {
+        @Suppress("UNCHECKED_CAST")
         return this as BaseViewModel<BaseView>
     }
 }

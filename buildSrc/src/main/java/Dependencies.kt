@@ -1,30 +1,40 @@
 object Dependencies {
     //All multiplatform libraries
-    object Common {
+    object KMM {
         object Coroutines {
             const val Core =
-                "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Dependencies.Common.CoroutinesVersion}"
+                "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Dependencies.KMM.CoroutinesVersion}"
             const val Android =
-                "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Dependencies.Common.CoroutinesVersion}"
+                "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Dependencies.KMM.CoroutinesVersion}"
         }
 
         object Serialization {
             const val Json =
-                "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.Dependencies.Common.KotlinSerializationVersion}"
+                "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.Dependencies.KMM.KotlinSerializationVersion}"
 
         }
 
         object Ktor {
             object Client {
                 const val Core =
-                    "io.ktor:ktor-client-core:${Versions.Dependencies.Common.ktorVersion}"
-                val commonJson = "io.ktor:ktor-client-json:${Versions.Dependencies.Common.ktorVersion}"
-                val commonLogging = "io.ktor:ktor-client-logging:${Versions.Dependencies.Common.ktorVersion}"
-                val androidOKHttp = "io.ktor:ktor-client-okhttp:${Versions.Dependencies.Common.ktorVersion}"
-                val ios = "io.ktor:ktor-client-ios:${Versions.Dependencies.Common.ktorVersion}"
+                    "io.ktor:ktor-client-core:${Versions.Dependencies.KMM.ktorVersion}"
+                val commonJson = "io.ktor:ktor-client-json:${Versions.Dependencies.KMM.ktorVersion}"
+                val commonLogging = "io.ktor:ktor-client-logging:${Versions.Dependencies.KMM.ktorVersion}"
+                val androidOKHttp = "io.ktor:ktor-client-okhttp:${Versions.Dependencies.KMM.ktorVersion}"
+                val ios = "io.ktor:ktor-client-ios:${Versions.Dependencies.KMM.ktorVersion}"
                 val commonSerialization =
-                    "io.ktor:ktor-client-serialization:${Versions.Dependencies.Common.ktorVersion}"
+                    "io.ktor:ktor-client-serialization:${Versions.Dependencies.KMM.ktorVersion}"
             }
+        }
+
+        object SQLDelight{
+            const val Runtime ="com.squareup.sqldelight:runtime:${Versions.Dependencies.KMM.SQLDelightVersion}"
+            const val AndroidDriver ="com.squareup.sqldelight:android-driver:${Versions.Dependencies.KMM.SQLDelightVersion}"
+            const val NativeDriver ="com.squareup.sqldelight:native-driver:${Versions.Dependencies.KMM.SQLDelightVersion}"
+        }
+        object Koin{
+            const val Core ="io.insert-koin:koin-core:${Versions.Dependencies.KMM.koinVersion}"
+            const val Android ="io.insert-koin:koin-android:${Versions.Dependencies.KMM.koinVersion}"
         }
     }
 

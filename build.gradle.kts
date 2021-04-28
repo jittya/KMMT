@@ -9,6 +9,7 @@ buildscript {
         classpath(Plugins.kotlinGradlePlugin)
         classpath(Plugins.AndroidBuildGradlePlugin)
         classpath(Plugins.kotlinSerializationGradlePlugin)
+        classpath(Plugins.SQLDelightGradlePlugin)
     }
 }
 

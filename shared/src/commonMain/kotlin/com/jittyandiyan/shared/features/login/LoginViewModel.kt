@@ -4,6 +4,7 @@ import com.jittyandiyan.shared.Platform
 import com.jittyandiyan.shared.apis.JsonPlaceHolderServiceAPI
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
 
+
 class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
     override fun onStartViewModel() {
         getView()?.setLoginPageLabel("Login : ${Platform().platform}")
@@ -23,11 +24,32 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
     private fun checkValidation(username: String?, password: String?) {
         if (username.isNullOrBlank().not() && password.isNullOrBlank().not()) {
 
-            runOnBackground(1){
+            runOnBackground(1) {
                 JsonPlaceHolderServiceAPI()::getPosts
             }.resultOnUI {
-                getView()?.showPopUpMessage("Login Success", "Username : ${it.first().name}\n email : ${it.first().email}")
+                getView()?.showPopUpMessage(
+                    "Login Success",
+                    "Username : ${it.first().name}\n email : ${it.first().email}"
+                )
             }
+
+//            runOnBackground(1) {
+//                JsonPlaceHolderServiceAPI()::getPosts
+//            }.cacheOnDB ({ postList ->
+//                postList.forEach {
+//                    tPostQueries.deletePosts(it.id.toLong())
+//                    tPostQueries
+//                        .addPost(it.id.toLong(), it.name, it.email, it.postId?.toLong(), it.body)
+//                }
+//            },{
+//                it.resultOnUI {
+//                    var postList:List<TPost> = get<KMMTDB>().tPostQueries.getPosts(1).executeAsList()
+//                    getView()?.showPopUpMessage(
+//                        "Login Success",
+//                        "Username : ${it.first().name}\n email : ${it.first().email}"
+//                    )
+//                }
+//            })
 
         } else {
             if (username.isNullOrBlank()) {

@@ -11,7 +11,7 @@ data class PostModel(
     @SerialName("email")
     var email: String? = null,
     @SerialName("id")
-    var id: Int? = null,
+    var id: Int,
     @SerialName("name")
     var name: String? = null,
     @SerialName("postId")

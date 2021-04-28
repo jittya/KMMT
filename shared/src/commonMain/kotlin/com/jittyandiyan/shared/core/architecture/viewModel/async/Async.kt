@@ -1,15 +1,19 @@
 package com.jittyandiyan.shared.core.architecture.viewModel.async
 
+import com.jittyandiyan.mobile.KMMTDB
 import com.jittyandiyan.shared.core.expectations.ApplicationDispatcher
 import com.jittyandiyan.shared.core.expectations.Dispatchers_Default
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.get
 import kotlin.reflect.KSuspendFunction0
 import kotlin.reflect.KSuspendFunction1
 
-abstract class Async {
+
+abstract class Async: KoinComponent {
 
     private val backgroundCoroutineScope = CoroutineScope(Dispatchers_Default)
     private val uiCoroutineScope = CoroutineScope(ApplicationDispatcher)
@@ -21,6 +25,31 @@ abstract class Async {
             }
         }
     }
+
+    protected fun <OUT> Flow<OUT>.resultAsync(function: (OUT) -> Unit) {
+        backgroundCoroutineScope.launch {
+            collect {
+                function.invoke(it)
+            }
+        }
+    }
+
+     fun <OUT> Flow<OUT>.cacheOnDB(
+        db: KMMTDB.(OUT) -> Unit,
+        function: (Flow<OUT>) -> Unit= { }
+    ) {
+        backgroundCoroutineScope.launch {
+            collect {
+                db.invoke(get(),it)
+                function.invoke(flow {
+                    emit(it)
+                })
+            }
+        }
+    }
+
+
+
 
     fun cancelAllRunningCoroutines(reason:String)
     {

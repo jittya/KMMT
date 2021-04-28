@@ -13,6 +13,8 @@ dependencies {
     implementation(Dependencies.Android.google_android_material_Material)
     implementation(Dependencies.Android.androidx_appcompat_Appcompat)
     implementation(Dependencies.Android.androidx_constraintlayout_Constraintlayout)
+    implementation(Dependencies.KMM.Koin.Core)
+    implementation(Dependencies.KMM.Koin.Android)
 }
 
 android {
