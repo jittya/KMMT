@@ -13,7 +13,7 @@ It uses a simplified MVVM approch that can be shared both in android and iOS eas
 _Primary objective of this project is to help KMM Developers & promote KMM technology_
 
 ## How to use
-#### Shared Module :
+#### Shared Module (Business Logics & UI Binding Methods) :
 ##### _Step 1 : Define View_
 
 - Create a View interface by extending from BaseView
@@ -68,7 +68,7 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
     }
 }
 ```
-#### Android Module  :
+#### Android Module UI Binding :
 ##### _Step 3 : Define Android View_
 - Create new activity by extending from KMMActivity with ViewModel as Type
 - Implement created View interface in activity
@@ -106,17 +106,11 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
     }
 
     override fun setLoginButtonClickAction(onLoginClick: KFunction0<Unit>) {
-        binding.loginBtn.setOnClickListener {
-            onLoginClick.invoke()
-        }
+        binding.loginBtn.setClickAction(onLoginClick)
     }
 
     override fun setLoginButtonLabel(loginLabel: String) {
         binding.loginBtn.text=loginLabel
-    }
-
-    override fun showErrorMessageOnUsername(errorMsg: String) {
-        binding.usernameET.error = errorMsg
     }
 
     //Generated Methods from KMMActivity based on LoginViewModel
@@ -125,7 +119,7 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
     }
 }
 ```
-#### iOS Module (Xcode) :
+#### iOS Module UI Binding (Xcode) :
 ##### _Step 4 : Define iOS View_
 - Create new viewcontroller by extending from KMMUIViewController
 - Implement created View interface in viewcontroller
@@ -174,10 +168,6 @@ class LoginViewController: KMMUIViewController ,LoginView {
         loginBtn.setTitle(loginLabel, for: UIControl.State.normal)
     }
     
-    func showErrorMessageOnUsername(errorMsg: String) {
-        usernameTF.errorMessage=errorMsg
-    }
-    
     //Generated Methods from KMMUIViewController
     override func initializeViewModel() -> BaseViewModel<BaseView> {
         return LoginViewModel(view: self).getViewModel()
@@ -191,32 +181,49 @@ class LoginViewController: KMMUIViewController ,LoginView {
 #### Common Networking API builder ( [Ktor] )
 Create API Services using BaseAPI class
 ```sh
-class ProfileMicroServiceAPI : BaseAPI() {
-
+class JsonPlaceHolderServiceAPI:BaseAPI() {
     override val baseUrl: String
-        get() = "https://mocki.io/"
+        get() = "https://jsonplaceholder.typicode.com/"
 
-    suspend fun getProfile(): ProfileModel {
-        return HTTPHelper().doGet<ProfileModel> {
-            apiPath("v1/e2c58213-cd6a-4e18-a170-83daf39b2f6c")
+    suspend fun getPosts(postId:Int):List<PostModel>
+    {
+        return HTTPHelper().doGet {
+            apiPath("comments?postId=$postId")
+        }
+    }
+
+    suspend fun setPost(post:PostModel):PostModel
+    {
+        return HTTPHelper().doPost(post) {
+            apiPath("comments")
         }
     }
 }
 ```
 
-#### Async helper in ViewModel : Background Thread Helper ( [Kotlinx.Coroutines] )
-Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB) in Background Thead and get the result in UI Thread
+#### Async Task Helper ( [Kotlinx.Coroutines] )
+Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background Thead and get the result in UI Thread
 ```sh
-class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
+class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 
-    fun getProfileData() {
-        runOnBackground<ProfileModel>{
-            ProfileMicroServiceAPI()::getProfile
+    fun getPostsFromAPI() {
+    
+        runOnBackground(1){
+            JsonPlaceHolderServiceAPI()::getPosts
         }.resultOnUI {
-            getView()?.showPopUpMessage("Profile", "Username : ${it.name}\n Github : ${it.github}")
+            getView()?.showPopUpMessage("First Post Details", "Username : ${it.first().name}\n email : ${it.first().email}")
         }
     }
-
+    
+    fun savePost() {
+        
+        val post = PostModel("Post Body", "jit@ccc.com", 100, "Jitty", 6)
+        runOnBackground(post) {
+            JsonPlaceHolderServiceAPI()::setPost
+        }.resultOnUI {
+            getView()?.showPopUpMessage("Saved Post Details", "Name : ${it.name}\n email : ${it.email}")
+        }
+    }
 }
 ```
 
