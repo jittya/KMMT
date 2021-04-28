@@ -215,13 +215,13 @@ Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB) in 
 class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 
     fun getPostsFromAPI() {
+    
         runOnBackground(1){
                 JsonPlaceHolderServiceAPI()::getPosts
             }.resultOnUI {
                 getView()?.showPopUpMessage("First Post Details", "Username : ${it.first().name}\n email : ${it.first().email}")
             }
     }
-
 }
 ```
 
