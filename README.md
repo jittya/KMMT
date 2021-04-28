@@ -195,7 +195,7 @@ class ProfileMicroServiceAPI : BaseAPI() {
         get() = "https://mocki.io/"
 
     suspend fun getProfile(): ProfileModel {
-        return HTTPHelper().doGet<ProfileModel> {
+        return HTTPHelper().doGet {
             apiPath("v1/e2c58213-cd6a-4e18-a170-83daf39b2f6c")
         }
     }
