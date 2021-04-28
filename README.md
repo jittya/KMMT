@@ -12,6 +12,11 @@ It uses a simplified MVVM approch that can be shared both in android and iOS eas
 
 _Primary objective of this project is to help KMM Developers & promote KMM technology_
 
+##### IDE Requirements
+Intelij/Android Studio - Android & Shared Module
+
+Xcode - iOS Project
+
 ## How to use
 #### Shared Module (Business Logics & UI Binding Methods) :
 ##### _Step 1 : Define View_
