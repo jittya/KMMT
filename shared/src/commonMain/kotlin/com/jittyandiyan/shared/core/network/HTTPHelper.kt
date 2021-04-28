@@ -39,6 +39,7 @@ class HTTPHelper {
         return client.post<T> {
             this.body=requestBody
             url.apply(urlBuilder)
+            contentType(ContentType.Application.Json)
         }
     }
 }

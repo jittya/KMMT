@@ -1,9 +1,8 @@
 package com.jittyandiyan.shared.features.login
 
 import com.jittyandiyan.shared.Platform
-import com.jittyandiyan.shared.apis.ProfileMicroServiceAPI
+import com.jittyandiyan.shared.apis.JsonPlaceHolderServiceAPI
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
-import com.jittyandiyan.shared.models.ProfileModel
 
 class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
     override fun onStartViewModel() {
@@ -24,10 +23,10 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
     fun checkValidation(username: String?, password: String?) {
         if (username.isNullOrBlank().not() && password.isNullOrBlank().not()) {
 
-            runOnBackground<ProfileModel>{
-                ProfileMicroServiceAPI()::getProfile
+            runOnBackground(1){
+                JsonPlaceHolderServiceAPI()::getPosts
             }.resultOnUI {
-                getView()?.showPopUpMessage("Login Success", "Username : ${it.name}\n Github : ${it.github}")
+                getView()?.showPopUpMessage("Login Success", "Username : ${it.first().name}\n email : ${it.first().email}")
             }
 
         } else {
