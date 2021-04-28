@@ -6,7 +6,11 @@ import com.jittyandiyan.shared.core.architecture.viewModel.viewState.ViewState
 
 abstract class BaseViewModel<View>(private var view: View): Async() where View : BaseView {
 
-    private var viewState = ViewState.INITIALIZED
+    private var viewState = ViewState.UNKNOWN
+
+    init {
+        viewState = ViewState.INITIALIZED
+    }
 
     abstract fun onStartViewModel()
 
