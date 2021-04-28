@@ -106,9 +106,7 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
     }
 
     override fun setLoginButtonClickAction(onLoginClick: KFunction0<Unit>) {
-        binding.loginBtn.setOnClickListener {
-            onLoginClick.invoke()
-        }
+        binding.loginBtn.setClickAction(onLoginClick)
     }
 
     override fun setLoginButtonLabel(loginLabel: String) {
