@@ -181,20 +181,19 @@ class LoginViewController: KMMUIViewController ,LoginView {
 #### Common Networking API builder ( [Ktor] )
 Create API Services using BaseAPI class
 ```sh
-class JsonPlaceHolderServiceAPI:BaseAPI() {
+class JsonPlaceHolderServiceAPI : BaseAPI() {
+
     override val baseUrl: String
         get() = "https://jsonplaceholder.typicode.com/"
 
-    suspend fun getPosts(postId:Int):List<PostModel>
-    {
-        return HTTPHelper().doGet {
+    suspend fun getPosts(postId: Int): List<PostModel> {
+        return doGet {
             apiPath("comments?postId=$postId")
         }
     }
 
-    suspend fun setPost(post:PostModel):PostModel
-    {
-        return HTTPHelper().doPost(post) {
+    suspend fun setPost(post: PostModel): PostModel {
+        return doPost(post) {
             apiPath("comments")
         }
     }
