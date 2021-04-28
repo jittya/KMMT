@@ -1,4 +1,4 @@
-package com.jittyandiyan.shared.core.network.APIs
+package com.jittyandiyan.shared.core.network
 
 import io.ktor.http.*
 

@@ -1,5 +1,6 @@
-package com.jittyandiyan.shared.core.network.APIs
+package com.jittyandiyan.shared.apis
 
+import com.jittyandiyan.shared.core.network.BaseAPI
 import com.jittyandiyan.shared.core.network.HTTPHelper
 import com.jittyandiyan.shared.models.ProfileModel
 

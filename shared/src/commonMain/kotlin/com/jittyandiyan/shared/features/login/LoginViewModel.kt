@@ -1,8 +1,8 @@
 package com.jittyandiyan.shared.features.login
 
 import com.jittyandiyan.shared.Platform
+import com.jittyandiyan.shared.apis.ProfileMicroServiceAPI
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
-import com.jittyandiyan.shared.core.network.APIs.ProfileMicroServiceAPI
 import com.jittyandiyan.shared.models.ProfileModel
 
 class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {

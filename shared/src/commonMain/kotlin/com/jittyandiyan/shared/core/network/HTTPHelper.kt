@@ -5,6 +5,7 @@ import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
 import io.ktor.client.features.logging.*
 import io.ktor.client.request.*
+import io.ktor.client.utils.*
 import io.ktor.http.*
 
 class HTTPHelper {
@@ -27,6 +28,16 @@ class HTTPHelper {
          urlBuilder: URLBuilder.()-> Unit
     ): T {
         return client.get<T> {
+            url.apply(urlBuilder)
+        }
+    }
+
+    suspend inline fun <reified T> doPost(
+        requestBody: Any = EmptyContent,
+        urlBuilder: URLBuilder.()-> Unit
+    ): T {
+        return client.post<T> {
+            this.body=requestBody
             url.apply(urlBuilder)
         }
     }
