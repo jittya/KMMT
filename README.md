@@ -113,10 +113,6 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
         binding.loginBtn.text=loginLabel
     }
 
-    override fun showErrorMessageOnUsername(errorMsg: String) {
-        binding.usernameET.error = errorMsg
-    }
-
     //Generated Methods from KMMActivity based on LoginViewModel
     override fun initializeViewModel(): LoginViewModel {
         return LoginViewModel(this)
@@ -170,10 +166,6 @@ class LoginViewController: KMMUIViewController ,LoginView {
     
     func setLoginButtonLabel(loginLabel: String) {
         loginBtn.setTitle(loginLabel, for: UIControl.State.normal)
-    }
-    
-    func showErrorMessageOnUsername(errorMsg: String) {
-        usernameTF.errorMessage=errorMsg
     }
     
     //Generated Methods from KMMUIViewController
