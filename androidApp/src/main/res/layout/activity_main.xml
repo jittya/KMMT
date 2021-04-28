@@ -6,7 +6,7 @@
         android:id="@+id/main_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".LoginActivity">
+        tools:context=".features.LoginActivity">
 
 
     <LinearLayout android:layout_width="match_parent"
@@ -27,11 +27,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/usernameET"
+                android:text="jitty"
         />
         <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/passwordET"
+                android:text="1234567"
         />
 
         <androidx.appcompat.widget.AppCompatButton

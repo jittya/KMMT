@@ -10,6 +10,11 @@ import shared
 
 class LoginViewController: KMMUIViewController ,LoginView {
     
+    func navigateToHomePage(username: String) {
+        
+    }
+    
+    
     @IBOutlet weak var usernameTF: UITextFieldX!
     @IBOutlet weak var passwordTF: UITextFieldX!
     @IBOutlet weak var textlabel: UILabel!

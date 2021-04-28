@@ -1,17 +1,23 @@
 package com.jittyandiyan.shared.core.architecture.view
 
+import android.app.ProgressDialog
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewbinding.ViewBinding
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
 
-abstract class KMMActivity<ViewModel> : AppCompatActivity() where ViewModel : BaseViewModel<*> {
+abstract class KMMActivity<ViewModel,UIViewBinding> : AppCompatActivity() where ViewModel : BaseViewModel<*>,UIViewBinding:ViewBinding {
 
     private lateinit var viewModel: ViewModel
+    private var progressDialog: ProgressDialog? = null
+    lateinit var binding:UIViewBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding=viewBindingInflate()
         viewModel = initializeViewModel()
+        setContentView(binding.root)
     }
 
     override fun onResume() {
@@ -29,19 +35,33 @@ abstract class KMMActivity<ViewModel> : AppCompatActivity() where ViewModel : Ba
     }
 
     abstract fun initializeViewModel(): ViewModel
+    abstract fun viewBindingInflate():UIViewBinding
 
     fun showPopUpMessage(message: String) {
         AlertDialog.Builder(this).setMessage(message)
-            .setPositiveButton("OK"
+            .setPositiveButton(
+                "OK"
             ) { dialog, which -> dialog?.dismiss() }
             .create().show()
     }
 
-    fun showPopUpMessage(title:String,message: String) {
+    fun showPopUpMessage(title: String, message: String) {
         AlertDialog.Builder(this).setTitle(title).setMessage(message)
-            .setPositiveButton("OK"
+            .setPositiveButton(
+                "OK"
             ) { dialog, which -> dialog?.dismiss() }
             .create().show()
+    }
+
+    fun showLoading(loadingLabel: String) {
+        progressDialog = ProgressDialog(this)
+        progressDialog?.setMessage(loadingLabel)
+        progressDialog?.show()
+
+    }
+
+    fun dismissLoading() {
+        progressDialog?.dismiss()
     }
 }
 

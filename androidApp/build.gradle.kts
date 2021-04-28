@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    id("kotlin-android-extensions")
 }
 
 group = AppConfig.group
@@ -58,5 +57,9 @@ android {
             buildConfigField("String", "Server", "\"0.0.0.0\"")
             buildConfigField("String", "Port", "\"8080\"")
         }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }

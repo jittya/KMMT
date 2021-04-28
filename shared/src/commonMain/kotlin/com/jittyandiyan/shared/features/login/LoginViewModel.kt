@@ -3,6 +3,7 @@ package com.jittyandiyan.shared.features.login
 import com.jittyandiyan.shared.Platform
 import com.jittyandiyan.shared.apis.JsonPlaceHolderServiceAPI
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
+import com.jittyandiyan.shared.models.CredentialsModel
 
 
 class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
@@ -15,6 +16,7 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
     }
 
     private fun onLoginButtonClick() {
+        getView()?.showLoading("authenticating...")
         val username = getView()?.getEnteredUsername()
         val password = getView()?.getEnteredPassword()
         checkValidation(username, password)
@@ -24,13 +26,17 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
     private fun checkValidation(username: String?, password: String?) {
         if (username.isNullOrBlank().not() && password.isNullOrBlank().not()) {
 
-            runOnBackground(1) {
-                JsonPlaceHolderServiceAPI()::getPosts
+            runOnBackground(CredentialsModel(username.toString(), password.toString())) {
+                JsonPlaceHolderServiceAPI()::authenticate
             }.resultOnUI {
-                getView()?.showPopUpMessage(
-                    "Login Success",
-                    "Username : ${it.first().name}\n email : ${it.first().email}"
-                )
+                getView()?.dismissLoading()
+                if (it) {
+                    getView()?.navigateToHomePage(username.toString())
+                } else {
+                    getView()?.showPopUpMessage(
+                        "Login Failed"
+                    )
+                }
             }
 
 //            runOnBackground(1) {

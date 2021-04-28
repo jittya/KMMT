@@ -50,4 +50,12 @@ class KMMUIViewController :UIViewController
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
+    
+    @objc func dismissLoading() {
+        
+    }
+    
+    @objc(showLoadingLoadingLabel:) func showLoading(loadingLabel: String) {
+        
+    }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,30 +13,36 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="KMMTApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-Oi-R5O">
-                                <rect key="frame" x="40" y="226" width="520" height="148.5"/>
+                                <rect key="frame" x="40" y="374" width="334" height="148.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zg-dP-DDa">
-                                        <rect key="frame" x="0.0" y="0.0" width="520" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Urj-VA-lEo" customClass="UITextFieldX" customModule="KMMTApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="30.5" width="520" height="34"/>
+                                        <rect key="frame" x="0.0" y="30.5" width="334" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="jitty"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ija-MS-Ihm" customClass="UITextFieldX" customModule="KMMTApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="74.5" width="520" height="34"/>
+                                        <rect key="frame" x="0.0" y="74.5" width="334" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="1234567"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgs-aX-euz">
-                                        <rect key="frame" x="0.0" y="118.5" width="520" height="30"/>
+                                        <rect key="frame" x="0.0" y="118.5" width="334" height="30"/>
                                         <state key="normal" title="-"/>
                                     </button>
                                 </subviews>
@@ -62,6 +69,14 @@
             <point key="canvasLocation" x="-4.3478260869565224" y="93.75"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Ija-MS-Ihm">
+            <size key="intrinsicContentSize" width="86" height="34"/>
+        </designable>
+        <designable name="Urj-VA-lEo">
+            <size key="intrinsicContentSize" width="52" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

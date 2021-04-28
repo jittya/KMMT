@@ -18,4 +18,5 @@ interface LoginView : BaseView {
 
     fun showErrorMessageOnUsername(errorMsg: String)
 
+    fun navigateToHomePage(username:String)
 }

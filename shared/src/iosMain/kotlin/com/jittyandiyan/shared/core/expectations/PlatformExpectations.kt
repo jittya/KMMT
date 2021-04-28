@@ -13,7 +13,6 @@ import platform.darwin.dispatch_get_main_queue
 import platform.darwin.dispatch_queue_t
 import kotlin.coroutines.CoroutineContext
 
-
 internal actual val ApplicationDispatcher: CoroutineDispatcher = NsQueueDispatcher(dispatch_get_main_queue())
 
 internal class NsQueueDispatcher(
@@ -43,6 +42,6 @@ actual fun getAppContextAsKoinBean(appContext: Any): Module {
     return module {  }
 }
 
-@Suppress("UNRESOLVED_REFERENCE")
+@Suppress("UNRESOLVED_REFERENCE","TYPE_MISMATCH")
 actual val sqlDriverModule: Module
     get() = module { single<SqlDriver> { NativeSqliteDriver(KMMTDB.Schema, "KMMTB.db") } }
