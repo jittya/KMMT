@@ -81,7 +81,7 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
 - Implement created View interface in activity.
 - Implement all necessary methods from View & KMMActivity.
 
-Implement **_LoginView_**
+Implement **_LoginView & Bind UI Controls_**
 ```kotlin
 class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
     private lateinit var binding: ActivityMainBinding
@@ -133,7 +133,7 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
 - Implement created View interface in viewcontroller.
 - Implement all necessary methods from View & KMMUIViewController.
 
-Implement **_LoginView_**
+Implement **_LoginView  & Bind UI Controls_**
 ```kotlin
 class LoginViewController: KMMUIViewController ,LoginView {
     
