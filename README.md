@@ -13,7 +13,7 @@ It uses a simplified MVVM approch that can be shared both in android and iOS eas
 _Primary objective of this project is to help KMM Developers & promote KMM technology_
 
 ## How to use
-#### Shared Module :
+#### Shared Module (Business Logics & UI Binding Methods) :
 ##### _Step 1 : Define View_
 
 - Create a View interface by extending from BaseView
@@ -68,7 +68,7 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
     }
 }
 ```
-#### Android Module  :
+#### Android Module UI Binding :
 ##### _Step 3 : Define Android View_
 - Create new activity by extending from KMMActivity with ViewModel as Type
 - Implement created View interface in activity
@@ -123,7 +123,7 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
     }
 }
 ```
-#### iOS Module (Xcode) :
+#### iOS Module UI Binding (Xcode) :
 ##### _Step 4 : Define iOS View_
 - Create new viewcontroller by extending from KMMUIViewController
 - Implement created View interface in viewcontroller
