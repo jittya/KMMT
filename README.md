@@ -208,7 +208,7 @@ Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB) in 
 class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 
     fun getProfileData() {
-        runOnBackground<ProfileModel>{
+        runOnBackground {
             ProfileMicroServiceAPI()::getProfile
         }.resultOnUI {
             getView()?.showPopUpMessage("Profile", "Username : ${it.name}\n Github : ${it.github}")
