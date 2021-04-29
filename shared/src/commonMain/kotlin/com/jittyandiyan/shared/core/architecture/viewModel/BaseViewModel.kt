@@ -3,9 +3,9 @@ package com.jittyandiyan.shared.core.architecture.viewModel
 import com.jittyandiyan.shared.core.architecture.view.BaseView
 import com.jittyandiyan.shared.core.architecture.viewModel.async.Async
 import com.jittyandiyan.shared.core.architecture.viewModel.viewState.ViewState
-import com.jittyandiyan.shared.core.expectations.Bundle
+import com.jittyandiyan.shared.core.expectations.BundleX
 import com.jittyandiyan.shared.core.extensions.toObject
-import com.jittyandiyan.shared.core.models.BundleCommon
+import com.jittyandiyan.shared.core.models.BundleExtras
 
 abstract class BaseViewModel<View>(private var view: View) : Async() where View : BaseView {
 
@@ -44,7 +44,7 @@ abstract class BaseViewModel<View>(private var view: View) : Async() where View 
 
     var bundlesValues = mutableMapOf<String, Any?>()
 
-    fun setBundle(bundle:BundleCommon)
+    fun setBundle(bundle:BundleExtras)
     {
         bundlesValues=bundle.extras
     }
@@ -70,10 +70,10 @@ abstract class BaseViewModel<View>(private var view: View) : Async() where View 
         }
     }
 
-    fun bundle(
-        bundle: BundleCommon.() -> Unit
-    ): Bundle {
-        return Bundle(BundleCommon().also(bundle))
+    fun Bundle(
+        bundle: BundleExtras.() -> Unit
+    ): BundleX {
+        return BundleX(BundleExtras().also(bundle))
     }
 }
 

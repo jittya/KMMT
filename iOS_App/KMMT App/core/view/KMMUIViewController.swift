@@ -14,7 +14,7 @@ import shared
 class KMMUIViewController :UIViewController
 {
     private var viewModel: BaseViewModel<BaseView>? = nil
-    var bundle:shared.Bundle? = nil
+    var bundle:shared.BundleX? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,12 +64,12 @@ class KMMUIViewController :UIViewController
         
     }
     
-    func openViewController(newViewControllerName: String,bundle: shared.Bundle)
+    func openViewController(newViewControllerName: String,bundle: shared.BundleX)
     {
         getViewController(newViewControllerName: "HomeViewController", bundle: bundle)
     }
     
-    private func getViewController(storyboardName:String="Main", newViewControllerName:String, bundle: shared.Bundle)
+    private func getViewController(storyboardName:String="Main", newViewControllerName:String, bundle: shared.BundleX)
     {
         let storyBoard: UIStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: newViewControllerName)

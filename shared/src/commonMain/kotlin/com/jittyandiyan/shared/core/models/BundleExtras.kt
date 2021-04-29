@@ -5,7 +5,7 @@ import kotlinx.serialization.KSerializer
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.builtins.serializer
 
-class BundleCommon {
+class BundleExtras {
      val extras = mutableMapOf<String, Any?>()
 
     fun getKeys(): Set<String> {

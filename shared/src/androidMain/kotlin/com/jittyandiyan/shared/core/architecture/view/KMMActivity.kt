@@ -7,6 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
+import com.jittyandiyan.shared.core.expectations.BundleX
 
 abstract class KMMActivity<ViewModel,UIViewBinding> : AppCompatActivity() where ViewModel : BaseViewModel<*>,UIViewBinding:ViewBinding {
 
@@ -68,7 +69,7 @@ abstract class KMMActivity<ViewModel,UIViewBinding> : AppCompatActivity() where 
         progressDialog?.dismiss()
     }
 
-    fun openActivity(activity: Class<*>, bundle: com.jittyandiyan.shared.core.expectations.Bundle) {
+    fun openActivity(activity: Class<*>, bundle: BundleX) {
         var intent = Intent(this, activity)
             intent.putExtras(bundle.bundle)
             startActivity(intent)

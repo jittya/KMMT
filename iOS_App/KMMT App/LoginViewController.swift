@@ -10,7 +10,7 @@ import shared
 
 class LoginViewController: KMMUIViewController ,LoginView {
     
-    func navigateToHomePage(bundle: shared.Bundle) {
+    func navigateToHomePage(bundle: shared.BundleX) {
         openViewController(newViewControllerName: "HomeViewController",bundle: bundle)
     }
     

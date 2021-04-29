@@ -3,6 +3,7 @@ package com.jittyandiyan.shared.core.expectations
 import android.content.Context
 import android.os.Bundle
 import com.jittyandiyan.mobile.KMMTDB
+import com.jittyandiyan.shared.core.models.BundleExtras
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 import com.squareup.sqldelight.db.SqlDriver
 import kotlinx.coroutines.CoroutineDispatcher
@@ -27,9 +28,9 @@ actual val sqlDriverModule: Module
     }
 
 
-actual class Bundle  {
+actual class BundleX  {
      val bundle = Bundle()
-    actual constructor(extras: com.jittyandiyan.shared.core.models.BundleCommon)
+    actual constructor(extras: BundleExtras)
     {
         extras.getKeys().forEach { key ->
             extras.getValue(key)?.let { value->

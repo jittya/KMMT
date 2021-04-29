@@ -1,7 +1,7 @@
 package com.jittyandiyan.shared.features.login
 
 import com.jittyandiyan.shared.core.architecture.view.BaseView
-import com.jittyandiyan.shared.core.expectations.Bundle
+import com.jittyandiyan.shared.core.expectations.BundleX
 import kotlin.reflect.KFunction0
 
 interface LoginView : BaseView {
@@ -19,5 +19,5 @@ interface LoginView : BaseView {
 
     fun showErrorMessageOnUsername(errorMsg: String)
 
-    fun navigateToHomePage(bundle: Bundle)
+    fun navigateToHomePage(bundle: BundleX)
 }
