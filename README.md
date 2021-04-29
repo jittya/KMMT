@@ -57,6 +57,7 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
 
     fun onLoginButtonClick()
     {
+        getView()?.showLoading("authenticating...")
         val username=getView()?.getEnteredUsername()
         val password=getView()?.getEnteredPassword()
         checkValidation(username,password)
@@ -66,7 +67,19 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
     {
         if (username.isNullOrBlank().not()&&password.isNullOrBlank().not())
         {
-            getView()?.showPopUpMessage("Login Success","Username : $username\nPassword : $password")
+          val credentials = CredentialsModel(username.toString(), password.toString())
+          runOnBackground(credentials) {
+                JsonPlaceHolderServiceAPI()::authenticate
+            }.resultOnUI {
+                getView()?.dismissLoading()
+                if (it) {
+                    getView()?.navigateToHomePage(username.toString())
+                } else {
+                    getView()?.showPopUpMessage(
+                        "Login Failed"
+                    )
+                }
+            }
         }
         else
         {
