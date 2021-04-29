@@ -68,6 +68,7 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
         if (username.isNullOrBlank().not()&&password.isNullOrBlank().not())
         {
           val credentials = CredentialsModel(username.toString(), password.toString())
+         
           runOnBackground(credentials) {
                 JsonPlaceHolderServiceAPI()::authenticate
             }.resultOnUI {
@@ -239,6 +240,7 @@ class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
     fun savePost() {
         
         val post = PostModel("Post Body", "jit@ccc.com", 100, "Jitty", 6)
+        
         runOnBackground(post) {
             JsonPlaceHolderServiceAPI()::setPost
         }.resultOnUI {
@@ -271,9 +273,9 @@ View Model can pass objects & values from Activity to Activity (Android) or View
    // 1st Activity : Android
    
        override fun navigateToHomePage(bundle: BundleX) {
-        openActivity(HomeActivity::class.java,bundle)
-        finish()
-    }
+           openActivity(HomeActivity::class.java,bundle)
+           finish()
+       }
     
    // 1st ViewContoller : iOS
        
@@ -294,6 +296,7 @@ View Model can pass objects & values from Activity to Activity (Android) or View
        }
 
        override fun onStartViewModel() {
+       
            getBundleValue<String>(USER_NAME)?.let { username ->
             
            }
