@@ -268,12 +268,19 @@ View Model can pass objects & values from Activity to Activity (Android) or View
      fun navigateToHomePage(bundle: BundleX)
      
      
-   // 1st Activity 
+   // 1st Activity : Android
    
        override fun navigateToHomePage(bundle: BundleX) {
         openActivity(HomeActivity::class.java,bundle)
         finish()
     }
+    
+   // 1st ViewContoller : iOS
+       
+       func navigateToHomePage(bundle: shared.BundleX) {
+           openViewController(newViewControllerName: "HomeViewController",bundle: bundle)
+       }
+    
 ```
 ###### Retrieve Values From 2nd View Model
 ```kotlin
