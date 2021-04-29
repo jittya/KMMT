@@ -1,4 +1,4 @@
-package com.jittyandiyan.shared.apis
+package com.jittyandiyan.shared.dataSources.apis
 
 import com.jittyandiyan.shared.core.network.BaseAPI
 import com.jittyandiyan.shared.models.CredentialsModel
@@ -21,13 +21,14 @@ class JsonPlaceHolderServiceAPI : BaseAPI() {
 
     }
 
-    suspend fun getPosts(postId: Int): List<PostModel> {
+    suspend fun getPosts(username: String): List<PostModel> {
         return doGet {
-            apiPath("comments?postId=$postId")
+            apiPath("jittya/jsonserver/post?username=$username")
         }
     }
 
-    suspend fun setPost(post: PostModel): PostModel {
+    //Example POST Method
+    private suspend fun setPost(post: PostModel): PostModel {
         return doPost(post) {
             apiPath("comments")
         }

@@ -1,6 +1,7 @@
 package com.jittyandiyan.shared.core.architecture.view
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +18,9 @@ abstract class KMMActivity<ViewModel,UIViewBinding> : AppCompatActivity() where 
         super.onCreate(savedInstanceState)
         binding=viewBindingInflate()
         viewModel = initializeViewModel()
+        intent.extras?.keySet()?.filterNotNull()?.forEach { key ->
+            getViewModel().setBundleValue(key, intent.extras!![key])
+        }
         setContentView(binding.root)
     }
 
@@ -62,6 +66,12 @@ abstract class KMMActivity<ViewModel,UIViewBinding> : AppCompatActivity() where 
 
     fun dismissLoading() {
         progressDialog?.dismiss()
+    }
+
+    fun openActivity(activity: Class<*>, bundle: com.jittyandiyan.shared.core.expectations.Bundle) {
+        var intent = Intent(this, activity)
+            intent.putExtras(bundle.bundle)
+            startActivity(intent)
     }
 }
 

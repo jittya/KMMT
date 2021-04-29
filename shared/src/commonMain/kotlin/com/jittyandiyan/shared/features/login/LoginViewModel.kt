@@ -1,9 +1,11 @@
 package com.jittyandiyan.shared.features.login
 
 import com.jittyandiyan.shared.Platform
-import com.jittyandiyan.shared.apis.JsonPlaceHolderServiceAPI
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
+import com.jittyandiyan.shared.dataSources.apis.JsonPlaceHolderServiceAPI
+import com.jittyandiyan.shared.features.home.HomeViewModel
 import com.jittyandiyan.shared.models.CredentialsModel
+import com.jittyandiyan.shared.models.UserModel
 
 
 class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
@@ -31,32 +33,19 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
             }.resultOnUI {
                 getView()?.dismissLoading()
                 if (it) {
-                    getView()?.navigateToHomePage(username.toString())
+
+                    var userModel = UserModel("jittya@gmail.com", "Jitty", "Andiyan")
+
+                    getView()?.navigateToHomePage(bundle {
+                        putStringExtra(HomeViewModel.USER_NAME, username.toString())
+                        putSerializableExtra(HomeViewModel.USER_OBJECT, userModel, UserModel.serializer())
+                    })
                 } else {
                     getView()?.showPopUpMessage(
                         "Login Failed"
                     )
                 }
             }
-
-//            runOnBackground(1) {
-//                JsonPlaceHolderServiceAPI()::getPosts
-//            }.cacheOnDB ({ postList ->
-//                postList.forEach {
-//                    tPostQueries.deletePosts(it.id.toLong())
-//                    tPostQueries
-//                        .addPost(it.id.toLong(), it.name, it.email, it.postId?.toLong(), it.body)
-//                }
-//            },{
-//                it.resultOnUI {
-//                    var postList:List<TPost> = get<KMMTDB>().tPostQueries.getPosts(1).executeAsList()
-//                    getView()?.showPopUpMessage(
-//                        "Login Success",
-//                        "Username : ${it.first().name}\n email : ${it.first().email}"
-//                    )
-//                }
-//            })
-
         } else {
             if (username.isNullOrBlank()) {
                 getView()?.showErrorMessageOnUsername("Please enter username")

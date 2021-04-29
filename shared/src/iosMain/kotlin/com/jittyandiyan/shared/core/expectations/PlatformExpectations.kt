@@ -1,6 +1,7 @@
 package com.jittyandiyan.shared.core.expectations
 
 import com.jittyandiyan.mobile.KMMTDB
+import com.jittyandiyan.shared.core.models.BundleCommon
 import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.drivers.native.NativeSqliteDriver
 import kotlinx.coroutines.CoroutineDispatcher
@@ -45,3 +46,11 @@ actual fun getAppContextAsKoinBean(appContext: Any): Module {
 @Suppress("UNRESOLVED_REFERENCE","TYPE_MISMATCH")
 actual val sqlDriverModule: Module
     get() = module { single<SqlDriver> { NativeSqliteDriver(KMMTDB.Schema, "KMMTB.db") } }
+
+actual class Bundle  {
+    var extras : BundleCommon
+    actual constructor(extras: BundleCommon)
+    {
+        this.extras=extras
+    }
+}

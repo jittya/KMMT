@@ -1,8 +1,8 @@
 package com.jittyandiyan.androidApp.features
 
 import com.jittyandiyan.androidApp.databinding.ActivityMainBinding
-import com.jittyandiyan.androidApp.features.HomeActivity.Companion.openHomeActivity
 import com.jittyandiyan.shared.core.architecture.view.KMMActivity
+import com.jittyandiyan.shared.core.expectations.Bundle
 import com.jittyandiyan.shared.core.extensions.setClickAction
 import com.jittyandiyan.shared.features.login.LoginView
 import com.jittyandiyan.shared.features.login.LoginViewModel
@@ -52,8 +52,8 @@ class LoginActivity : KMMActivity<LoginViewModel, ActivityMainBinding>(), LoginV
         binding.usernameET.error = errorMsg
     }
 
-    override fun navigateToHomePage(username: String) {
-        openHomeActivity(username)
+    override fun navigateToHomePage(bundle: Bundle) {
+        openActivity(HomeActivity::class.java,bundle)
         finish()
     }
 

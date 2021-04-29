@@ -14,10 +14,15 @@ import shared
 class KMMUIViewController :UIViewController
 {
     private var viewModel: BaseViewModel<BaseView>? = nil
+    var bundle:shared.Bundle? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = initializeViewModel()
+        if (bundle != nil){
+            viewModel?.setBundle(bundle: bundle!.extras)
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,6 +61,24 @@ class KMMUIViewController :UIViewController
     }
     
     @objc(showLoadingLoadingLabel:) func showLoading(loadingLabel: String) {
+        
+    }
+    
+    func openViewController(newViewControllerName: String,bundle: shared.Bundle)
+    {
+        getViewController(newViewControllerName: "HomeViewController", bundle: bundle)
+    }
+    
+    private func getViewController(storyboardName:String="Main", newViewControllerName:String, bundle: shared.Bundle)
+    {
+        let storyBoard: UIStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: newViewControllerName)
+        newViewController.modalPresentationStyle = .fullScreen
+        newViewController.modalTransitionStyle = .crossDissolve
+        if (newViewController is KMMUIViewController) {
+            (newViewController as! KMMUIViewController).bundle=bundle
+        }
+        self.present(newViewController, animated: true, completion: nil)
         
     }
 }

@@ -1,6 +1,7 @@
 package com.jittyandiyan.shared.core.expectations
 
 import android.content.Context
+import android.os.Bundle
 import com.jittyandiyan.mobile.KMMTDB
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 import com.squareup.sqldelight.db.SqlDriver
@@ -24,3 +25,39 @@ actual val sqlDriverModule: Module
     get() = module {
         single<SqlDriver> { AndroidSqliteDriver(KMMTDB.Schema, get(), "KMMTB.db") }
     }
+
+
+actual class Bundle  {
+     val bundle = Bundle()
+    actual constructor(extras: com.jittyandiyan.shared.core.models.BundleCommon)
+    {
+        extras.getKeys().forEach { key ->
+            extras.getValue(key)?.let { value->
+                if (value is String)
+                {
+                    bundle.putString(key,value)
+                }
+                else if (value is Boolean)
+                {
+                    bundle.putBoolean(key,value)
+                }
+                else if (value is Int)
+                {
+                    bundle.putInt(key,value)
+                }
+                else if (value is Long)
+                {
+                    bundle.putLong(key,value)
+                }
+                else if (value is Float)
+                {
+                    bundle.putFloat(key,value)
+                }
+                else if (value is Double)
+                {
+                    bundle.putDouble(key,value)
+                }
+            }
+        }
+    }
+}

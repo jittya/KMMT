@@ -44,14 +44,14 @@ android {
     flavorDimensions("version")
     productFlavors {
         create("dev") {
-            dimension("version")
+            setDimension("version")
             applicationIdSuffix = ".$name"
             versionNameSuffix = "-$name"
             buildConfigField("String", "Server", "\"0.0.0.0\"")
             buildConfigField("String", "Port", "\"8080\"")
         }
         create("prod") {
-            dimension("version")
+            setDimension("version")
             applicationIdSuffix = ".$name"
             versionNameSuffix = "-$name"
             buildConfigField("String", "Server", "\"0.0.0.0\"")
