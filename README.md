@@ -259,11 +259,13 @@ View Model can pass objects & values from Activity to Activity (Android) or View
    
      var userModel = UserModel("jittya@gmail.com", "Jitty", "Andiyan")
 
-     getView()?.navigateToHomePage(Bundle {
+     var bundle = Bundle {
          putStringExtra(HomeViewModel.USER_NAME, username.toString())
-         putSerializableExtra(HomeViewModel.USER_OBJECT, userModel, UserModel.serializer()    
-     })
-     
+         putSerializableExtra(HomeViewModel.USER_OBJECT, userModel, UserModel.serializer())
+     }
+                    
+     getView()?.navigateToHomePage(bundle)
+
      
    // 1st View 
    
@@ -290,7 +292,7 @@ View Model can pass objects & values from Activity to Activity (Android) or View
    
    class HomeViewModel(view: HomeView) : BaseViewModel<HomeView>(view) {
 
-       companion object Bundle {
+       companion object BundleKeys {
            const val USER_NAME = "USERNAME"
            const val USER_OBJECT = "USEROBJ"
        }
