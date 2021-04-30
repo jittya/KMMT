@@ -1,6 +1,7 @@
 package com.jittyandiyan.androidApp.demo.features
 
 import com.jittyandiyan.androidApp.databinding.ActivityMainBinding
+import com.jittyandiyan.androidApp.demo.features.home.HomeActivity
 import com.jittyandiyan.shared.core.architecture.view.KMMActivity
 import com.jittyandiyan.shared.core.expectations.BundleX
 import com.jittyandiyan.shared.core.extensions.setClickAction

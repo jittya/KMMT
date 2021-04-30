@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		26A9780A727172A93072BD3A /* Pods_KMMTAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C130946642AB0425595898 /* Pods_KMMTAppTests.framework */; };
 		3F2DAFDC263AB2BC0059A2C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2DAFDB263AB2BC0059A2C1 /* HomeViewController.swift */; };
+		3F2DAFE3263C3CD30059A2C1 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2DAFE2263C3CD30059A2C1 /* PostCell.swift */; };
+		3F2DAFE5263C3F570059A2C1 /* PostTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2DAFE4263C3F570059A2C1 /* PostTableViewDataSource.swift */; };
+		3F2DAFE7263C4BDF0059A2C1 /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2DAFE6263C4BDF0059A2C1 /* UIFontExtensions.swift */; };
 		3F540588263717AB000AEA16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F540587263717AB000AEA16 /* AppDelegate.swift */; };
 		3F54058A263717AB000AEA16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F540589263717AB000AEA16 /* SceneDelegate.swift */; };
 		3F54058C263717AB000AEA16 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54058B263717AB000AEA16 /* LoginViewController.swift */; };
@@ -63,6 +66,9 @@
 		30C130946642AB0425595898 /* Pods_KMMTAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMTAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A0BE59D9862A11021B0BCBC /* Pods_KMMTApp_KMMTAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMTApp_KMMTAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2DAFDB263AB2BC0059A2C1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3F2DAFE2263C3CD30059A2C1 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		3F2DAFE4263C3F570059A2C1 /* PostTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewDataSource.swift; sourceTree = "<group>"; };
+		3F2DAFE6263C4BDF0059A2C1 /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		3F540584263717AB000AEA16 /* KMMTApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KMMTApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F540587263717AB000AEA16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F540589263717AB000AEA16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,10 +134,28 @@
 		3F2DAFDD263BF12C0059A2C1 /* demo */ = {
 			isa = PBXGroup;
 			children = (
-				3F2DAFDB263AB2BC0059A2C1 /* HomeViewController.swift */,
+				3F2DAFE0263C37C90059A2C1 /* home */,
 				3F54058B263717AB000AEA16 /* LoginViewController.swift */,
 			);
 			path = demo;
+			sourceTree = "<group>";
+		};
+		3F2DAFE0263C37C90059A2C1 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				3F2DAFE1263C3C990059A2C1 /* postTableView */,
+				3F2DAFDB263AB2BC0059A2C1 /* HomeViewController.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		3F2DAFE1263C3C990059A2C1 /* postTableView */ = {
+			isa = PBXGroup;
+			children = (
+				3F2DAFE2263C3CD30059A2C1 /* PostCell.swift */,
+				3F2DAFE4263C3F570059A2C1 /* PostTableViewDataSource.swift */,
+			);
+			path = postTableView;
 			sourceTree = "<group>";
 		};
 		3F54057B263717AB000AEA16 = {
@@ -223,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				3F5405D32637F3CC000AEA16 /* UIControlExtensions.swift */,
+				3F2DAFE6263C4BDF0059A2C1 /* UIFontExtensions.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -523,7 +548,10 @@
 				3F54058C263717AB000AEA16 /* LoginViewController.swift in Sources */,
 				3F5405D42637F3CC000AEA16 /* UIControlExtensions.swift in Sources */,
 				3F2DAFDC263AB2BC0059A2C1 /* HomeViewController.swift in Sources */,
+				3F2DAFE7263C4BDF0059A2C1 /* UIFontExtensions.swift in Sources */,
+				3F2DAFE5263C3F570059A2C1 /* PostTableViewDataSource.swift in Sources */,
 				3F54062126380237000AEA16 /* Colors.swift in Sources */,
+				3F2DAFE3263C3CD30059A2C1 /* PostCell.swift in Sources */,
 				3F5405CB26371F00000AEA16 /* KMMUIViewController.swift in Sources */,
 				3F540588263717AB000AEA16 /* AppDelegate.swift in Sources */,
 				3F54058A263717AB000AEA16 /* SceneDelegate.swift in Sources */,

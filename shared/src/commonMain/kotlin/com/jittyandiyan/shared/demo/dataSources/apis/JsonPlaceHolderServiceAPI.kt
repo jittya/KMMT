@@ -4,7 +4,6 @@ import com.jittyandiyan.shared.core.network.BaseAPI
 import com.jittyandiyan.shared.demo.models.CredentialsModel
 import com.jittyandiyan.shared.demo.models.PostModel
 import com.jittyandiyan.shared.demo.models.UserModel
-import kotlinx.coroutines.delay
 
 class JsonPlaceHolderServiceAPI : BaseAPI() {
     override val baseUrl: String
@@ -12,7 +11,6 @@ class JsonPlaceHolderServiceAPI : BaseAPI() {
 
     suspend fun authenticate(credentails:CredentialsModel):Boolean
     {
-        delay(1000)
         var userData:List<UserModel> = doGet {
             apiPath("jittya/jsonserver/users?username=${credentails.username}&password=${credentails.password}")
         }

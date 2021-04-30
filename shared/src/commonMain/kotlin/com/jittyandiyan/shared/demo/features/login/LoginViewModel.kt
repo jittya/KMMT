@@ -10,6 +10,7 @@ import com.jittyandiyan.shared.demo.models.UserModel
 
 class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
     override fun onStartViewModel() {
+        getView()?.setPageTitle("KMM Login")
         getView()?.setLoginPageLabel("Login : ${Platform().platform}")
         getView()?.setUsernameLabel("Enter Username")
         getView()?.setPasswordLabel("Enter Password")

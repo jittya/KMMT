@@ -42,6 +42,11 @@ abstract class KMMActivity<ViewModel,UIViewBinding> : AppCompatActivity() where 
     abstract fun initializeViewModel(): ViewModel
     abstract fun viewBindingInflate():UIViewBinding
 
+    fun setPageTitle(title: String)
+    {
+        this.title=title
+    }
+
     fun showPopUpMessage(message: String) {
         AlertDialog.Builder(this).setMessage(message)
             .setPositiveButton(

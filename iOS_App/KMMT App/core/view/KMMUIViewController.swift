@@ -44,6 +44,11 @@ class KMMUIViewController :UIViewController
         preconditionFailure("This method must be overridden Eg: return LoginViewModel(view: self).getViewModel()")
     }
     
+    @objc(setPageTitleTitle:) func setPageTitle(title: String)
+    {
+        preconditionFailure("ViewModel is trying to set the page title. Please override this method in your ViewContoller")
+    }
+    
     @objc(showPopUpMessageMessage:) func showPopUpMessage(message: String) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

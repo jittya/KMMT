@@ -1,7 +1,6 @@
 package com.jittyandiyan.shared.demo.features.home
 
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
-import com.jittyandiyan.shared.core.extensions.toJsonString
 import com.jittyandiyan.shared.demo.dataSources.apis.JsonPlaceHolderServiceAPI
 import com.jittyandiyan.shared.demo.models.UserModel
 
@@ -13,9 +12,10 @@ class HomeViewModel(view: HomeView) : BaseViewModel<HomeView>(view) {
     }
 
     override fun onStartViewModel() {
+        getView()?.setPageTitle("KMM : Home")
         getBundleValue<String>(USER_NAME)?.let { username ->
             getBundleValue<UserModel>(USER_OBJECT)?.let { userModel ->
-                getView()?.showUsername(userModel.toJsonString(UserModel.serializer()))
+                getView()?.showUsername(" User : "+userModel.firstname+" "+userModel.lastname)
             }
             runOnBackground(username) {
                 JsonPlaceHolderServiceAPI()::getPosts

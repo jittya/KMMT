@@ -10,6 +10,10 @@ import shared
 
 class LoginViewController: KMMUIViewController ,LoginView {
     
+    override func setPageTitle(title: String) {
+        
+    }
+    
     func navigateToHomePage(bundle: BundleX) {
         openViewController(newViewControllerName: "HomeViewController",bundle: bundle)
     }
