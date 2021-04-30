@@ -279,7 +279,7 @@ View Model can pass objects & values from Activity to Activity (Android) or View
     
    // 1st ViewContoller : iOS
        
-       func navigateToHomePage(bundle: shared.BundleX) {
+       func navigateToHomePage(bundle: BundleX) {
            openViewController(newViewControllerName: "HomeViewController",bundle: bundle)
        }
     
