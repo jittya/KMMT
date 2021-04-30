@@ -12,7 +12,7 @@ class HomeViewModel(view: HomeView) : BaseViewModel<HomeView>(view) {
     }
 
     override fun onStartViewModel() {
-        isAndroid {
+        runOnAndroid {
             getView()?.setPageTitle("KMM : Home")
         }
         getBundleValue<String>(USER_NAME)?.let { username ->

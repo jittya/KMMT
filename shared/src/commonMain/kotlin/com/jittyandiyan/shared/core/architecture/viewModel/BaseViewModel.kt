@@ -78,7 +78,7 @@ abstract class BaseViewModel<View>(private var view: View) : Async() where View 
         return BundleX(BundleExtras().also(bundle))
     }
 
-    fun isAndroid(
+    fun runOnAndroid(
         android: Android.() -> Unit
     ) {
         if (platform is Android) {
@@ -86,7 +86,7 @@ abstract class BaseViewModel<View>(private var view: View) : Async() where View 
         }
     }
 
-    fun isiOS(
+    fun runOniOS(
         android: iOS.() -> Unit
     ) {
         if (platform is iOS) {

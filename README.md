@@ -134,11 +134,11 @@ View Model can pass objects & values from Activity to Activity (Android) or View
 Execute anything specific to a particular platform using Platform Blocks
 ```kotlin
 
-isAndroid {
+runOnAndroid {
             
 }
-        
-isiOS { 
+
+runOniOS { 
             
 }
 
