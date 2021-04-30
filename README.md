@@ -309,6 +309,20 @@ View Model can pass objects & values from Activity to Activity (Android) or View
    }
 ```
 
+#### Platform Specific Blocks in ViewModel 
+If you want to execute anything specific to a perticular platform use Platform Blocks
+```kotlin
+
+isAndroid {
+            
+}
+        
+isiOS { 
+            
+}
+
+```
+
 #### Local Database SQLite ( [SQLDelight] )
 Please refer [SQLDelight]
 
