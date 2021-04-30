@@ -156,7 +156,7 @@ _Objects to String Serialization_
 
 _String to Object Serialization_
 ```koltin
-        var userModel =j sonString.toObject<UserModel>()
+        var userModel = jsonString.toObject<UserModel>()
         
         or
         
