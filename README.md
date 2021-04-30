@@ -1,5 +1,5 @@
 # KMMT : Kotlin Multiplatform Mobile Template
-## _Koltin Multiplatform Mobile Develpoment Simplified_
+## _Kotlin Multiplatform Mobile Development Simplified_
 
 [![Kotlin](https://img.shields.io/badge/kotlin-1.4.32-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
@@ -15,7 +15,7 @@ _Primary objective of this project is to help KMM Developers & promote KMM techn
 [![image](https://kotlinlang.org/lp/mobile/static/sdk-811ad35a3742e58b40278b7a984fc289.svg)](https://kotlinlang.org/lp/mobile/)
 
 ##### IDE Requirements
-Intelij/Android Studio - Android & Shared Module
+IntelliJ/Android Studio - Android & Shared Module
 
 Xcode - iOS Project
 
@@ -224,7 +224,7 @@ class JsonPlaceHolderServiceAPI : BaseAPI() {
 ```
 
 #### Async Task Helper ( [Kotlinx.Coroutines] )
-Run code (Netwoking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background thead and get the result in UI thread.
+Run code (Networking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background thread and get the result in UI thread.
 ```kotlin
 class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 
