@@ -33,9 +33,9 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
             val credentials = CredentialsModel(username.toString(), password.toString())
             runOnBackground(credentials) {
                 JsonPlaceHolderServiceAPI()::authenticate
-            }.resultOnUI {
+            }.resultOnUI { isAuthenticated ->
                 getView()?.dismissLoading()
-                if (it) {
+                if (isAuthenticated) {
 
                     var userModel = UserModel("jittya@gmail.com", "Jitty", "Andiyan")
 
