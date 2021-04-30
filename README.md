@@ -68,6 +68,7 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
         if (username.isNullOrBlank().not()&&password.isNullOrBlank().not())
         {
           val credentials = CredentialsModel(username.toString(), password.toString())
+         
           runOnBackground(credentials) {
                 JsonPlaceHolderServiceAPI()::authenticate
             }.resultOnUI {
@@ -239,6 +240,7 @@ class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
     fun savePost() {
         
         val post = PostModel("Post Body", "jit@ccc.com", 100, "Jitty", 6)
+        
         runOnBackground(post) {
             JsonPlaceHolderServiceAPI()::setPost
         }.resultOnUI {
@@ -246,6 +248,65 @@ class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
         }
     }
 }
+```
+
+#### Multiplatform Bundle : Object Passing B/W Activities or ViewControllers
+View Model can pass objects & values from Activity to Activity (Android) or ViewController to ViewController (iOS) 
+
+###### Send Values From 1st View Model
+```kotlin
+   // 1st View Model 
+   
+     var userModel = UserModel("jittya@gmail.com", "Jitty", "Andiyan")
+
+     var bundle = Bundle {
+         putStringExtra(HomeViewModel.USER_NAME, username.toString())
+         putSerializableExtra(HomeViewModel.USER_OBJECT, userModel, UserModel.serializer())
+     }
+                    
+     getView()?.navigateToHomePage(bundle)
+
+     
+   // 1st View 
+   
+     fun navigateToHomePage(bundle: BundleX)
+     
+     
+   // 1st Activity : Android
+   
+       override fun navigateToHomePage(bundle: BundleX) {
+           openActivity(HomeActivity::class.java,bundle)
+           finish()
+       }
+    
+   // 1st ViewContoller : iOS
+       
+       func navigateToHomePage(bundle: BundleX) {
+           openViewController(newViewControllerName: "HomeViewController",bundle: bundle)
+       }
+    
+```
+###### Retrieve Values From 2nd View Model
+```kotlin
+   // 2nd View Model 
+   
+   class HomeViewModel(view: HomeView) : BaseViewModel<HomeView>(view) {
+
+       companion object BundleKeys {
+           const val USER_NAME = "USERNAME"
+           const val USER_OBJECT = "USEROBJ"
+       }
+
+       override fun onStartViewModel() {
+       
+           getBundleValue<String>(USER_NAME)?.let { username ->
+            
+           }
+           getBundleValue<UserModel>(USER_OBJECT)?.let { userModel ->
+            
+           }
+       }
+   }
 ```
 
 #### Local Database SQLite ( [SQLDelight] )
