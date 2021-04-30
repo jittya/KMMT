@@ -19,6 +19,135 @@ IntelliJ/Android Studio - Android & Shared Module
 
 Xcode - iOS Project
 
+
+## ✨Features ✨
+
+#### Common Networking API builder ( [Ktor] )
+Create API Services using BaseAPI class.
+```kotlin
+class JsonPlaceHolderServiceAPI : BaseAPI() {
+
+    override val baseUrl: String
+        get() = "https://jsonplaceholder.typicode.com/"
+
+    suspend fun getPosts(postId: Int): List<PostModel> {
+        return doGet {
+            apiPath("comments?postId=$postId")
+        }
+    }
+
+    suspend fun setPost(post: PostModel): PostModel {
+        return doPost(post) {
+            apiPath("comments")
+        }
+    }
+}
+```
+
+#### Async Task Helper ( [Kotlinx.Coroutines] )
+Run code (Networking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background thread and get the result in UI thread.
+```kotlin
+class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
+
+    fun getPostsFromAPI() {
+    
+        runOnBackground(1){
+            JsonPlaceHolderServiceAPI()::getPosts
+        }.resultOnUI {
+            getView()?.showPopUpMessage("First Post Details", "Username : ${it.first().name}\n email : ${it.first().email}")
+        }
+    }
+    
+    fun savePost() {
+        
+        val post = PostModel("Post Body", "jit@ccc.com", 100, "Jitty", 6)
+        
+        runOnBackground(post) {
+            JsonPlaceHolderServiceAPI()::setPost
+        }.resultOnUI {
+            getView()?.showPopUpMessage("Saved Post Details", "Name : ${it.name}\n email : ${it.email}")
+        }
+    }
+}
+```
+
+#### Multiplatform Bundle : Object Passing B/W Activities or ViewControllers
+View Model can pass objects & values from Activity to Activity (Android) or ViewController to ViewController (iOS)
+
+###### Send Values From 1st View Model
+```kotlin
+   // 1st View Model 
+   
+     var userModel = UserModel("jittya@gmail.com", "Jitty", "Andiyan")
+
+     var bundle = Bundle {
+         putStringExtra(HomeViewModel.USER_NAME, username.toString())
+         putSerializableExtra(HomeViewModel.USER_OBJECT, userModel, UserModel.serializer())
+     }
+                    
+     getView()?.navigateToHomePage(bundle)
+
+     
+   // 1st View 
+   
+     fun navigateToHomePage(bundle: BundleX)
+     
+     
+   // 1st Activity : Android
+   
+       override fun navigateToHomePage(bundle: BundleX) {
+           openActivity(HomeActivity::class.java,bundle)
+           finish()
+       }
+    
+   // 1st ViewContoller : iOS
+       
+       func navigateToHomePage(bundle: BundleX) {
+           openViewController(newViewControllerName: "HomeViewController",bundle: bundle)
+       }
+    
+```
+###### Retrieve Values From 2nd View Model
+```kotlin
+   // 2nd View Model 
+   
+   class HomeViewModel(view: HomeView) : BaseViewModel<HomeView>(view) {
+
+       companion object BundleKeys {
+           const val USER_NAME = "USERNAME"
+           const val USER_OBJECT = "USEROBJ"
+       }
+
+       override fun onStartViewModel() {
+       
+           getBundleValue<String>(USER_NAME)?.let { username ->
+            
+           }
+           getBundleValue<UserModel>(USER_OBJECT)?.let { userModel ->
+            
+           }
+       }
+   }
+```
+
+#### Platform Specific Blocks in ViewModel
+Execute anything specific to a particular platform using Platform Blocks
+```kotlin
+
+isAndroid {
+            
+}
+        
+isiOS { 
+            
+}
+
+```
+
+#### Local Database SQLite ( [SQLDelight] )
+Please refer [SQLDelight]
+
+
 ## How to use
 #### Shared Module (Business Logics & UI Binding Methods) :
 ##### _Step 1 : Define View_
@@ -198,133 +327,6 @@ class LoginViewController: KMMUIViewController ,LoginView {
 }
 ```
 
-
-## ✨Features ✨
-
-#### Common Networking API builder ( [Ktor] )
-Create API Services using BaseAPI class.
-```kotlin
-class JsonPlaceHolderServiceAPI : BaseAPI() {
-
-    override val baseUrl: String
-        get() = "https://jsonplaceholder.typicode.com/"
-
-    suspend fun getPosts(postId: Int): List<PostModel> {
-        return doGet {
-            apiPath("comments?postId=$postId")
-        }
-    }
-
-    suspend fun setPost(post: PostModel): PostModel {
-        return doPost(post) {
-            apiPath("comments")
-        }
-    }
-}
-```
-
-#### Async Task Helper ( [Kotlinx.Coroutines] )
-Run code (Networking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background thread and get the result in UI thread.
-```kotlin
-class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
-
-    fun getPostsFromAPI() {
-    
-        runOnBackground(1){
-            JsonPlaceHolderServiceAPI()::getPosts
-        }.resultOnUI {
-            getView()?.showPopUpMessage("First Post Details", "Username : ${it.first().name}\n email : ${it.first().email}")
-        }
-    }
-    
-    fun savePost() {
-        
-        val post = PostModel("Post Body", "jit@ccc.com", 100, "Jitty", 6)
-        
-        runOnBackground(post) {
-            JsonPlaceHolderServiceAPI()::setPost
-        }.resultOnUI {
-            getView()?.showPopUpMessage("Saved Post Details", "Name : ${it.name}\n email : ${it.email}")
-        }
-    }
-}
-```
-
-#### Multiplatform Bundle : Object Passing B/W Activities or ViewControllers
-View Model can pass objects & values from Activity to Activity (Android) or ViewController to ViewController (iOS) 
-
-###### Send Values From 1st View Model
-```kotlin
-   // 1st View Model 
-   
-     var userModel = UserModel("jittya@gmail.com", "Jitty", "Andiyan")
-
-     var bundle = Bundle {
-         putStringExtra(HomeViewModel.USER_NAME, username.toString())
-         putSerializableExtra(HomeViewModel.USER_OBJECT, userModel, UserModel.serializer())
-     }
-                    
-     getView()?.navigateToHomePage(bundle)
-
-     
-   // 1st View 
-   
-     fun navigateToHomePage(bundle: BundleX)
-     
-     
-   // 1st Activity : Android
-   
-       override fun navigateToHomePage(bundle: BundleX) {
-           openActivity(HomeActivity::class.java,bundle)
-           finish()
-       }
-    
-   // 1st ViewContoller : iOS
-       
-       func navigateToHomePage(bundle: BundleX) {
-           openViewController(newViewControllerName: "HomeViewController",bundle: bundle)
-       }
-    
-```
-###### Retrieve Values From 2nd View Model
-```kotlin
-   // 2nd View Model 
-   
-   class HomeViewModel(view: HomeView) : BaseViewModel<HomeView>(view) {
-
-       companion object BundleKeys {
-           const val USER_NAME = "USERNAME"
-           const val USER_OBJECT = "USEROBJ"
-       }
-
-       override fun onStartViewModel() {
-       
-           getBundleValue<String>(USER_NAME)?.let { username ->
-            
-           }
-           getBundleValue<UserModel>(USER_OBJECT)?.let { userModel ->
-            
-           }
-       }
-   }
-```
-
-#### Platform Specific Blocks in ViewModel 
-Execute anything specific to a particular platform using Platform Blocks
-```kotlin
-
-isAndroid {
-            
-}
-        
-isiOS { 
-            
-}
-
-```
-
-#### Local Database SQLite ( [SQLDelight] )
-Please refer [SQLDelight]
 
 ##### _Subscribe for upcoming details and features..._
 
