@@ -7,7 +7,7 @@ import com.jittyandiyan.shared.demo.models.UserModel
 
 class HomeViewModel(view: HomeView) : BaseViewModel<HomeView>(view) {
 
-    companion object Bundle {
+    companion object BundleKeys {
         const val USER_NAME = "USERNAME"
         const val USER_OBJECT = "USEROBJ"
     }

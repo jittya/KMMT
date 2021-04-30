@@ -36,10 +36,12 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 
                     var userModel = UserModel("jittya@gmail.com", "Jitty", "Andiyan")
 
-                    getView()?.navigateToHomePage(Bundle {
+                    var bundle = Bundle {
                         putStringExtra(HomeViewModel.USER_NAME, username.toString())
                         putSerializableExtra(HomeViewModel.USER_OBJECT, userModel, UserModel.serializer())
-                    })
+                    }
+
+                    getView()?.navigateToHomePage(bundle)
                 } else {
                     getView()?.showPopUpMessage(
                         "Login Failed"
