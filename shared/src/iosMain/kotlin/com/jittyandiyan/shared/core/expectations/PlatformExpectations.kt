@@ -2,6 +2,8 @@ package com.jittyandiyan.shared.core.expectations
 
 import com.jittyandiyan.mobile.KMMTDB
 import com.jittyandiyan.shared.core.models.BundleExtras
+import com.jittyandiyan.shared.core.platform.Platform
+import com.jittyandiyan.shared.core.platform.iOS
 import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.drivers.native.NativeSqliteDriver
 import kotlinx.coroutines.CoroutineDispatcher
@@ -9,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Runnable
 import org.koin.core.module.Module
 import org.koin.dsl.module
+import platform.UIKit.UIDevice
 import platform.darwin.dispatch_async
 import platform.darwin.dispatch_get_main_queue
 import platform.darwin.dispatch_queue_t
@@ -54,3 +57,5 @@ actual class BundleX  {
         this.extras=extras
     }
 }
+
+actual val platform: Platform = iOS (UIDevice.currentDevice.systemName(),UIDevice.currentDevice.systemVersion.toDouble())

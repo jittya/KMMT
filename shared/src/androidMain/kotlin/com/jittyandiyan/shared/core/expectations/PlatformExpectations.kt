@@ -4,6 +4,8 @@ import android.content.Context
 import android.os.Bundle
 import com.jittyandiyan.mobile.KMMTDB
 import com.jittyandiyan.shared.core.models.BundleExtras
+import com.jittyandiyan.shared.core.platform.Android
+import com.jittyandiyan.shared.core.platform.Platform
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 import com.squareup.sqldelight.db.SqlDriver
 import kotlinx.coroutines.CoroutineDispatcher
@@ -62,3 +64,5 @@ actual class BundleX  {
         }
     }
 }
+
+actual val platform:Platform = Android("Android",android.os.Build.VERSION.SDK_INT)

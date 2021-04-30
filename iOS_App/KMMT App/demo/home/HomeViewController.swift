@@ -37,8 +37,5 @@ class HomeViewController: KMMUIViewController,HomeView  {
         return HomeViewModel(view: self).getViewModel()
     }
     
-    override func setPageTitle(title: String) {
-        
-    }
 }
 

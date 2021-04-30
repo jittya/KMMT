@@ -4,8 +4,11 @@ import com.jittyandiyan.shared.core.architecture.view.BaseView
 import com.jittyandiyan.shared.core.architecture.viewModel.async.Async
 import com.jittyandiyan.shared.core.architecture.viewModel.viewState.ViewState
 import com.jittyandiyan.shared.core.expectations.BundleX
+import com.jittyandiyan.shared.core.expectations.platform
 import com.jittyandiyan.shared.core.extensions.toObject
 import com.jittyandiyan.shared.core.models.BundleExtras
+import com.jittyandiyan.shared.core.platform.Android
+import com.jittyandiyan.shared.core.platform.iOS
 
 abstract class BaseViewModel<View>(private var view: View) : Async() where View : BaseView {
 
@@ -44,9 +47,8 @@ abstract class BaseViewModel<View>(private var view: View) : Async() where View 
 
     var bundlesValues = mutableMapOf<String, Any?>()
 
-    fun setBundle(bundle:BundleExtras)
-    {
-        bundlesValues=bundle.extras
+    fun setBundle(bundle: BundleExtras) {
+        bundlesValues = bundle.extras
     }
 
     fun setBundleValue(paramName: String, paramValue: Any?) {
@@ -74,6 +76,22 @@ abstract class BaseViewModel<View>(private var view: View) : Async() where View 
         bundle: BundleExtras.() -> Unit
     ): BundleX {
         return BundleX(BundleExtras().also(bundle))
+    }
+
+    fun isAndroid(
+        android: Android.() -> Unit
+    ) {
+        if (platform is Android) {
+            android.invoke(platform)
+        }
+    }
+
+    fun isiOS(
+        android: iOS.() -> Unit
+    ) {
+        if (platform is iOS) {
+            android.invoke(platform)
+        }
     }
 }
 
