@@ -22,7 +22,7 @@ Xcode - iOS Project
 
 ## ✨Features ✨
 
-#### Common Networking API builder ( [Ktor] )
+#### 1. Simple Networking API  ( [Ktor] )
 Create API Services using BaseAPI class.
 ```kotlin
 class JsonPlaceHolderServiceAPI : BaseAPI() {
@@ -44,7 +44,7 @@ class JsonPlaceHolderServiceAPI : BaseAPI() {
 }
 ```
 
-#### Async Task Helper ( [Kotlinx.Coroutines] )
+#### 2. Async Task Helper ( [Kotlinx.Coroutines] )
 Run code (Networking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background thread and get the result in UI thread.
 ```kotlin
 class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
@@ -71,7 +71,7 @@ class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 }
 ```
 
-#### Multiplatform Bundle : Object Passing B/W Activities or ViewControllers
+#### 3. Multiplatform Bundle : Object Passing B/W Activities or ViewControllers
 View Model can pass objects & values from Activity to Activity (Android) or ViewController to ViewController (iOS)
 
 ###### Send Values From 1st View Model
@@ -130,7 +130,7 @@ View Model can pass objects & values from Activity to Activity (Android) or View
    }
 ```
 
-#### Platform Specific Blocks in ViewModel
+#### 4. Platform Specific Blocks in ViewModel
 Execute anything specific to a particular platform using Platform Blocks
 ```kotlin
 
@@ -144,7 +144,7 @@ runOniOS {
 
 ```
 
-#### Object Serialization Helper ( [Kotlinx.Serialization] )
+#### 5. Object Serialization Helper ( [Kotlinx.Serialization] )
 Use **_toJsonString_** and **_toObject_** functions for instant serialization.
 
 _Objects to String Serialization_
@@ -167,7 +167,7 @@ _String to Object Serialization_
         var userModel = jsonString.toObject(UserModel.serializer())
 ```
 
-#### Key Value Store ( [Multiplatform Settings] )
+#### 6. Key Value Store ( [Multiplatform Settings] )
 Use **_storeValue_** and **_getStoreValue_** functions in **ViewModel** for storing and retrieving Key-Value respectively
 
 _Storing **Key-Value** pair_
