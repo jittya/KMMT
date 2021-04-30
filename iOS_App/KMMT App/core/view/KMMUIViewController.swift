@@ -41,7 +41,7 @@ class KMMUIViewController :UIViewController
 
     func initializeViewModel() -> BaseViewModel<BaseView>
     {
-            preconditionFailure("This method must be overridden")
+            preconditionFailure("This method must be overridden Eg: return LoginViewModel(view: self).getViewModel()")
     }
     
     @objc(showPopUpMessageMessage:) func showPopUpMessage(message: String) {
@@ -64,12 +64,12 @@ class KMMUIViewController :UIViewController
         
     }
     
-    func openViewController(newViewControllerName: String,bundle: shared.BundleX)
+    func openViewController(newViewControllerName: String,bundle: BundleX)
     {
         getViewController(newViewControllerName: "HomeViewController", bundle: bundle)
     }
     
-    private func getViewController(storyboardName:String="Main", newViewControllerName:String, bundle: shared.BundleX)
+    private func getViewController(storyboardName:String="Main", newViewControllerName:String, bundle: BundleX)
     {
         let storyBoard: UIStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: newViewControllerName)

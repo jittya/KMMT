@@ -1,11 +1,11 @@
-package com.jittyandiyan.shared.features.login
+package com.jittyandiyan.shared.demo.features.login
 
 import com.jittyandiyan.shared.Platform
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
-import com.jittyandiyan.shared.dataSources.apis.JsonPlaceHolderServiceAPI
-import com.jittyandiyan.shared.features.home.HomeViewModel
-import com.jittyandiyan.shared.models.CredentialsModel
-import com.jittyandiyan.shared.models.UserModel
+import com.jittyandiyan.shared.demo.dataSources.apis.JsonPlaceHolderServiceAPI
+import com.jittyandiyan.shared.demo.features.home.HomeViewModel
+import com.jittyandiyan.shared.demo.models.CredentialsModel
+import com.jittyandiyan.shared.demo.models.UserModel
 
 
 class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {

@@ -1,9 +1,9 @@
-package com.jittyandiyan.shared.dataSources.apis
+package com.jittyandiyan.shared.demo.dataSources.apis
 
 import com.jittyandiyan.shared.core.network.BaseAPI
-import com.jittyandiyan.shared.models.CredentialsModel
-import com.jittyandiyan.shared.models.PostModel
-import com.jittyandiyan.shared.models.UserModel
+import com.jittyandiyan.shared.demo.models.CredentialsModel
+import com.jittyandiyan.shared.demo.models.PostModel
+import com.jittyandiyan.shared.demo.models.UserModel
 import kotlinx.coroutines.delay
 
 class JsonPlaceHolderServiceAPI : BaseAPI() {

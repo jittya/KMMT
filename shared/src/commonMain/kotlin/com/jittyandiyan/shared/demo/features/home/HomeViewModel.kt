@@ -1,9 +1,9 @@
-package com.jittyandiyan.shared.features.home
+package com.jittyandiyan.shared.demo.features.home
 
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
 import com.jittyandiyan.shared.core.extensions.toJsonString
-import com.jittyandiyan.shared.dataSources.apis.JsonPlaceHolderServiceAPI
-import com.jittyandiyan.shared.models.UserModel
+import com.jittyandiyan.shared.demo.dataSources.apis.JsonPlaceHolderServiceAPI
+import com.jittyandiyan.shared.demo.models.UserModel
 
 class HomeViewModel(view: HomeView) : BaseViewModel<HomeView>(view) {
 

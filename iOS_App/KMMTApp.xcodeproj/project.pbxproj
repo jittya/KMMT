@@ -125,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F2DAFDD263BF12C0059A2C1 /* demo */ = {
+			isa = PBXGroup;
+			children = (
+				3F2DAFDB263AB2BC0059A2C1 /* HomeViewController.swift */,
+				3F54058B263717AB000AEA16 /* LoginViewController.swift */,
+			);
+			path = demo;
+			sourceTree = "<group>";
+		};
 		3F54057B263717AB000AEA16 = {
 			isa = PBXGroup;
 			children = (
@@ -150,15 +159,14 @@
 		3F540586263717AB000AEA16 /* KMMT App */ = {
 			isa = PBXGroup;
 			children = (
+				3F2DAFDD263BF12C0059A2C1 /* demo */,
 				3F5405C826371EE5000AEA16 /* core */,
 				3F540587263717AB000AEA16 /* AppDelegate.swift */,
 				3F540589263717AB000AEA16 /* SceneDelegate.swift */,
-				3F54058B263717AB000AEA16 /* LoginViewController.swift */,
 				3F54058D263717AB000AEA16 /* Main.storyboard */,
 				3F540590263717AC000AEA16 /* Assets.xcassets */,
 				3F540592263717AC000AEA16 /* LaunchScreen.storyboard */,
 				3F540595263717AC000AEA16 /* Info.plist */,
-				3F2DAFDB263AB2BC0059A2C1 /* HomeViewController.swift */,
 			);
 			path = "KMMT App";
 			sourceTree = "<group>";

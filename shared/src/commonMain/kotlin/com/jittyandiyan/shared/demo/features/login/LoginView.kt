@@ -1,4 +1,4 @@
-package com.jittyandiyan.shared.features.login
+package com.jittyandiyan.shared.demo.features.login
 
 import com.jittyandiyan.shared.core.architecture.view.BaseView
 import com.jittyandiyan.shared.core.expectations.BundleX

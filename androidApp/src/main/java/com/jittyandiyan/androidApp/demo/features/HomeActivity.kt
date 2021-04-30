@@ -1,10 +1,10 @@
-package com.jittyandiyan.androidApp.features
+package com.jittyandiyan.androidApp.demo.features
 
 import com.jittyandiyan.androidApp.databinding.ActivityHomeBinding
 import com.jittyandiyan.shared.core.architecture.view.KMMActivity
-import com.jittyandiyan.shared.features.home.HomeView
-import com.jittyandiyan.shared.features.home.HomeViewModel
-import com.jittyandiyan.shared.models.PostModel
+import com.jittyandiyan.shared.demo.features.home.HomeView
+import com.jittyandiyan.shared.demo.features.home.HomeViewModel
+import com.jittyandiyan.shared.demo.models.PostModel
 
 class HomeActivity : KMMActivity<HomeViewModel, ActivityHomeBinding>(), HomeView {
 

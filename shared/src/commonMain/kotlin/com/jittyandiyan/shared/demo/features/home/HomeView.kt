@@ -1,7 +1,7 @@
-package com.jittyandiyan.shared.features.home
+package com.jittyandiyan.shared.demo.features.home
 
 import com.jittyandiyan.shared.core.architecture.view.BaseView
-import com.jittyandiyan.shared.models.PostModel
+import com.jittyandiyan.shared.demo.models.PostModel
 
 interface HomeView:BaseView {
     fun showPostList(postList:List<PostModel>)

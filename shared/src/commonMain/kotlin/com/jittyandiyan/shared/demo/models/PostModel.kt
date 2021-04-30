@@ -1,4 +1,4 @@
-package com.jittyandiyan.shared.models
+package com.jittyandiyan.shared.demo.models
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

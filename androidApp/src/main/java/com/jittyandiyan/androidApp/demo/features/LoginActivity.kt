@@ -1,11 +1,11 @@
-package com.jittyandiyan.androidApp.features
+package com.jittyandiyan.androidApp.demo.features
 
 import com.jittyandiyan.androidApp.databinding.ActivityMainBinding
 import com.jittyandiyan.shared.core.architecture.view.KMMActivity
 import com.jittyandiyan.shared.core.expectations.BundleX
 import com.jittyandiyan.shared.core.extensions.setClickAction
-import com.jittyandiyan.shared.features.login.LoginView
-import com.jittyandiyan.shared.features.login.LoginViewModel
+import com.jittyandiyan.shared.demo.features.login.LoginView
+import com.jittyandiyan.shared.demo.features.login.LoginViewModel
 import kotlin.reflect.KFunction0
 
 class LoginActivity : KMMActivity<LoginViewModel, ActivityMainBinding>(), LoginView {
