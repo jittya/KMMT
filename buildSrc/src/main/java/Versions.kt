@@ -13,6 +13,7 @@
             const val KotlinSerializationVersion = "1.0.1"
             const val ktorVersion = "1.5.3"
             const val koinVersion = "3.0.1"
+            const val multiplatform_settingsVersion = "0.7.5"
         }
 
         //All Android libraries

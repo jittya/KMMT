@@ -1,8 +1,8 @@
 package com.jittyandiyan.shared.core.architecture.viewModel.async
 
 import com.jittyandiyan.mobile.KMMTDB
-import com.jittyandiyan.shared.core.expectations.ApplicationDispatcher
-import com.jittyandiyan.shared.core.expectations.Dispatchers_Default
+import com.jittyandiyan.shared.core.platform.expectations.ApplicationDispatcher
+import com.jittyandiyan.shared.core.platform.expectations.Dispatchers_Default
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect

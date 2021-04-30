@@ -7,7 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
-import com.jittyandiyan.shared.core.expectations.BundleX
+import com.jittyandiyan.shared.core.platform.expectations.BundleX
 
 abstract class KMMActivity<ViewModel,UIViewBinding> : AppCompatActivity() where ViewModel : BaseViewModel<*>,UIViewBinding:ViewBinding {
 

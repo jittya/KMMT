@@ -144,6 +144,56 @@ runOniOS {
 
 ```
 
+#### Object Serialization Helper ( [Kotlinx.Serialization] )
+Use **_toJsonString_** and **_toObject_** functions for instant serialization.
+
+_Objects to String Serialization_
+```koltin
+        var userModel = UserModel("jittya@gmail.com", "Jitty", "Andiyan")
+        
+        var jsonString = userModel.toJsonString(UserModel.serializer())
+```
+
+_String to Object Serialization_
+```koltin
+        var userModel =j sonString.toObject<UserModel>()
+        
+        or
+        
+        var userModel:UserModel = jsonString.toObject()
+        
+        or
+        
+        var userModel = jsonString.toObject(UserModel.serializer())
+```
+
+#### Key Value Store ( [Multiplatform Settings] )
+Use **_storeValue_** and **_getStoreValue_** functions in **ViewModel** for storing and retrieving Key-Value respectively
+
+_Storing **Key-Value** pair_
+```koltin
+        var userModel = UserModel("jittya@gmail.com", "Jitty", "Andiyan")
+        
+        storeValue { 
+            putString("Key1","Value")
+            putBoolean("Key2",false)
+            putSerializable("Key3",userModel,UserModel.serializer())
+        }
+```
+
+_Retrieve **Value** using **Key**_
+```koltin
+        var stringValue = getStoreValue<String>("Key1")
+        
+        or
+        
+        var stringValue:String? = getStoreValue("Key1")
+        
+        var boolValue = getStoreValue<Boolean>("Key2")
+        
+        var userModel = getStoreValue<UserModel>("Key3",UserModel.serializer())
+```
+
 #### Local Database SQLite ( [SQLDelight] )
 Please refer [SQLDelight]
 
@@ -336,3 +386,5 @@ class LoginViewController: KMMUIViewController ,LoginView {
    [Ktor]: <https://github.com/ktorio/ktor>
    [Kotlinx.Coroutines]: <https://github.com/Kotlin/kotlinx.coroutines>
    [SQLDelight]:<https://github.com/cashapp/sqldelight>
+   [kotlinx.serialization]:<https://github.com/Kotlin/kotlinx.serialization>
+   [Multiplatform Settings]:<https://github.com/russhwolf/multiplatform-settings>

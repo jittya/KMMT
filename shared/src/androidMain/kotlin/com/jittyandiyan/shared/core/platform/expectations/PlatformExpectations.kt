@@ -1,11 +1,14 @@
-package com.jittyandiyan.shared.core.expectations
+package com.jittyandiyan.shared.core.platform.expectations
 
 import android.content.Context
 import android.os.Bundle
 import com.jittyandiyan.mobile.KMMTDB
+import com.jittyandiyan.shared.core.dependencyInjection.AndroidKoinComponents
 import com.jittyandiyan.shared.core.models.BundleExtras
 import com.jittyandiyan.shared.core.platform.Android
 import com.jittyandiyan.shared.core.platform.Platform
+import com.russhwolf.settings.AndroidSettings
+import com.russhwolf.settings.Settings
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 import com.squareup.sqldelight.db.SqlDriver
 import kotlinx.coroutines.CoroutineDispatcher
@@ -66,3 +69,6 @@ actual class BundleX  {
 }
 
 actual val platform:Platform = Android("Android",android.os.Build.VERSION.SDK_INT)
+
+actual val keyValueStore: Settings
+    get() = AndroidSettings(AndroidKoinComponents().androidContext.getSharedPreferences("KeyValueStore", Context.MODE_PRIVATE))

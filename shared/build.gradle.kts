@@ -30,6 +30,7 @@ kotlin {
                 implementation(Dependencies.KMM.Ktor.Client.commonSerialization)
                 implementation(Dependencies.KMM.SQLDelight.Runtime)
                 implementation(Dependencies.KMM.Koin.Core)
+                implementation(Dependencies.KMM.Settings.common)
             }
         }
         val commonTest by getting {

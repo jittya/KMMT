@@ -36,6 +36,9 @@ object Dependencies {
             const val Core ="io.insert-koin:koin-core:${Versions.Dependencies.KMM.koinVersion}"
             const val Android ="io.insert-koin:koin-android:${Versions.Dependencies.KMM.koinVersion}"
         }
+        object Settings{
+            const val common="com.russhwolf:multiplatform-settings:${Versions.Dependencies.KMM.multiplatform_settingsVersion}"
+        }
     }
 
         //All Android libraries
