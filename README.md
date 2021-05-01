@@ -276,14 +276,16 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
 
 Implement **_LoginView & Bind UI Controls_**
 ```kotlin
-class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
-    private lateinit var binding: ActivityMainBinding
-    
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-    }
+class LoginActivity : KMMActivity<LoginViewModel, ActivityMainBinding>(), LoginView {
+
+   //Generated Methods from KMMActivity based on LoginViewModel
+   override fun initializeViewModel(): LoginViewModel {
+      return LoginViewModel(this)
+   }
+
+   override fun viewBindingInflate(): ActivityMainBinding {
+      return ActivityMainBinding.inflate(layoutInflater)
+   }
     
     //Generated Methods from LoginView
     override fun setLoginPageLabel(msg: String) {
@@ -312,11 +314,6 @@ class LoginActivity : KMMActivity<LoginViewModel>(), LoginView {
 
     override fun setLoginButtonLabel(loginLabel: String) {
         binding.loginBtn.text=loginLabel
-    }
-
-    //Generated Methods from KMMActivity based on LoginViewModel
-    override fun initializeViewModel(): LoginViewModel {
-        return LoginViewModel(this)
     }
 }
 ```
