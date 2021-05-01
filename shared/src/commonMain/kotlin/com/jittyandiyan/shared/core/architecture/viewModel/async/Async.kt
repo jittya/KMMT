@@ -18,6 +18,14 @@ abstract class Async: KoinComponent {
     private val backgroundCoroutineScope = CoroutineScope(Dispatchers_Default)
     private val uiCoroutineScope = CoroutineScope(ApplicationDispatcher)
 
+    fun getBackgroundCoroutineScope(): CoroutineScope {
+        return backgroundCoroutineScope
+    }
+
+    fun getUICoroutineScope(): CoroutineScope {
+        return uiCoroutineScope
+    }
+
     protected fun <OUT> Flow<OUT>.resultOnUI(function: (OUT) -> Unit) {
         uiCoroutineScope.launch {
             collect {
