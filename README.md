@@ -8,7 +8,7 @@
 
 
 KMMT is a KMM based project template designed to simplify the KMM development.
-It uses a simplified MVP approach that can be shared both in android and iOS easily.
+It uses a simplified approach that can be shared both in android and iOS easily.
 
 _Primary objective of this project is to help KMM Developers & promote KMM technology_
 
