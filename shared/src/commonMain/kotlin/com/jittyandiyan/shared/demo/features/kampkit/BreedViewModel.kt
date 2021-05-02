@@ -14,10 +14,5 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
 
 
     }
-
-    override fun onDetached() {
-        super.onDetached()
-    }
-
 }
 
