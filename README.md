@@ -270,9 +270,87 @@ class PremiumManagerBoolean {
 
 }
 ```
-#### 8. Local Database SQLite ( [SQLDelight] )
-Please refer [SQLDelight]
+#### 8. Observe with DBHelper ( Local Database : SQLite - [SQLDelight] )
+Use DBHelper class to observe a select query data
+```kotlin
+class BreedTableHelper : DBHelper() {
+    
+    fun getAllBreeds(): Flow<List<TBreed>> =
+        localDB.tBreedQueries
+            .selectAll()
+            .asFlow()
+            .mapToList()
+            .flowOn(Dispatchers_Default)
 
+
+    suspend fun insertBreeds(breeds: List<TBreed>) {...}
+
+   fun selectById(id: Long): Flow<List<TBreed>> =
+      localDB.tBreedQueries
+         .selectById(id)
+         .asFlow()
+         .mapToList()
+         .flowOn(Dispatchers_Default)
+
+    suspend fun deleteAll() {...}
+   
+}
+```
+```kotlin
+class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
+
+    lateinit var breedTableHelper: BreedTableHelper
+    lateinit var breedLiveDataObservable: LiveDataObservable<List<TBreed>>
+    val BREED_SYNC_TIME_KEY = "BREED_SYNC_TIME"
+
+    override fun onStartViewModel() {
+       
+        breedTableHelper = BreedTableHelper()
+
+        breedLiveDataObservable = LiveDataObservable(getLifeCycle())
+        breedLiveDataObservable.observe { breedList ->
+            //update UI on each value update from table
+            getView()?.refreshBreedList(breedList)
+        }
+        
+        getBreedsFromAPI()
+        observeBreedsTable()
+    }
+
+    private fun getBreedsFromAPI() {
+        if (isSyncExpired()) {
+            //get Data from API and save to DB
+            runOnBackground {
+                BreedServiceAPI().getBreeds()
+            }.resultAsync { breedResult ->
+
+                storeValue { putLong(BREED_SYNC_TIME_KEY, DateTime.nowLocal().local.unixMillisLong) }
+
+                breedResult.message.keys
+                    .sorted().toList()
+                    .map { TBreed(0L, name = it, false) }
+                    .let {
+                        //This table insert will trigger data change and value will be available in collector
+                        breedTableHelper.insertBreeds(it)
+                    }
+            }
+        }
+    }
+
+    private fun isSyncExpired(): Boolean {...}
+
+    private fun observeBreedsTable() {
+        //get Data from db with observe (Flow)
+        runOnBackground {
+            breedTableHelper.getAllBreeds()
+        }.resultAsync { flow ->
+            flow.collect {
+                breedLiveDataObservable.setValue(it)
+            }
+        }
+    }
+}
+```
 
 ## How to use
 #### Shared Module (Business Logics & UI Binding Methods) :

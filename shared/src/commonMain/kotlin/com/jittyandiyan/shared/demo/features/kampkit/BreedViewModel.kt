@@ -4,23 +4,22 @@ import com.jittyandiyan.mobile.TBreed
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
 import com.jittyandiyan.shared.core.liveData.LiveDataObservable
 import com.jittyandiyan.shared.demo.dataSources.apis.BreedServiceAPI
-import com.jittyandiyan.shared.demo.models.Breed.BreedDBFlowHelper
+import com.jittyandiyan.shared.demo.models.Breed.BreedTableHelper
 import com.soywiz.klock.DateTime
 import kotlinx.coroutines.flow.collect
 
 class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
 
-    lateinit var breedDBFlowHelper: BreedDBFlowHelper
+    lateinit var breedTableHelper: BreedTableHelper
     lateinit var breedLiveDataObservable: LiveDataObservable<List<TBreed>>
     val BREED_SYNC_TIME_KEY = "BREED_SYNC_TIME"
 
     override fun onStartViewModel() {
+        breedTableHelper = BreedTableHelper()
 
-        breedDBFlowHelper = BreedDBFlowHelper()
         breedLiveDataObservable = LiveDataObservable(getLifeCycle())
-
         breedLiveDataObservable.observe { breedList ->
-            //update UI
+            //update UI on each value update from table
             getView()?.refreshBreedList(breedList)
         }
 
@@ -42,7 +41,8 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
                     .map { TBreed(0L, name = it, false) }
                     .let {
                         println("New Data from Server : Size = ${it.size}")
-                        breedDBFlowHelper.insertBreeds(it)
+                        //This table insert will trigger data change and value will be available in observer
+                        breedTableHelper.insertBreeds(it)
                     }
             }
         }else{
@@ -63,7 +63,7 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
     private fun observeBreedsTable() {
         //get Data from db with observe (Flow)
         runOnBackground {
-            breedDBFlowHelper.getAllBreeds()
+            breedTableHelper.getAllBreeds()
         }.resultAsync { flow ->
             flow.collect {
                 println("data from DB : Size = ${it.size}")

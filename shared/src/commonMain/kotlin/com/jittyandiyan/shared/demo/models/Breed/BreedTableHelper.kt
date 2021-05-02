@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 
 
-class BreedDBFlowHelper : DBHelper() {
+class BreedTableHelper : DBHelper() {
 
     fun getAllBreeds(): Flow<List<TBreed>> =
         localDB.tBreedQueries
