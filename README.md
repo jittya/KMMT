@@ -461,4 +461,4 @@ class LoginViewController: KMMUIViewController ,LoginView {
    [SQLDelight]:<https://github.com/cashapp/sqldelight>
    [kotlinx.serialization]:<https://github.com/Kotlin/kotlinx.serialization>
    [Multiplatform Settings]:<https://github.com/russhwolf/multiplatform-settings>
-   [LiveData]:<https://github.com/stumi01/Multiplatform-LiveData>
+   [LiveData]:<https://github.com/florent37/Multiplatform-LiveData>
