@@ -2,7 +2,7 @@
 ## _Kotlin Multiplatform Mobile Development Simplified_
 
 [![Kotlin](https://img.shields.io/badge/kotlin-1.4.32-blue.svg?logo=kotlin)](http://kotlinlang.org)
-[![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [![image](https://github.com/jittya/KMMT/blob/master/KMultiplatform.png)](https://kotlinlang.org/lp/mobile/)
 
