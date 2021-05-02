@@ -7,6 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
+import com.jittyandiyan.shared.core.liveData.kLifecycle
 import com.jittyandiyan.shared.core.platform.expectations.BundleX
 
 abstract class KMMActivity<ViewModel,UIViewBinding> : AppCompatActivity() where ViewModel : BaseViewModel<*>,UIViewBinding:ViewBinding {
@@ -19,6 +20,7 @@ abstract class KMMActivity<ViewModel,UIViewBinding> : AppCompatActivity() where 
         super.onCreate(savedInstanceState)
         binding=viewBindingInflate()
         viewModel = initializeViewModel()
+        viewModel.setLifeCycle(this.kLifecycle())
         intent.extras?.keySet()?.filterNotNull()?.forEach { key ->
             getViewModel().setBundleValue(key, intent.extras!![key])
         }
@@ -78,6 +80,11 @@ abstract class KMMActivity<ViewModel,UIViewBinding> : AppCompatActivity() where 
         var intent = Intent(this, activity)
             intent.putExtras(bundle.bundle)
             startActivity(intent)
+    }
+
+    fun openActivity(activity: Class<*>) {
+        var intent = Intent(this, activity)
+        startActivity(intent)
     }
 }
 

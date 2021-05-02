@@ -5,6 +5,7 @@ import com.jittyandiyan.shared.core.architecture.viewModel.async.Async
 import com.jittyandiyan.shared.core.architecture.viewModel.viewState.ViewState
 import com.jittyandiyan.shared.core.extensions.getSerializable
 import com.jittyandiyan.shared.core.extensions.toObject
+import com.jittyandiyan.shared.core.liveData.lifecycle.LiveDataLifecycle
 import com.jittyandiyan.shared.core.models.BundleExtras
 import com.jittyandiyan.shared.core.platform.Android
 import com.jittyandiyan.shared.core.platform.expectations.BundleX
@@ -18,15 +19,21 @@ import org.koin.core.component.get
 
 abstract class BaseViewModel<View>(private var view: View) : Async() where View : BaseView {
 
+    private lateinit var lifeCycle: LiveDataLifecycle
     private var viewState = ViewState.UNKNOWN
 
     init {
         viewState = ViewState.INITIALIZED
     }
 
+    fun getLifeCycle(): LiveDataLifecycle {
+        return lifeCycle
+    }
+
     abstract fun onStartViewModel()
 
     open fun onInit() {
+        lifeCycle.start()
         if (viewState == ViewState.INITIALIZED) {
             viewState = ViewState.STARTED
             onStartViewModel()
@@ -38,6 +45,7 @@ abstract class BaseViewModel<View>(private var view: View) : Async() where View 
     fun onDetached() {
         viewState = ViewState.DETACHED
         cancelAllRunningCoroutines("ViewModel onDetached called")
+        lifeCycle.stop()
     }
 
     fun getView(): View? {
@@ -126,6 +134,10 @@ abstract class BaseViewModel<View>(private var view: View) : Async() where View 
     inline fun <reified T> getStoreValue(key: String, serializer: KSerializer<T>):T?
     {
         return get<Settings>().getSerializable(key, serializer)
+    }
+
+    fun setLifeCycle(lifeCycle: LiveDataLifecycle) {
+        this.lifeCycle=lifeCycle
     }
 }
 

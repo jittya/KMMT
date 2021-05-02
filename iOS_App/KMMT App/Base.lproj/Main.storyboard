@@ -86,7 +86,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aUW-Ov-EsP">
-                                <rect key="frame" x="20" y="94" width="374" height="768"/>
+                                <rect key="frame" x="20" y="94" width="374" height="717"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="208" id="8Pk-Qy-R3P" customClass="PostCell" customModule="KMMTApp" customModuleProvider="target">
@@ -135,20 +135,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3B-6t-enN">
+                                <rect key="frame" x="20" y="819" width="374" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="2PD-jr-ONf"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fHX-BK-7bf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="h3B-6t-enN" firstAttribute="top" secondItem="aUW-Ov-EsP" secondAttribute="bottom" constant="8" id="6AN-Ue-rl2"/>
                             <constraint firstItem="Wbu-7P-K4x" firstAttribute="trailing" secondItem="LPb-ia-0SC" secondAttribute="trailingMargin" id="9vX-tn-vT1"/>
                             <constraint firstItem="aUW-Ov-EsP" firstAttribute="top" secondItem="Wbu-7P-K4x" secondAttribute="bottom" id="Bvp-Fj-qmh"/>
                             <constraint firstItem="aUW-Ov-EsP" firstAttribute="leading" secondItem="fHX-BK-7bf" secondAttribute="leading" constant="20" id="EF3-Nl-Yjf"/>
-                            <constraint firstItem="aUW-Ov-EsP" firstAttribute="bottom" secondItem="fHX-BK-7bf" secondAttribute="bottom" id="HXW-nt-sm8"/>
+                            <constraint firstItem="h3B-6t-enN" firstAttribute="leading" secondItem="fHX-BK-7bf" secondAttribute="leading" constant="20" id="TJx-g3-ekO"/>
                             <constraint firstItem="Wbu-7P-K4x" firstAttribute="top" secondItem="fHX-BK-7bf" secondAttribute="top" id="bhB-SD-5es"/>
                             <constraint firstItem="fHX-BK-7bf" firstAttribute="trailing" secondItem="aUW-Ov-EsP" secondAttribute="trailing" constant="20" id="buW-nu-Wxc"/>
+                            <constraint firstItem="fHX-BK-7bf" firstAttribute="trailing" secondItem="h3B-6t-enN" secondAttribute="trailing" constant="20" id="dvg-hE-p2w"/>
                             <constraint firstItem="Wbu-7P-K4x" firstAttribute="leading" secondItem="LPb-ia-0SC" secondAttribute="leadingMargin" id="nrN-Eq-97C"/>
+                            <constraint firstItem="h3B-6t-enN" firstAttribute="bottom" secondItem="fHX-BK-7bf" secondAttribute="bottom" constant="10" id="rNJ-5E-bKS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="kampKitDemoBtn" destination="h3B-6t-enN" id="sq6-jU-nte"/>
                         <outlet property="postTableView" destination="aUW-Ov-EsP" id="HUr-bP-lP1"/>
                         <outlet property="usernameLabel" destination="Wbu-7P-K4x" id="idA-Q8-Zfu"/>
                     </connections>

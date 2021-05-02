@@ -15,10 +15,12 @@ class KMMUIViewController :UIViewController
 {
     private var viewModel: BaseViewModel<BaseView>? = nil
     var bundle:shared.BundleX? = nil
+    private let kLifecycle = LiveDataLifecycle()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = initializeViewModel()
+        viewModel?.setLifeCycle(lifeCycle: kLifecycle)
         if (bundle != nil){
             viewModel?.setBundle(bundle: bundle!.extras)
         }
@@ -29,6 +31,7 @@ class KMMUIViewController :UIViewController
         super.viewDidAppear(animated)
         viewModel?.onInit()
     }
+    
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
@@ -69,12 +72,12 @@ class KMMUIViewController :UIViewController
         showSpinner(onView: self.view,message: loadingLabel)
     }
     
-    func openViewController(newViewControllerName: String,bundle: BundleX)
+    func openViewController(newViewControllerName: String,bundle: BundleX? = nil)
     {
         getViewController(newViewControllerName: "HomeViewController", bundle: bundle)
     }
     
-    private func getViewController(storyboardName:String="Main", newViewControllerName:String, bundle: BundleX)
+    private func getViewController(storyboardName:String="Main", newViewControllerName:String, bundle: BundleX? = nil)
     {
         let storyBoard: UIStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: newViewControllerName)

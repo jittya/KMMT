@@ -15,15 +15,20 @@ class HomeViewModel(view: HomeView) : BaseViewModel<HomeView>(view) {
         runOnAndroid {
             getView()?.setPageTitle("KMM : Home")
         }
+        getView()?.setKampKitPageButtonLabel("KampKit Demo")
+        getView()?.setKampKitBtnClickAction(this::kampKitDemoBtnClicked)
         getBundleValue<String>(USER_NAME)?.let { username ->
             getBundleValue<UserModel>(USER_OBJECT)?.let { userModel ->
-                getView()?.showUsername(" User : "+userModel.firstname+" "+userModel.lastname)
+                getView()?.showUsername(" User : " + userModel.firstname + " " + userModel.lastname)
             }
-            runOnBackground{
+            runOnBackground {
                 JsonPlaceHolderServiceAPI().getPosts(username)
             }.resultOnUI {
                 getView()?.showPostList(it)
             }
         }
+    }
+    fun kampKitDemoBtnClicked() {
+        getView()?.navigateToKampKitDemoPage()
     }
 }

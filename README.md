@@ -193,8 +193,84 @@ _Retrieve **Value** using **Key**_
         
         var userModel = getStoreValue<UserModel>("Key3",UserModel.serializer())
 ```
+#### 7. LiveData & LiveDataObservable ( [LiveData] )
+LiveData follows the observer pattern. LiveData notifies Observer objects when underlying data changes.
+You can consolidate your code to update the UI in these Observer objects. 
+That way, you don't need to update the UI every time the app data changes because the observer does it for you.
+```koltin
+        //Sources
+        var premiumManager = PremiumManager()
+        var premiumManagerBoolean = PremiumManagerBoolean()
 
-#### Local Database SQLite ( [SQLDelight] )
+        //Observer
+        var subscriptionLiveDataObservable = LiveDataObservable<String>(getLifeCycle())
+
+        //observe changes on sources
+        subscriptionLiveDataObservable.observe {
+           getView()?.setSubscriptionLabel(it)
+        }
+        
+        //Adding Sources
+        subscriptionLiveDataObservable.addSource(premiumManager.premium())
+
+        or
+        
+        //Adding Sources with converter (Boolean to String)
+        subscriptionLiveDataObservable.addSource(premiumManagerBoolean.isPremium()){
+            if (it)
+            {
+                return@addSource "Premium"
+            }else{
+                return@addSource "Free"
+            }
+
+        }
+
+        //Update source states
+        premiumManager.becomePremium()
+
+        premiumManagerBoolean.becomeFree()
+
+        premiumManager.becomeFree()
+
+        premiumManagerBoolean.becomePremium()
+
+```
+
+```koltin
+class PremiumManager {
+    private val premium = MutableLiveDataX<String>()
+    fun premium(): LiveDataX<String> {
+        return premium
+    }
+
+    fun becomePremium() {
+        premium.value = "premium"
+    }
+
+    fun becomeFree() {
+        premium.value = "free"
+    }
+
+}
+
+class PremiumManagerBoolean {
+    private val premium = MutableLiveDataX<Boolean>()
+    fun isPremium(): LiveDataX<Boolean> {
+        return premium
+    }
+
+    fun becomePremium() {
+        premium.value = true
+    }
+
+    fun becomeFree() {
+        premium.value = false
+    }
+
+}
+```
+#### 8. Local Database SQLite ( [SQLDelight] )
 Please refer [SQLDelight]
 
 
@@ -385,3 +461,4 @@ class LoginViewController: KMMUIViewController ,LoginView {
    [SQLDelight]:<https://github.com/cashapp/sqldelight>
    [kotlinx.serialization]:<https://github.com/Kotlin/kotlinx.serialization>
    [Multiplatform Settings]:<https://github.com/russhwolf/multiplatform-settings>
+   [LiveData]:<https://github.com/stumi01/Multiplatform-LiveData>

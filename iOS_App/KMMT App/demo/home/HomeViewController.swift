@@ -10,6 +10,18 @@ import shared
 import Foundation
 
 class HomeViewController: KMMUIViewController,HomeView  {
+    func navigateToKampKitDemoPage() {
+        self.dismiss(animated: true, completion: nil);
+    }
+    
+    func setKampKitBtnClickAction(btnClickAction: @escaping () -> KotlinUnit) {
+        kampKitDemoBtn.setClickAction(action: btnClickAction)
+    }
+    
+    func setKampKitPageButtonLabel(btnLabel: String) {
+        kampKitDemoBtn.setTitle(btnLabel, for: UIControl.State.normal)
+    }
+    
     
     var postList: [PostModel] = []
     
@@ -32,6 +44,7 @@ class HomeViewController: KMMUIViewController,HomeView  {
     
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var postTableView: UITableView!
+    @IBOutlet weak var kampKitDemoBtn: UIButton!
     
     override func initializeViewModel() -> BaseViewModel<BaseView> {
         return HomeViewModel(view: self).getViewModel()

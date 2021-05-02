@@ -12,9 +12,11 @@
             android:label="@string/app_name"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="com.jittyandiyan.androidApp.demo.features.home.HomeActivity">
+        <activity android:name=".demo.features.kampkit.KampKitActivity">
         </activity>
-        <activity android:name="com.jittyandiyan.androidApp.demo.features.LoginActivity">
+        <activity android:name=".demo.features.home.HomeActivity">
+        </activity>
+        <activity android:name=".demo.features.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
