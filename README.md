@@ -168,7 +168,7 @@ _String to Object Serialization_
 ```
 
 #### 6. Key Value Store ( [Multiplatform Settings] )
-Use **_storeValue_** and **_getStoreValue_** functions in **ViewModel** for storing and retrieving Key-Value respectively
+Use **_storeValue_** and **_getStoreValue_** functions for storing and retrieving Key-Value respectively
 
 _Storing **Key-Value** pair_
 ```koltin
