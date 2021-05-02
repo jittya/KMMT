@@ -11,7 +11,8 @@ import Foundation
 
 class HomeViewController: KMMUIViewController,HomeView  {
     func navigateToKampKitDemoPage() {
-        self.dismiss(animated: true, completion: nil);
+//        self.dismiss(animated: true, completion: nil);
+        openViewController(newViewControllerName: "BreedViewController")
     }
     
     func setKampKitBtnClickAction(btnClickAction: @escaping () -> KotlinUnit) {

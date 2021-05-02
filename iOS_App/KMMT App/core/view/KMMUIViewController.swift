@@ -74,7 +74,7 @@ class KMMUIViewController :UIViewController
     
     func openViewController(newViewControllerName: String,bundle: BundleX? = nil)
     {
-        getViewController(newViewControllerName: "HomeViewController", bundle: bundle)
+        getViewController(newViewControllerName: newViewControllerName, bundle: bundle)
     }
     
     private func getViewController(storyboardName:String="Main", newViewControllerName:String, bundle: BundleX? = nil)

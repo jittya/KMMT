@@ -7,10 +7,7 @@ import com.jittyandiyan.shared.core.extensions.getSerializable
 import com.jittyandiyan.shared.core.extensions.toObject
 import com.jittyandiyan.shared.core.liveData.lifecycle.LiveDataLifecycle
 import com.jittyandiyan.shared.core.models.BundleExtras
-import com.jittyandiyan.shared.core.platform.Android
 import com.jittyandiyan.shared.core.platform.expectations.BundleX
-import com.jittyandiyan.shared.core.platform.expectations.platform
-import com.jittyandiyan.shared.core.platform.iOS
 import com.russhwolf.settings.Settings
 import com.russhwolf.settings.contains
 import com.russhwolf.settings.get
@@ -92,22 +89,6 @@ abstract class BaseViewModel<View>(private var view: View) : Async() where View 
         bundle: BundleExtras.() -> Unit
     ): BundleX {
         return BundleX(BundleExtras().also(bundle))
-    }
-
-    fun runOnAndroid(
-        android: Android.() -> Unit
-    ) {
-        if (platform is Android) {
-            android.invoke(platform)
-        }
-    }
-
-    fun runOniOS(
-        android: iOS.() -> Unit
-    ) {
-        if (platform is iOS) {
-            android.invoke(platform)
-        }
     }
 
     fun storeValue(

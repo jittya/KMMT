@@ -1,0 +1,26 @@
+
+
+CREATE TABLE TBreed (
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+name TEXT NOT NULL UNIQUE,
+favorite INTEGER AS Boolean DEFAULT 0 NOT NULL
+);
+
+selectAll:
+SELECT * FROM TBreed;
+
+selectById:
+SELECT * FROM TBreed WHERE id = ?;
+
+selectByName:
+SELECT * FROM TBreed WHERE name = ?;
+
+insertBreed:
+INSERT OR IGNORE INTO TBreed(id, name)
+VALUES (?,?);
+
+deleteAll:
+DELETE FROM TBreed;
+
+updateFavorite:
+UPDATE TBreed SET favorite = ? WHERE id = ?;

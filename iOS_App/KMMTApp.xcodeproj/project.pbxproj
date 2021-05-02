@@ -26,6 +26,7 @@
 		3F5405D42637F3CC000AEA16 /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5405D32637F3CC000AEA16 /* UIControlExtensions.swift */; };
 		3F540617263800A2000AEA16 /* UITextFieldX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F540616263800A2000AEA16 /* UITextFieldX.swift */; };
 		3F54062126380237000AEA16 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54062026380237000AEA16 /* Colors.swift */; };
+		3F95EAAD263EE68700A8EDD4 /* BreedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95EAAC263EE68700A8EDD4 /* BreedViewController.swift */; };
 		95D5CEA2F5ED1E32250313CA /* Pods_KMMTApp_KMMTAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0BE59D9862A11021B0BCBC /* Pods_KMMTApp_KMMTAppUITests.framework */; };
 		F0A114C1772BD32678BAEAD5 /* Pods_KMMTApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF2E1A10C4C547BA8C36935 /* Pods_KMMTApp.framework */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,7 @@
 		3F5405D32637F3CC000AEA16 /* UIControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtensions.swift; sourceTree = "<group>"; };
 		3F540616263800A2000AEA16 /* UITextFieldX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldX.swift; sourceTree = "<group>"; };
 		3F54062026380237000AEA16 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3F95EAAC263EE68700A8EDD4 /* BreedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewController.swift; sourceTree = "<group>"; };
 		53A1C171B7C7CC3BC8E70C58 /* Pods-KMMTApp-KMMTAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTApp-KMMTAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-KMMTApp-KMMTAppUITests/Pods-KMMTApp-KMMTAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		53ED154DD5958B1E727CF6A0 /* Pods-KMMT AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT AppTests.release.xcconfig"; path = "Target Support Files/Pods-KMMT AppTests/Pods-KMMT AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		69BE0FECDF673D684DC3023F /* Pods-KMMTApp-KMMTAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTApp-KMMTAppUITests.release.xcconfig"; path = "Target Support Files/Pods-KMMTApp-KMMTAppUITests/Pods-KMMTApp-KMMTAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		3F2DAFDD263BF12C0059A2C1 /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				3F95EAAB263EE66300A8EDD4 /* kampkit */,
 				3F2DAFE0263C37C90059A2C1 /* home */,
 				3F54058B263717AB000AEA16 /* LoginViewController.swift */,
 			);
@@ -266,6 +269,14 @@
 				3F54062026380237000AEA16 /* Colors.swift */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		3F95EAAB263EE66300A8EDD4 /* kampkit */ = {
+			isa = PBXGroup;
+			children = (
+				3F95EAAC263EE68700A8EDD4 /* BreedViewController.swift */,
+			);
+			path = kampkit;
 			sourceTree = "<group>";
 		};
 		DFC8AB6293DC94FBB114B648 /* Pods */ = {
@@ -555,6 +566,7 @@
 				3F5405CB26371F00000AEA16 /* KMMUIViewController.swift in Sources */,
 				3F540588263717AB000AEA16 /* AppDelegate.swift in Sources */,
 				3F54058A263717AB000AEA16 /* SceneDelegate.swift in Sources */,
+				3F95EAAD263EE68700A8EDD4 /* BreedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

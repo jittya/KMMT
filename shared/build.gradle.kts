@@ -22,6 +22,7 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                implementation(Dependencies.KMM.Klock.common)
                 implementation(Dependencies.KMM.Coroutines.Core)
                 implementation(Dependencies.KMM.Serialization.Json)
                 implementation(Dependencies.KMM.Ktor.Client.Core)

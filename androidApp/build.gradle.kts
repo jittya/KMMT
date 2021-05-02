@@ -14,6 +14,7 @@ dependencies {
     implementation(Dependencies.Android.androidx_constraintlayout_Constraintlayout)
     implementation(Dependencies.KMM.Koin.Core)
     implementation(Dependencies.KMM.Koin.Android)
+    implementation(Dependencies.Android.swipeRefresh)
 }
 
 android {

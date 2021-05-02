@@ -130,7 +130,7 @@ View Model can pass objects & values from Activity to Activity (Android) or View
    }
 ```
 
-#### 4. Platform Specific Blocks in ViewModel
+#### 4. Platform Blocks
 Execute anything specific to a particular platform using Platform Blocks
 ```kotlin
 

@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jittyandiyan.androidApp.databinding.ActivityHomeBinding
 import com.jittyandiyan.androidApp.demo.features.home.adapter.PostAdapter
-import com.jittyandiyan.androidApp.demo.features.kampkit.KampKitActivity
+import com.jittyandiyan.androidApp.demo.features.kampkit.BreedActivity
 import com.jittyandiyan.shared.core.architecture.view.KMMActivity
 import com.jittyandiyan.shared.demo.features.home.HomeView
 import com.jittyandiyan.shared.demo.features.home.HomeViewModel
@@ -44,7 +44,7 @@ class HomeActivity : KMMActivity<HomeViewModel, ActivityHomeBinding>(), HomeView
     }
 
     override fun navigateToKampKitDemoPage() {
-        openActivity(KampKitActivity::class.java)
+        openActivity(BreedActivity::class.java)
     }
 
     override fun setKampKitBtnClickAction(btnClickAction: KFunction0<Unit>) {

@@ -14,6 +14,9 @@
             const val ktorVersion = "1.5.3"
             const val koinVersion = "3.0.1"
             const val multiplatform_settingsVersion = "0.7.5"
+            const val kermit="0.1.8"
+            const val DateTimeKotlinx = "0.1.1"
+            const val klock = "2.0.7"
         }
 
         //All Android libraries
@@ -22,6 +25,7 @@
             const val junit_version="4.13.1"
             const val androidx_appcompat_version="1.2.0"
             const val androidx_constraintlayout_version="2.0.4"
+            const val swipeRefresh = "1.1.0"
         }
 
         //All iOS libraries
