@@ -51,8 +51,8 @@ class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 
     fun getPostsFromAPI() {
     
-        runOnBackground(1){
-            JsonPlaceHolderServiceAPI()::getPosts
+        runOnBackground {
+            JsonPlaceHolderServiceAPI().getPosts(1)
         }.resultOnUI {
             getView()?.showPopUpMessage("First Post Details", "Username : ${it.first().name}\n email : ${it.first().email}")
         }
@@ -62,8 +62,8 @@ class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
         
         val post = PostModel("Post Body", "jit@ccc.com", 100, "Jitty", 6)
         
-        runOnBackground(post) {
-            JsonPlaceHolderServiceAPI()::setPost
+        runOnBackground {
+            JsonPlaceHolderServiceAPI().setPost(post)
         }.resultOnUI {
             getView()?.showPopUpMessage("Saved Post Details", "Name : ${it.name}\n email : ${it.email}")
         }

@@ -9,9 +9,6 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.get
-import kotlin.reflect.KSuspendFunction0
-import kotlin.reflect.KSuspendFunction1
-
 
 abstract class Async: KoinComponent {
 
@@ -56,24 +53,14 @@ abstract class Async: KoinComponent {
         }
     }
 
-
-
-
     fun cancelAllRunningCoroutines(reason:String)
     {
         backgroundCoroutineScope.coroutineContext.cancelChildren(CancellationException(reason))
     }
 
-    fun <OUT> runOnBackground(function: () -> KSuspendFunction0<OUT>): Flow<OUT> = flow {
+    fun <OUT> runOnBackground(function: suspend () -> OUT): Flow<OUT> = flow {
         val job = backgroundCoroutineScope.async {
-            return@async function.invoke().invoke()
-        }
-        emit(job.await())
-    }
-
-    fun <IN,OUT> runOnBackground(param: IN, function: () -> KSuspendFunction1<IN, OUT>): Flow<OUT> = flow {
-        val job = backgroundCoroutineScope.async {
-            return@async function.invoke().invoke(param)
+            return@async function.invoke()
         }
         emit(job.await())
     }

@@ -30,6 +30,8 @@ abstract class BaseViewModel<View>(private var view: View) : Async() where View 
         if (viewState == ViewState.INITIALIZED) {
             viewState = ViewState.STARTED
             onStartViewModel()
+        }else{
+            viewState = ViewState.STARTED
         }
     }
 
