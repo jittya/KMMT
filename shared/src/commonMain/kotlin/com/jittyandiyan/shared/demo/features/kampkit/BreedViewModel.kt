@@ -25,13 +25,13 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
             getView()?.refreshBreedList(breedList)
         }
 
-        getBreedsFromAPI()
+        getBreedsFromAPIThenCache()
 
         observeBreedsTable()
 
     }
 
-    private fun getBreedsFromAPI() {
+    private fun getBreedsFromAPIThenCache() {
         if (isSyncExpired()) {
             //get Data from API and save to DB
             runOnBackgroundBlock {
