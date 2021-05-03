@@ -54,7 +54,7 @@ runOnBackgroundBlock {
 Return value from background
 ```kotlin
 runOnBackground {
-   //add a function will return some result
+   //add a function that will return some result
 }.resultOnUI { result ->
     
 }
@@ -62,7 +62,7 @@ runOnBackground {
 or
 
 runOnBackground {
-   //add a function will return some result
+   //add a function that will return some result
 }.resultOnBackground { result ->
 
 }
