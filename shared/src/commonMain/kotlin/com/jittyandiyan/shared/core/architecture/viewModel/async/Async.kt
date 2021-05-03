@@ -7,11 +7,18 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import org.koin.core.component.KoinComponent
+import kotlin.coroutines.CoroutineContext
 
 abstract class Async : KoinComponent {
 
     private val backgroundCoroutineScope = CoroutineScope(Dispatchers_Default)
     private val uiCoroutineScope = CoroutineScope(ApplicationDispatcher)
+
+    private val exceptionHandler =
+        CoroutineExceptionHandler { coroutineContext: CoroutineContext, throwable: Throwable ->
+            println("CoroutineExceptionHandler : " + throwable.stackTraceToString())
+            throw throwable
+        }
 
     fun getBackgroundCoroutineScope(): CoroutineScope {
         return backgroundCoroutineScope
@@ -22,7 +29,7 @@ abstract class Async : KoinComponent {
     }
 
     protected fun <OUT> Flow<OUT>.resultOnUI(function: (OUT) -> Unit) {
-        uiCoroutineScope.launch {
+        uiCoroutineScope.launch(exceptionHandler) {
             collect {
                 function.invoke(it)
             }
@@ -30,25 +37,12 @@ abstract class Async : KoinComponent {
     }
 
     protected fun <OUT> Flow<OUT>.resultOnBackground(function: suspend (OUT) -> Unit) {
-        backgroundCoroutineScope.launch {
+        backgroundCoroutineScope.launch(exceptionHandler) {
             collect {
                 function.invoke(it)
             }
         }
     }
-
-//     fun <OUT> Flow<OUT>.cacheOnDB(
-//        function: suspend (Flow<OUT>) -> Unit= { }
-//    ) {
-//        backgroundCoroutineScope.launch {
-//            collect {
-//                get<KMMTDB>()
-//                function.invoke(flow {
-//                    emit(it)
-//                })
-//            }
-//        }
-//    }
 
     fun cancelAllRunningCoroutines(reason: String) {
         backgroundCoroutineScope.coroutineContext.cancelChildren(CancellationException(reason))
@@ -62,7 +56,7 @@ abstract class Async : KoinComponent {
     }
 
     fun runOnBackgroundBlock(function: suspend () -> Unit) {
-        backgroundCoroutineScope.launch {
+        backgroundCoroutineScope.launch(exceptionHandler) {
             function.invoke()
         }
     }
