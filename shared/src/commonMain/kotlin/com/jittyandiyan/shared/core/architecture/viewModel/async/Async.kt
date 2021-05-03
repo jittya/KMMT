@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import org.koin.core.component.KoinComponent
 
-abstract class Async: KoinComponent {
+abstract class Async : KoinComponent {
 
     private val backgroundCoroutineScope = CoroutineScope(Dispatchers_Default)
     private val uiCoroutineScope = CoroutineScope(ApplicationDispatcher)
@@ -50,16 +50,15 @@ abstract class Async: KoinComponent {
 //        }
 //    }
 
-    fun cancelAllRunningCoroutines(reason:String)
-    {
+    fun cancelAllRunningCoroutines(reason: String) {
         backgroundCoroutineScope.coroutineContext.cancelChildren(CancellationException(reason))
     }
 
     fun <OUT> runOnBackground(function: suspend () -> OUT): Flow<OUT> = flow {
-        val job = backgroundCoroutineScope.async {
-            return@async function.invoke()
+        val result = withContext(backgroundCoroutineScope.coroutineContext) {
+            return@withContext function.invoke()
         }
-        emit(job.await())
+        emit(result)
     }
 
 }
