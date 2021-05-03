@@ -59,7 +59,7 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
                     storeValue { putLong(BREED_SYNC_TIME_KEY, DateTime.nowLocal().local.unixMillisLong) }
                     breedResult.message.keys
                         .sorted().toList()
-                        .map { TBreed(0L, name = it, false) }
+                        .map { TBreed(0L, name = it.toWordCaps(), false) }
                         .let {
                             println("New Data from Server : Size = ${it.size}")
                             //This table insert will trigger data change and value will be available in observer
@@ -91,6 +91,17 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
                 breedLiveDataObservable.setValue(it)
             }
         }
+    }
+
+    fun String.toWordCaps(): String {
+        val words = this.split(" ")
+
+        var newStr = ""
+
+        words.forEach {
+            newStr += it.capitalize() + " "
+        }
+        return newStr.trim()
     }
 }
 

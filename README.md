@@ -398,6 +398,8 @@ interface LoginView : BaseView {
     fun getEnteredPassword():String
 
     fun setLoginButtonClickAction(onLoginClick: KFunction0<Unit>)
+
+    fun navigateToHomePage(bundle: BundleX)
 }
 ```
 
@@ -431,10 +433,13 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
          
           runOnBackground(credentials) {
                 JsonPlaceHolderServiceAPI()::authenticate
-            }.resultOnUI {
+            }.resultOnUI { isAuthenticated ->
                 getView()?.dismissLoading()
-                if (it) {
-                    getView()?.navigateToHomePage(username.toString())
+                if (isAuthenticated) {
+                   var bundle = Bundle {
+                      putStringExtra(HomeViewModel.USER_NAME, username.toString())
+                   }
+                    getView()?.navigateToHomePage(bundle)
                 } else {
                     getView()?.showPopUpMessage(
                         "Login Failed"
@@ -496,6 +501,11 @@ class LoginActivity : KMMActivity<LoginViewModel, ActivityMainBinding>(), LoginV
     override fun setLoginButtonLabel(loginLabel: String) {
         binding.loginBtn.text=loginLabel
     }
+
+    override fun navigateToHomePage(bundle: BundleX) {
+       openActivity(HomeActivity::class.java,bundle)
+       finish()
+    }
 }
 ```
 #### iOS Module UI Binding (Xcode) :
@@ -551,6 +561,10 @@ class LoginViewController: KMMUIViewController ,LoginView {
     //Generated Methods from KMMUIViewController
     override func initializeViewModel() -> BaseViewModel<BaseView> {
         return LoginViewModel(view: self).getViewModel()
+    }
+
+    func navigateToHomePage(bundle: BundleX) {
+       openViewController(newViewControllerName: "HomeViewController",bundle: bundle)
     }
 }
 ```
