@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.ListAdapter
 import com.jittyandiyan.androidApp.databinding.ItemBreedBinding
 import com.jittyandiyan.mobile.TBreed
 
-class BreedAdapter : ListAdapter<TBreed, BreedViewModel>(postCallback) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BreedViewModel {
+class BreedAdapter : ListAdapter<TBreed, BreedViewHolder>(postCallback) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BreedViewHolder {
         var binding = ItemBreedBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return BreedViewModel(binding)
+        return BreedViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: BreedViewModel, position: Int) {
+    override fun onBindViewHolder(holder: BreedViewHolder, position: Int) {
         holder.bindData(getItem(position))
     }
 

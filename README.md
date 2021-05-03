@@ -47,6 +47,27 @@ class JsonPlaceHolderServiceAPI : BaseAPI() {
 #### 2. Async Task Helper ( [Kotlinx.Coroutines] )
 Run code (Networking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background thread and get the result in UI thread.
 ```kotlin
+runOnBackgroundBlock {
+   //Code to execute in background
+}
+```
+Return value from background
+```kotlin
+runOnBackground {
+   //add a function will return some result
+}.resultOnUI { result ->
+    
+}
+
+or
+
+runOnBackground {
+   //add a function will return some result
+}.resultOnBackground { result ->
+
+}
+```
+```kotlin
 class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 
     fun getPostsFromAPI() {
@@ -271,7 +292,7 @@ class PremiumManagerBoolean {
 }
 ```
 #### 8. Observe with DBHelper ( Local Database : SQLite - [SQLDelight] )
-Use DBHelper class to observe a select query data
+Use 'asFlow()' extension from DBHelper class to observe a query data
 ```kotlin
 class BreedTableHelper : DBHelper() {
     
@@ -318,22 +339,22 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
     }
 
     private fun getBreedsFromAPI() {
-        if (isSyncExpired()) {
+        if (isSyncExpired()) { 
             //get Data from API and save to DB
-            runOnBackground {
-                BreedServiceAPI().getBreeds()
-            }.resultAsync { breedResult ->
-
-                storeValue { putLong(BREED_SYNC_TIME_KEY, DateTime.nowLocal().local.unixMillisLong) }
-
-                breedResult.message.keys
+           runOnBackgroundBlock {
+              BreedServiceAPI().getBreeds().let{ breedResult ->
+                 
+                 storeValue { putLong(BREED_SYNC_TIME_KEY, DateTime.nowLocal().local.unixMillisLong) }
+                 
+                 breedResult.message.keys
                     .sorted().toList()
                     .map { TBreed(0L, name = it, false) }
                     .let {
-                        //This table insert will trigger data change and value will be available in collector
-                        breedTableHelper.insertBreeds(it)
+                       //This table insert will trigger data change and value will be available in collector
+                       breedTableHelper.insertBreeds(it)
                     }
-            }
+              }
+           }
         }
     }
 
@@ -341,13 +362,11 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
 
     private fun observeBreedsTable() {
         //get Data from db with observe (Flow)
-        runOnBackground {
-            breedTableHelper.getAllBreeds()
-        }.resultAsync { flow ->
-            flow.collect {
-                breedLiveDataObservable.setValue(it)
-            }
-        }
+       runOnBackgroundBlock {
+          breedTableHelper.getAllBreeds().collect {
+             breedLiveDataObservable.setValue(it)
+          }
+       }
     }
 }
 ```

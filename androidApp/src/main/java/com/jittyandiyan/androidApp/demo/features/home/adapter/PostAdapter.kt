@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.ListAdapter
 import com.jittyandiyan.androidApp.databinding.PostAdapterItemBinding
 import com.jittyandiyan.shared.demo.models.PostModel
 
-class PostAdapter : ListAdapter<PostModel, PostViewModel>(postCallback) {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewModel {
+class PostAdapter : ListAdapter<PostModel, PostViewHolder>(postCallback) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         var binding = PostAdapterItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return PostViewModel(binding)
+        return PostViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: PostViewModel, position: Int) {
+    override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
         holder.bindData(getItem(position))
     }
 

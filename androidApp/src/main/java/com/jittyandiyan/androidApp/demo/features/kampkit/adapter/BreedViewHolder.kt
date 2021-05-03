@@ -5,7 +5,7 @@ import com.jittyandiyan.androidApp.R
 import com.jittyandiyan.androidApp.databinding.ItemBreedBinding
 import com.jittyandiyan.mobile.TBreed
 
-class BreedViewModel(binding: ItemBreedBinding) : RecyclerView.ViewHolder(binding.root) {
+class BreedViewHolder(binding: ItemBreedBinding) : RecyclerView.ViewHolder(binding.root) {
     private val nameTextView = binding.breedNameTextView
     private val favoriteButton = binding.favoriteButton
 

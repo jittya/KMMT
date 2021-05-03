@@ -29,7 +29,7 @@ abstract class Async : KoinComponent {
         }
     }
 
-    protected fun <OUT> Flow<OUT>.resultAsync(function: suspend (OUT) -> Unit) {
+    protected fun <OUT> Flow<OUT>.resultOnBackground(function: suspend (OUT) -> Unit) {
         backgroundCoroutineScope.launch {
             collect {
                 function.invoke(it)
@@ -59,6 +59,12 @@ abstract class Async : KoinComponent {
             return@withContext function.invoke()
         }
         emit(result)
+    }
+
+    fun runOnBackgroundBlock(function: suspend () -> Unit) {
+        backgroundCoroutineScope.launch {
+            function.invoke()
+        }
     }
 
 }

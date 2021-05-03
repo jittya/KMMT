@@ -34,18 +34,18 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
     private fun getBreedsFromAPI() {
         if (isSyncExpired()) {
             //get Data from API and save to DB
-            runOnBackground {
-                BreedServiceAPI().getBreeds()
-            }.resultAsync { breedResult ->
-                storeValue { putLong(BREED_SYNC_TIME_KEY, DateTime.nowLocal().local.unixMillisLong) }
-                breedResult.message.keys
-                    .sorted().toList()
-                    .map { TBreed(0L, name = it, false) }
-                    .let {
-                        println("New Data from Server : Size = ${it.size}")
-                        //This table insert will trigger data change and value will be available in observer
-                        breedTableHelper.insertBreeds(it)
-                    }
+            runOnBackgroundBlock {
+                BreedServiceAPI().getBreeds().let{ breedResult ->
+                    storeValue { putLong(BREED_SYNC_TIME_KEY, DateTime.nowLocal().local.unixMillisLong) }
+                    breedResult.message.keys
+                        .sorted().toList()
+                        .map { TBreed(0L, name = it, false) }
+                        .let {
+                            println("New Data from Server : Size = ${it.size}")
+                            //This table insert will trigger data change and value will be available in observer
+                            breedTableHelper.insertBreeds(it)
+                        }
+                }
             }
         }else{
             println("isSyncExpired not expired")
@@ -64,10 +64,8 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
 
     private fun observeBreedsTable() {
         //get Data from db with observe (Flow)
-        runOnBackground {
-            breedTableHelper.getAllBreeds()
-        }.resultAsync { flow ->
-            flow.collect {
+        runOnBackgroundBlock {
+            breedTableHelper.getAllBreeds().collect {
                 println("data from DB : Size = ${it.size}")
                 breedLiveDataObservable.setValue(it)
             }
