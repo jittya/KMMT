@@ -14,6 +14,13 @@ _Primary objective of this project is to help KMM Developers & promote KMM techn
 
 [![image](https://kotlinlang.org/lp/mobile/static/sdk-811ad35a3742e58b40278b7a984fc289.svg)](https://kotlinlang.org/lp/mobile/)
 
+
+https://user-images.githubusercontent.com/9760688/116871405-d2815b80-ac31-11eb-89cd-cbc92dd42d8c.mp4 
+
+https://user-images.githubusercontent.com/9760688/116871609-24c27c80-ac32-11eb-93bb-387b4f5918c2.mp4
+
+
+
 ##### IDE Requirements
 IntelliJ/Android Studio - Android & Shared Module
 
