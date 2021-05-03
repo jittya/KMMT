@@ -14,6 +14,7 @@ _Primary objective of this project is to help KMM Developers & promote KMM techn
 
 [![image](https://kotlinlang.org/lp/mobile/static/sdk-811ad35a3742e58b40278b7a984fc289.svg)](https://kotlinlang.org/lp/mobile/)
 
+Credits : [KaMP Kit]
 
 https://user-images.githubusercontent.com/9760688/116871405-d2815b80-ac31-11eb-89cd-cbc92dd42d8c.mp4 
 
@@ -566,3 +567,4 @@ class LoginViewController: KMMUIViewController ,LoginView {
    [kotlinx.serialization]:<https://github.com/Kotlin/kotlinx.serialization>
    [Multiplatform Settings]:<https://github.com/russhwolf/multiplatform-settings>
    [LiveData]:<https://github.com/florent37/Multiplatform-LiveData>
+   [KaMP Kit]:<https://github.com/touchlab/KaMPKit>
