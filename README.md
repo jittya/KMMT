@@ -3,7 +3,6 @@
 
 [![Kotlin](https://img.shields.io/badge/kotlin-1.4.32-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Views](https://komarev.com/ghpvc/?username=jittya-kmmt)
 
 [![image](https://github.com/jittya/KMMT/blob/master/KMultiplatform.png)](https://kotlinlang.org/lp/mobile/)
 
@@ -572,7 +571,7 @@ class LoginViewController: KMMUIViewController ,LoginView {
 
 
 ##### _Subscribe for upcoming details and features..._
-
+![Views](https://komarev.com/ghpvc/?username=jittya-kmmt)
 
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
