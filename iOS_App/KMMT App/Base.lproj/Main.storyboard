@@ -179,6 +179,46 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cDK-dW-VKb">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BreedCell" id="fYT-7L-2om" userLabel="BreedCell" customClass="BreedCell" customModule="KMMTApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fYT-7L-2om" id="OeB-HS-iTR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5C3-7L-9A3">
+                                                    <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dd-XN-9jC">
+                                                    <rect key="frame" x="386" y="11" width="23" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="IjG-tf-Suk"/>
+                                                        <constraint firstAttribute="width" secondItem="7Dd-XN-9jC" secondAttribute="height" multiplier="75:22" constant="-52" id="r7m-Zm-ePf"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="heart" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="favoriteButtonPressed:" destination="fYT-7L-2om" eventType="touchUpInside" id="Etv-NI-bSX"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7Dd-XN-9jC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5C3-7L-9A3" secondAttribute="trailing" constant="8" symbolic="YES" id="P2h-Pf-SOY"/>
+                                                <constraint firstItem="7Dd-XN-9jC" firstAttribute="centerY" secondItem="OeB-HS-iTR" secondAttribute="centerY" id="TzS-e5-CRs"/>
+                                                <constraint firstItem="5C3-7L-9A3" firstAttribute="centerY" secondItem="OeB-HS-iTR" secondAttribute="centerY" id="cKK-eY-kxU"/>
+                                                <constraint firstItem="5C3-7L-9A3" firstAttribute="leading" secondItem="OeB-HS-iTR" secondAttribute="leadingMargin" id="sVi-Y6-0M8"/>
+                                                <constraint firstAttribute="trailing" secondItem="7Dd-XN-9jC" secondAttribute="trailing" constant="5" id="xNv-oo-qf1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="favoriteButton" destination="7Dd-XN-9jC" id="ORd-kb-cYu"/>
+                                            <outlet property="nameLabel" destination="5C3-7L-9A3" id="FFc-oK-2mB"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oFW-yc-pXW"/>
@@ -190,10 +230,13 @@
                             <constraint firstItem="cDK-dW-VKb" firstAttribute="leading" secondItem="oFW-yc-pXW" secondAttribute="leading" id="xZC-La-znS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="breedTableView" destination="cDK-dW-VKb" id="p7X-GR-1UJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKP-XN-zrB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1787" y="94"/>
+            <point key="canvasLocation" x="1786.9565217391305" y="93.75"/>
         </scene>
     </scenes>
     <designables>
@@ -205,6 +248,7 @@
         </designable>
     </designables>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

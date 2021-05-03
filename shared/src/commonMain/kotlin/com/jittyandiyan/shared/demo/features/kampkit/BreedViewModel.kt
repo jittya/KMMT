@@ -5,6 +5,7 @@ import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
 import com.jittyandiyan.shared.core.keyValueStore.getStoreValue
 import com.jittyandiyan.shared.core.keyValueStore.storeValue
 import com.jittyandiyan.shared.core.liveData.LiveDataObservable
+import com.jittyandiyan.shared.core.platform.runOnAndroid
 import com.jittyandiyan.shared.demo.dataSources.apis.BreedServiceAPI
 import com.jittyandiyan.shared.demo.models.Breed.BreedTableHelper
 import com.soywiz.klock.DateTime
@@ -17,22 +18,41 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
     val BREED_SYNC_TIME_KEY = "BREED_SYNC_TIME"
 
     override fun onStartViewModel() {
+
+        runOnAndroid {
+            getView()?.setPageTitle("Breed List")
+        }
+
         breedTableHelper = BreedTableHelper()
 
         breedLiveDataObservable = LiveDataObservable(getLifeCycle())
         breedLiveDataObservable.observe { breedList ->
             //update UI on each value update from table
             getView()?.refreshBreedList(breedList)
+            getView()?.stopRefreshing()
         }
 
         getBreedsFromAPIThenCache()
 
         observeBreedsTable()
 
+        getView()?.setBreedRefreshAction(this::refresh)
+        getView()?.setBreedFavouriteClickAction(this::invertBreedFavouriteState)
     }
 
-    private fun getBreedsFromAPIThenCache() {
-        if (isSyncExpired()) {
+    private fun refresh(forceRefresh: Boolean)
+    {
+        getBreedsFromAPIThenCache(forceRefresh)
+    }
+
+    private fun invertBreedFavouriteState(tBreed: TBreed)
+    {
+        runOnBackgroundBlock {
+            breedTableHelper.updateFavorite(tBreed.id,tBreed.favorite.not())
+        }
+    }
+    private fun getBreedsFromAPIThenCache(forceRefresh:Boolean=false) {
+        if (isSyncExpired()||forceRefresh) {
             //get Data from API and save to DB
             runOnBackgroundBlock {
                 BreedServiceAPI().getBreeds().let{ breedResult ->
@@ -49,6 +69,7 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
             }
         }else{
             println("isSyncExpired not expired")
+            getView()?.stopRefreshing()
         }
     }
 

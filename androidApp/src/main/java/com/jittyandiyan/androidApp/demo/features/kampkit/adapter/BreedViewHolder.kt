@@ -7,7 +7,7 @@ import com.jittyandiyan.mobile.TBreed
 
 class BreedViewHolder(binding: ItemBreedBinding) : RecyclerView.ViewHolder(binding.root) {
     private val nameTextView = binding.breedNameTextView
-    private val favoriteButton = binding.favoriteButton
+    val favoriteButton = binding.favoriteButton
 
     fun bindData(breed: TBreed) {
         nameTextView.text = breed.name

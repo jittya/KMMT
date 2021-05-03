@@ -8,6 +8,7 @@ import com.jittyandiyan.mobile.TBreed
 import com.jittyandiyan.shared.core.architecture.view.KMMActivity
 import com.jittyandiyan.shared.demo.features.kampkit.BreedView
 import com.jittyandiyan.shared.demo.features.kampkit.BreedViewModel
+import kotlin.reflect.KFunction1
 
 class BreedActivity : KMMActivity<BreedViewModel, ActivityKampKitBinding>(), BreedView {
 
@@ -30,5 +31,20 @@ class BreedActivity : KMMActivity<BreedViewModel, ActivityKampKitBinding>(), Bre
 
     override fun refreshBreedList(breedList: List<TBreed>) {
         breedAdapter.submitList(breedList)
+
+    }
+
+    override fun setBreedRefreshAction(refresh: KFunction1<Boolean, Unit>) {
+        binding.swipeRefresh.setOnRefreshListener {
+            refresh.invoke(true)
+        }
+    }
+
+    override fun stopRefreshing() {
+        binding.swipeRefresh.isRefreshing = false
+    }
+
+    override fun setBreedFavouriteClickAction(invertBreedFavouriteState: KFunction1<TBreed, Unit>) {
+        breedAdapter.setBreedFavouriteClickAction(invertBreedFavouriteState)
     }
 }
