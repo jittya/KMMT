@@ -3,8 +3,7 @@
 
 [![Kotlin](https://img.shields.io/badge/kotlin-1.5.0-green.svg?logo=kotlin)](http://kotlinlang.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Platform: Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://kotlinlang.org/lp/mobile/)
-[![Platform: iOS](https://img.shields.io/badge/Platform-iOS-green.svg)](https://kotlinlang.org/lp/mobile/)
+[![Platform](https://img.shields.io/badge/Platform-Android_&_iOS-green.svg)](https://kotlinlang.org/lp/mobile/)
 
 
 KMMT is a KMM based project template designed to simplify the KMM development.
