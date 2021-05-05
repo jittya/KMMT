@@ -1,9 +1,10 @@
 # KMMT : Kotlin Multiplatform Mobile Template
 ## _Kotlin Multiplatform Mobile Development Simplified_
 
-[![Kotlin](https://img.shields.io/badge/kotlin-1.5.0-blue.svg?logo=kotlin)](http://kotlinlang.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Platform: Multiplatform](https://img.shields.io/badge/Platform-Multiplatform_Mobile-blue.svg)](https://kotlinlang.org/lp/mobile/)
+[![Kotlin](https://img.shields.io/badge/kotlin-1.5.0-green.svg?logo=kotlin)](http://kotlinlang.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Platform: Android](https://img.shields.io/badge/Platform-Android-green.svg)](https://kotlinlang.org/lp/mobile/)
+[![Platform: iOS](https://img.shields.io/badge/Platform-iOS-green.svg)](https://kotlinlang.org/lp/mobile/)
 
 
 KMMT is a KMM based project template designed to simplify the KMM development.
