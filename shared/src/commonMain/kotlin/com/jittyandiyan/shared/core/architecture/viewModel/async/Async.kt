@@ -15,7 +15,7 @@ abstract class Async : KoinComponent {
     private val uiCoroutineScope = CoroutineScope(ApplicationDispatcher)
 
     private val exceptionHandler =
-        CoroutineExceptionHandler { coroutineContext: CoroutineContext, throwable: Throwable ->
+        CoroutineExceptionHandler { _: CoroutineContext, throwable: Throwable ->
             println("CoroutineExceptionHandler : " + throwable.stackTraceToString())
             throw throwable
         }

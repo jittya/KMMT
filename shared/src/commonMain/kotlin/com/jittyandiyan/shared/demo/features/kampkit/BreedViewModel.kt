@@ -99,7 +99,7 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
         var newStr = ""
 
         words.forEach {
-            newStr += it.capitalize() + " "
+            newStr += it.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() } + " "
         }
         return newStr.trim()
     }
