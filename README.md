@@ -230,11 +230,8 @@ That way, you don't need to update the UI every time the app data changes becaus
         var premiumManager = PremiumManager()
         var premiumManagerBoolean = PremiumManagerBoolean()
 
-        //Observer
-        var subscriptionLiveDataObservable = LiveDataObservable<String>(getLifeCycle())
-
-        //observe changes on sources
-        subscriptionLiveDataObservable.observe {
+        //Create Observer & Observe
+        var subscriptionLiveDataObservable = observe<String> {
            getView()?.setSubscriptionLabel(it)
         }
         
@@ -335,10 +332,9 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
        
         breedTableHelper = BreedTableHelper()
 
-        breedLiveDataObservable = LiveDataObservable(getLifeCycle())
-        breedLiveDataObservable.observe { breedList ->
-            //update UI on each value update from table
-            getView()?.refreshBreedList(breedList)
+        breedLiveDataObservable = observe { breedList ->
+           //update UI on each value update from table
+           getView()?.refreshBreedList(breedList)
         }
        
         observeBreedsTable()

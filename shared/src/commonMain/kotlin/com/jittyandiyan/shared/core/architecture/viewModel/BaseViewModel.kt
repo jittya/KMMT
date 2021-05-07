@@ -4,10 +4,10 @@ import com.jittyandiyan.shared.core.architecture.view.BaseView
 import com.jittyandiyan.shared.core.architecture.viewModel.async.Async
 import com.jittyandiyan.shared.core.architecture.viewModel.viewState.ViewState
 import com.jittyandiyan.shared.core.extensions.toObject
+import com.jittyandiyan.shared.core.liveData.LiveDataObservable
 import com.jittyandiyan.shared.core.liveData.lifecycle.LiveDataLifecycle
 import com.jittyandiyan.shared.core.models.BundleExtras
 import com.jittyandiyan.shared.core.platform.expectations.BundleX
-import kotlin.collections.mutableMapOf
 import kotlin.collections.set
 
 abstract class BaseViewModel<View>(private var view: View) : Async() where View : BaseView {
@@ -30,7 +30,7 @@ abstract class BaseViewModel<View>(private var view: View) : Async() where View 
         if (viewState == ViewState.INITIALIZED) {
             viewState = ViewState.STARTED
             onStartViewModel()
-        }else{
+        } else {
             viewState = ViewState.STARTED
         }
     }
@@ -88,7 +88,13 @@ abstract class BaseViewModel<View>(private var view: View) : Async() where View 
     }
 
     fun setLifeCycle(lifeCycle: LiveDataLifecycle) {
-        this.lifeCycle=lifeCycle
+        this.lifeCycle = lifeCycle
+    }
+
+    fun <T> observe(result: (T) -> Unit): LiveDataObservable<T> {
+        var liveData = LiveDataObservable<T>(getLifeCycle())
+        liveData.observe(result)
+        return liveData
     }
 }
 

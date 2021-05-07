@@ -25,9 +25,7 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
 
         breedTableHelper = BreedTableHelper()
 
-        breedLiveDataObservable = LiveDataObservable(getLifeCycle())
-        breedLiveDataObservable.observe { breedList ->
-            //update UI on each value update from table
+        breedLiveDataObservable = observe { breedList ->
             getView()?.refreshBreedList(breedList)
             getView()?.stopRefreshing()
         }
@@ -40,22 +38,21 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
         getView()?.setBreedFavouriteClickAction(this::invertBreedFavouriteState)
     }
 
-    private fun refresh(forceRefresh: Boolean)
-    {
+    private fun refresh(forceRefresh: Boolean) {
         getBreedsFromAPIThenCache(forceRefresh)
     }
 
-    private fun invertBreedFavouriteState(tBreed: TBreed)
-    {
+    private fun invertBreedFavouriteState(tBreed: TBreed) {
         runOnBackgroundBlock {
-            breedTableHelper.updateFavorite(tBreed.id,tBreed.favorite.not())
+            breedTableHelper.updateFavorite(tBreed.id, tBreed.favorite.not())
         }
     }
-    private fun getBreedsFromAPIThenCache(forceRefresh:Boolean=false) {
-        if (isSyncExpired()||forceRefresh) {
+
+    private fun getBreedsFromAPIThenCache(forceRefresh: Boolean = false) {
+        if (isSyncExpired() || forceRefresh) {
             //get Data from API and save to DB
             runOnBackgroundBlock {
-                BreedServiceAPI().getBreeds().let{ breedResult ->
+                BreedServiceAPI().getBreeds().let { breedResult ->
                     storeValue { putLong(BREED_SYNC_TIME_KEY, DateTime.nowLocal().local.unixMillisLong) }
                     breedResult.message.keys
                         .sorted().toList()
@@ -67,7 +64,7 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
                         }
                 }
             }
-        }else{
+        } else {
             println("isSyncExpired not expired")
             getView()?.stopRefreshing()
         }
