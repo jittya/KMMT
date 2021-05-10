@@ -1,5 +1,7 @@
 package com.jittyandiyan.shared.core.network
 
+import com.jittyandiyan.shared.core.functional.Either
+import com.jittyandiyan.shared.core.models.NetworkFailure
 import io.ktor.client.utils.*
 import io.ktor.http.*
 
@@ -14,18 +16,28 @@ abstract class BaseAPI {
 
     suspend inline fun <reified T> doGet(
         urlBuilder: URLBuilder.() -> Unit
-    ): T {
-        return httpHelper.doGet {
-            apply(urlBuilder)
+    ): Either<T, NetworkFailure> {
+        return try {
+            val result = httpHelper.doGet<T> {
+                apply(urlBuilder)
+            }
+            Either.Success(result)
+        } catch (e: Exception) {
+            Either.Failure(NetworkFailure(e))
         }
     }
 
     suspend inline fun <reified T> doPost(
         requestBody: Any = EmptyContent,
         urlBuilder: URLBuilder.() -> Unit
-    ): T {
-        return httpHelper.doPost(requestBody) {
-            apply(urlBuilder)
+    ): Either<T, NetworkFailure> {
+        return try {
+            val result = httpHelper.doPost<T>(requestBody) {
+                apply(urlBuilder)
+            }
+            Either.Success(result)
+        } catch (e: Exception) {
+            Either.Failure(NetworkFailure(e))
         }
     }
 }

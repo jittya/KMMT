@@ -30,21 +30,22 @@ Xcode - iOS Project
 ## ✨Features ✨
 
 #### 1. Simple Networking API  ( [Ktor] )
-Create API Services using BaseAPI class.
+Create API Services using BaseAPI class. All network responses are wrapped in *Either* data type
+
 ```kotlin
 class JsonPlaceHolderServiceAPI : BaseAPI() {
 
     override val baseUrl: String
-        get() = "https://jsonplaceholder.typicode.com/"
+       get() = "https://jsonplaceholder.typicode.com/"
 
-    suspend fun getPosts(postId: Int): List<PostModel> {
-        return doGet {
+   suspend fun getPosts(postId: Int): Either<List<PostModel>, NetworkFailure> {
+      return doGet {
             apiPath("comments?postId=$postId")
         }
-    }
+   }
 
-    suspend fun setPost(post: PostModel): PostModel {
-        return doPost(post) {
+   suspend fun setPost(post: PostModel): Either<PostModel, NetworkFailure> {
+      return doPost(post) {
             apiPath("comments")
         }
     }
@@ -54,13 +55,13 @@ class JsonPlaceHolderServiceAPI : BaseAPI() {
 #### 2. Async Task Helper ( [Kotlinx.Coroutines] )
 Run code (Networking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background thread and get the result in UI thread.
 ```kotlin
-runOnBackgroundBlock {
+runOnBackground {
    //Code to execute in background
 }
 ```
 Return value from background
 ```kotlin
-runOnBackground {
+runOnBackgroundAsFlow {
    //add a function that will return some result
 }.resultOnUI { result ->
     
@@ -68,34 +69,38 @@ runOnBackground {
 
 or
 
-runOnBackground {
+runOnBackgroundAsFlow {
    //add a function that will return some result
 }.resultOnBackground { result ->
 
 }
 ```
+
 ```kotlin
 class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 
-    fun getPostsFromAPI() {
-    
-        runOnBackground {
-            JsonPlaceHolderServiceAPI().getPosts(1)
-        }.resultOnUI {
-            getView()?.showPopUpMessage("First Post Details", "Username : ${it.first().name}\n email : ${it.first().email}")
-        }
-    }
-    
-    fun savePost() {
-        
-        val post = PostModel("Post Body", "jit@ccc.com", 100, "Jitty", 6)
-        
-        runOnBackground {
-            JsonPlaceHolderServiceAPI().setPost(post)
-        }.resultOnUI {
-            getView()?.showPopUpMessage("Saved Post Details", "Name : ${it.name}\n email : ${it.email}")
-        }
-    }
+   fun getPostsFromAPI() {
+
+      runOnBackgroundAsFlow {
+         JsonPlaceHolderServiceAPI().getPosts(1)
+      }.resultOnUI {
+         getView()?.showPopUpMessage(
+            "First Post Details",
+            "Username : ${it.first().name}\n email : ${it.first().email}"
+         )
+      }
+   }
+
+   fun savePost() {
+
+      val post = PostModel("Post Body", "jit@ccc.com", 100, "Jitty", 6)
+
+      runOnBackgroundAsFlow {
+         JsonPlaceHolderServiceAPI().setPost(post)
+      }.resultOnUI {
+         getView()?.showPopUpMessage("Saved Post Details", "Name : ${it.name}\n email : ${it.email}")
+      }
+   }
 }
 ```
 
@@ -336,46 +341,104 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
            //update UI on each value update from table
            getView()?.refreshBreedList(breedList)
         }
-       
-        observeBreedsTable()
-        getBreedsFromAPIThenCache()
+
+       observeBreedsTable()
+       getBreedsFromAPIThenCache()
     }
 
-    private fun getBreedsFromAPIThenCache() {
-        if (isSyncExpired()) { 
-            //get Data from API and save to DB
-           runOnBackgroundBlock {
-              BreedServiceAPI().getBreeds().let{ breedResult ->
-                 
-                 storeValue { putLong(BREED_SYNC_TIME_KEY, DateTime.nowLocal().local.unixMillisLong) }
-                 
-                 breedResult.message.keys
-                    .sorted().toList()
-                    .map { TBreed(0L, name = it, false) }
-                    .let {
-                       //This table insert will trigger data change and value will be available in collector
-                       breedTableHelper.insertBreeds(it)
-                    }
-              }
-           }
-        }
-    }
+   private fun getBreedsFromAPIThenCache() {
+      if (isSyncExpired()) {
+         //get Data from API and save to DB
+         runOnBackground {
+            BreedServiceAPI().getBreeds().let { breedResult ->
+               breedResult.eitherAsync({
+                  runOnUI {
+                     getView()?.showPopUpMessage(it.message)
+                     getView()?.stopRefreshing()
+                  }
+               }, { breedResult ->
+                  storeValue { putLong(BREED_SYNC_TIME_KEY, DateTime.nowLocal().local.unixMillisLong) }
+                  breedResult.message.keys
+                     .sorted().toList()
+                     .map { TBreed(0L, name = it.toWordCaps(), false) }
+                     .let {
+                        //This table insert will trigger data change and value will be available in observer
+                        breedTableHelper.insertBreeds(it)
+                     }
+               })
 
-    private fun isSyncExpired(): Boolean {...}
+            }
+         }
+      }
+   }
 
-    private fun observeBreedsTable() {
-        //get Data from db with observe (Flow)
-       runOnBackgroundBlock {
-          breedTableHelper.getAllBreeds().collect {
-             breedLiveDataObservable.setValue(it)
-          }
-       }
-    }
+   private fun isSyncExpired(): Boolean {
+      ...
+   }
+
+   private fun observeBreedsTable() {
+      //get Data from db with observe (Flow)
+      runOnBackgroundBlock {
+         breedTableHelper.getAllBreeds().collect {
+            breedLiveDataObservable.setValue(it)
+         }
+      }
+   }
 }
 ```
 
+#### 9. Useful Functional Programming
+
+use *Either* data type to represent a value of one of two possible types (a disjoint union). Instances of *Either* are
+either an instance of *Failure* or *Success*
+
+```kotlin
+ Either<SuccessType, FailureType>
+```
+
+convert or map SuccessType using flatMap or map
+
+```kotlin
+var result = doGet<List<UserModel>> {
+   apiPath("jittya/jsonserver/users?username=${credentails.username}&password=${credentails.password}")
+}
+
+return result.flatMap {
+   // convert List to Boolean
+   Either.Success(it.any { it.username == credentails.username && it.password == credentails.password })
+}
+```
+
+use either blocks( *either* or *eitherAsync* [for suspended method support] ) to define failure & success
+functionalities
+
+```kotlin
+ authenticatedResult.either({
+   //Failure
+   getView()?.showPopUpMessage(it.message)
+
+}, { isAuthenticated ->
+   //Success
+   if (isAuthenticated) {
+
+      var userModel = UserModel("jittya@gmail.com", "Jitty", "Andiyan")
+
+      var bundle = Bundle {
+         putStringExtra(HomeViewModel.USER_NAME, username.toString())
+         putSerializableExtra(HomeViewModel.USER_OBJECT, userModel, UserModel.serializer())
+      }
+
+      getView()?.navigateToHomePage(bundle)
+   } else {
+      getView()?.showPopUpMessage("Login Failed")
+   }
+})
+```
+
 ## How to use
+
 #### Shared Module (Business Logics & UI Binding Methods) :
+
 ##### _Step 1 : Define View_
 
 - Create a View interface by extending from BaseView.
@@ -384,7 +447,7 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
 ```kotlin
 interface LoginView : BaseView {
 
-    fun setLoginPageLabel(msg:String)
+   fun setLoginPageLabel(msg:String)
     fun setUsernameLabel(usernameLabel:String)
     fun setPasswordLabel(passwordLabel:String)
     fun setLoginButtonLabel(loginLabel: String)
@@ -415,38 +478,39 @@ class LoginViewModel(view: LoginView) :BaseViewModel<LoginView>(view) {
     fun onLoginButtonClick()
     {
         getView()?.showLoading("authenticating...")
-        val username=getView()?.getEnteredUsername()
-        val password=getView()?.getEnteredPassword()
-        checkValidation(username,password)
+       val username = getView()?.getEnteredUsername()
+       val password = getView()?.getEnteredPassword()
+       checkValidation(username, password)
     }
 
-    fun checkValidation(username:String?,password:String?)
-    {
-        if (username.isNullOrBlank().not()&&password.isNullOrBlank().not())
-        {
-          val credentials = CredentialsModel(username.toString(), password.toString())
-         
-          runOnBackground(credentials) {
-                JsonPlaceHolderServiceAPI()::authenticate
-            }.resultOnUI { isAuthenticated ->
-                getView()?.dismissLoading()
-                if (isAuthenticated) {
-                   var bundle = Bundle {
-                      putStringExtra(HomeViewModel.USER_NAME, username.toString())
-                   }
-                    getView()?.navigateToHomePage(bundle)
-                } else {
-                    getView()?.showPopUpMessage(
-                        "Login Failed"
-                    )
-                }
-            }
-        }
-        else
-        {
-            getView()?.showPopUpMessage("Validation Failed","Username or Password is empty")
-        }
-    }
+   fun checkValidation(username: String?, password: String?) {
+      if (username.isNullOrBlank().not() && password.isNullOrBlank().not()) {
+         val credentials = CredentialsModel(username.toString(), password.toString())
+
+         runOnBackgroundAsFlow {
+            JsonPlaceHolderServiceAPI().authenticate(credentials)
+         }.resultOnUI { authenticatedResult ->
+            getView()?.dismissLoading()
+            authenticatedResult.either({
+               getView()?.showPopUpMessage(it.message)
+            }, { isAuthenticated ->
+               if (isAuthenticated) {
+                  var bundle = Bundle {
+                     putStringExtra(HomeViewModel.USER_NAME, username.toString())
+                  }
+                  getView()?.navigateToHomePage(bundle)
+               } else {
+                  getView()?.showPopUpMessage(
+                     "Login Failed"
+                  )
+               }
+            })
+
+         }
+      } else {
+         getView()?.showPopUpMessage("Validation Failed", "Username or Password is empty")
+      }
+   }
 }
 ```
 #### Android Module UI Binding :

@@ -22,13 +22,19 @@ class HomeViewModel(view: HomeView) : BaseViewModel<HomeView>(view) {
             getBundleValue<UserModel>(USER_OBJECT)?.let { userModel ->
                 getView()?.showUsername(" User : " + userModel.firstname + " " + userModel.lastname)
             }
-            runOnBackground {
+            runOnBackgroundAsFlow {
                 JsonPlaceHolderServiceAPI().getPosts(username)
             }.resultOnUI {
-                getView()?.showPostList(it)
+                it.either({
+                    getView()?.showPopUpMessage(it.message)
+                }, {
+                    getView()?.showPostList(it)
+                })
+
             }
         }
     }
+
     fun kampKitDemoBtnClicked() {
         getView()?.navigateToKampKitDemoPage()
     }

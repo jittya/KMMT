@@ -7,18 +7,17 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import org.koin.core.component.KoinComponent
-import kotlin.coroutines.CoroutineContext
 
 abstract class Async : KoinComponent {
 
-    private val backgroundCoroutineScope = CoroutineScope(Dispatchers_Default)
-    private val uiCoroutineScope = CoroutineScope(ApplicationDispatcher)
+    private val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
+        println("CoroutineExceptionHandler : " + throwable.stackTraceToString())
+        throw throwable
+    }
 
-    private val exceptionHandler =
-        CoroutineExceptionHandler { _: CoroutineContext, throwable: Throwable ->
-            println("CoroutineExceptionHandler : " + throwable.stackTraceToString())
-            throw throwable
-        }
+    private val backgroundCoroutineScope = CoroutineScope(Dispatchers_Default + exceptionHandler)
+    private val uiCoroutineScope = CoroutineScope(ApplicationDispatcher + exceptionHandler)
+
 
     fun getBackgroundCoroutineScope(): CoroutineScope {
         return backgroundCoroutineScope
@@ -29,7 +28,7 @@ abstract class Async : KoinComponent {
     }
 
     protected fun <OUT> Flow<OUT>.resultOnUI(function: (OUT) -> Unit) {
-        uiCoroutineScope.launch(exceptionHandler) {
+        uiCoroutineScope.launch {
             collect {
                 function.invoke(it)
             }
@@ -37,7 +36,7 @@ abstract class Async : KoinComponent {
     }
 
     protected fun <OUT> Flow<OUT>.resultOnBackground(function: suspend (OUT) -> Unit) {
-        backgroundCoroutineScope.launch(exceptionHandler) {
+        backgroundCoroutineScope.launch {
             collect {
                 function.invoke(it)
             }
@@ -48,15 +47,21 @@ abstract class Async : KoinComponent {
         backgroundCoroutineScope.coroutineContext.cancelChildren(CancellationException(reason))
     }
 
-    fun <OUT> runOnBackground(function: suspend () -> OUT): Flow<OUT> = flow {
+    fun <OUT> runOnBackgroundAsFlow(function: suspend () -> OUT): Flow<OUT> = flow {
         val result = withContext(backgroundCoroutineScope.coroutineContext) {
             return@withContext function.invoke()
         }
         emit(result)
     }
 
-    fun runOnBackgroundBlock(function: suspend () -> Unit) {
-        backgroundCoroutineScope.launch(exceptionHandler) {
+    fun runOnBackground(function: suspend () -> Unit) {
+        backgroundCoroutineScope.launch {
+            function.invoke()
+        }
+    }
+
+    fun runOnUI(function: suspend () -> Unit) {
+        uiCoroutineScope.launch {
             function.invoke()
         }
     }

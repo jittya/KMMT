@@ -32,25 +32,30 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
     private fun checkValidation(username: String?, password: String?) {
         if (username.isNullOrBlank().not() && password.isNullOrBlank().not()) {
             val credentials = CredentialsModel(username.toString(), password.toString())
-            runOnBackground {
+            runOnBackgroundAsFlow {
                 JsonPlaceHolderServiceAPI().authenticate(credentials)
-            }.resultOnUI { isAuthenticated ->
+            }.resultOnUI { authenticatedResult ->
                 getView()?.dismissLoading()
-                if (isAuthenticated) {
+                authenticatedResult.either({
+                    getView()?.showPopUpMessage(it.message)
+                }, { isAuthenticated ->
+                    if (isAuthenticated) {
 
-                    var userModel = UserModel("jittya@gmail.com", "Jitty", "Andiyan")
+                        var userModel = UserModel("jittya@gmail.com", "Jitty", "Andiyan")
 
-                    var bundle = Bundle {
-                        putStringExtra(HomeViewModel.USER_NAME, username.toString())
-                        putSerializableExtra(HomeViewModel.USER_OBJECT, userModel, UserModel.serializer())
+                        var bundle = Bundle {
+                            putStringExtra(HomeViewModel.USER_NAME, username.toString())
+                            putSerializableExtra(HomeViewModel.USER_OBJECT, userModel, UserModel.serializer())
+                        }
+
+                        getView()?.navigateToHomePage(bundle)
+                    } else {
+                        getView()?.showPopUpMessage(
+                            "Login Failed"
+                        )
                     }
+                })
 
-                    getView()?.navigateToHomePage(bundle)
-                } else {
-                    getView()?.showPopUpMessage(
-                        "Login Failed"
-                    )
-                }
             }
         } else {
             if (username.isNullOrBlank()) {
