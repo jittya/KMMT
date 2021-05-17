@@ -32,7 +32,7 @@ class LoginViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
     private fun checkValidation(username: String?, password: String?) {
         if (username.isNullOrBlank().not() && password.isNullOrBlank().not()) {
             val credentials = CredentialsModel(username.toString(), password.toString())
-            runOnBackgroundAsFlow {
+            runOnBackgroundWithResult {
                 JsonPlaceHolderServiceAPI().authenticate(credentials)
             }.resultOnUI { authenticatedResult ->
                 getView()?.dismissLoading()

@@ -47,7 +47,7 @@ abstract class Async : KoinComponent {
         backgroundCoroutineScope.coroutineContext.cancelChildren(CancellationException(reason))
     }
 
-    fun <OUT> runOnBackgroundAsFlow(function: suspend () -> OUT): Flow<OUT> = flow {
+    fun <OUT> runOnBackgroundWithResult(function: suspend () -> OUT): Flow<OUT> = flow {
         val result = withContext(backgroundCoroutineScope.coroutineContext) {
             return@withContext function.invoke()
         }
@@ -65,5 +65,4 @@ abstract class Async : KoinComponent {
             function.invoke()
         }
     }
-
 }

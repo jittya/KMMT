@@ -22,7 +22,7 @@ class HomeViewModel(view: HomeView) : BaseViewModel<HomeView>(view) {
             getBundleValue<UserModel>(USER_OBJECT)?.let { userModel ->
                 getView()?.showUsername(" User : " + userModel.firstname + " " + userModel.lastname)
             }
-            runOnBackgroundAsFlow {
+            runOnBackgroundWithResult {
                 JsonPlaceHolderServiceAPI().getPosts(username)
             }.resultOnUI {
                 it.either({
