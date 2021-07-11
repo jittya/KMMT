@@ -11,7 +11,7 @@ shared both in android and iOS easily.
 
 _Primary objective of this project is to help KMM Developers & promote KMM technology_
 
-[![image](https://kotlinlang.org/lp/mobile/static/sdk-811ad35a3742e58b40278b7a984fc289.svg)](https://kotlinlang.org/lp/mobile/)
+[![image](https://kotlinlang.org/lp/mobile/static/sdk-392342a1bb7fde8faa08e60b07d5c802.svg)](https://kotlinlang.org/lp/mobile/)
 
 Credits : [KaMP Kit]
 
