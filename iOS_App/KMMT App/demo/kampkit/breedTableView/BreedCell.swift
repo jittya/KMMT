@@ -10,16 +10,16 @@ import UIKit
 import shared
 
 protocol BreedCellDelegate: class {
-    func toggleFavorite(_ breed: TBreed)
+    func toggleFavorite(_ breed: Breed)
 }
 
 class BreedCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIButton!
-    var breed: TBreed?
+    var breed: Breed?
     weak var delegate: BreedCellDelegate?
     
-    func bindData(_ breed: TBreed) {
+    func bindData(_ breed: Breed) {
         self.breed = breed
         nameLabel.text = breed.name
         

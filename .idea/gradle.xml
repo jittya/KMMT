@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/androidApp" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/persistence" />
             <option value="$PROJECT_DIR$/shared" />
           </set>
         </option>

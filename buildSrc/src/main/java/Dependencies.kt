@@ -47,6 +47,10 @@ object Dependencies {
                 "io.insert-koin:koin-android:${Versions.Dependencies.KMM.koinVersion}"
         }
 
+        object Realm {
+            const val LibraryBase = "io.realm.kotlin:library-base:${Versions.Dependencies.KMM.realmVersion}"
+        }
+
         object Settings {
             const val common =
                 "com.russhwolf:multiplatform-settings:${Versions.Dependencies.KMM.multiplatform_settingsVersion}"

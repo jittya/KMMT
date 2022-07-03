@@ -10,10 +10,10 @@ import shared
 
 class BreedViewController: KMMUIViewController ,BreedView {
     
-    var invertBreedFavouriteState: ( (TBreed) -> KotlinUnit)? = nil
+    var invertBreedFavouriteState: ( (Breed) -> KotlinUnit)? = nil
     var refresh: ((KotlinBoolean) -> KotlinUnit)? = nil
     
-    func setBreedFavouriteClickAction(invertBreedFavouriteState: @escaping (TBreed) -> KotlinUnit) {
+    func setBreedFavouriteClickAction(invertBreedFavouriteState: @escaping (Breed) -> KotlinUnit) {
         self.invertBreedFavouriteState = invertBreedFavouriteState
     }
     
@@ -35,12 +35,12 @@ class BreedViewController: KMMUIViewController ,BreedView {
         refreshControl.endRefreshing()
     }
     
-    func refreshBreedList(breedList: [TBreed]) {
+    func refreshBreedList(breedList: [Breed]) {
         self.breedList = breedList
         breedTableView.reloadData()
     }
     
-    var breedList: [TBreed] = []
+    var breedList: [Breed] = []
 
     @IBOutlet weak var breedTableView: UITableView!
     private let refreshControl = UIRefreshControl()

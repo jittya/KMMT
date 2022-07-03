@@ -2,6 +2,7 @@
     object Project {
         const val kotlin_version = "1.7.0"
         const val Android_Gradle_Plugin_version = "7.2.1"
+        const val Realm_Gradle_Plugin_version = Dependencies.KMM.realmVersion
 
     }
 
@@ -13,6 +14,7 @@
             const val KotlinSerializationVersion = "1.3.3"
             const val ktorVersion = "2.0.3"
             const val koinVersion = "3.2.0"
+            const val realmVersion = "1.0.0"
             const val multiplatform_settingsVersion = "0.9"
             const val kermit="1.1.3"
             const val DateTimeKotlinx = "0.4.0"

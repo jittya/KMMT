@@ -47,10 +47,6 @@ actual fun getAppContextAsKoinBean(appContext: Any): Module {
     return module { }
 }
 
-@Suppress("UNRESOLVED_REFERENCE", "TYPE_MISMATCH")
-actual val sqlDriverModule: Module
-    get() = module { single<SqlDriver> { NativeSqliteDriver(KMMTDB.Schema, "KMMTB.db") } }
-
 actual class BundleX {
     var extras: BundleExtras
 

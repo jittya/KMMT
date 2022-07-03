@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.jittyandiyan.androidApp.databinding.ItemBreedBinding
-import com.jittyandiyan.mobile.TBreed
+import com.kmmt.persistance.dataSources.breed.Breed
 import kotlin.reflect.KFunction1
 
-class BreedAdapter : ListAdapter<TBreed, BreedViewHolder>(postCallback) {
-    private var invertBreedFavouriteState: KFunction1<TBreed, Unit>? = null
+class BreedAdapter : ListAdapter<Breed, BreedViewHolder>(postCallback) {
+    private var invertBreedFavouriteState: KFunction1<Breed, Unit>? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BreedViewHolder {
         var binding = ItemBreedBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -23,14 +23,14 @@ class BreedAdapter : ListAdapter<TBreed, BreedViewHolder>(postCallback) {
         }
     }
 
-    fun setBreedFavouriteClickAction(invertBreedFavouriteState: KFunction1<TBreed, Unit>) {
+    fun setBreedFavouriteClickAction(invertBreedFavouriteState: KFunction1<Breed, Unit>) {
         this.invertBreedFavouriteState = invertBreedFavouriteState
     }
 
     companion object {
-        private val postCallback = object : DiffUtil.ItemCallback<TBreed>() {
-            override fun areContentsTheSame(oldItem: TBreed, newItem: TBreed): Boolean = oldItem == newItem
-            override fun areItemsTheSame(oldItem: TBreed, newItem: TBreed): Boolean = oldItem.id == newItem.id
+        private val postCallback = object : DiffUtil.ItemCallback<Breed>() {
+            override fun areContentsTheSame(oldItem: Breed, newItem: Breed): Boolean = oldItem == newItem
+            override fun areItemsTheSame(oldItem: Breed, newItem: Breed): Boolean = oldItem.id == newItem.id
         }
     }
 }

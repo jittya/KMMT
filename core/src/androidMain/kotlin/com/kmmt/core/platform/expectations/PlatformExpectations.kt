@@ -2,15 +2,12 @@ package com.kmmt.core.platform.expectations
 
 import android.content.Context
 import android.os.Bundle
-import com.jittyandiyan.mobile.KMMTDB
 import com.kmmt.core.dependencyInjection.AndroidKoinComponents
 import com.kmmt.core.models.BundleExtras
 import com.kmmt.core.platform.Android
 import com.kmmt.core.platform.Platform
 import com.russhwolf.settings.AndroidSettings
 import com.russhwolf.settings.Settings
-import com.squareup.sqldelight.android.AndroidSqliteDriver
-import com.squareup.sqldelight.db.SqlDriver
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import org.koin.core.module.Module
@@ -26,12 +23,6 @@ actual fun getAppContextAsKoinBean(appContext: Any): Module {
         single<Context> { appContext }
     }
 }
-
-actual val sqlDriverModule: Module
-    get() = module {
-        single<SqlDriver> { AndroidSqliteDriver(KMMTDB.Schema, get(), "KMMTB.db") }
-    }
-
 
 actual class BundleX  {
      val bundle = Bundle()

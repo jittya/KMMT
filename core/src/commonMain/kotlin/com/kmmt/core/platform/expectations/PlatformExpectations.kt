@@ -12,8 +12,6 @@ expect val Dispatchers_Default: CoroutineDispatcher
 
 expect fun getAppContextAsKoinBean(appContext: Any): Module
 
-expect val sqlDriverModule: Module
-
 expect class BundleX(extras: BundleExtras)
 
 expect val platform:Platform

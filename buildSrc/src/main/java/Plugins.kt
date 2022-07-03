@@ -7,6 +7,8 @@ object Plugins {
         "org.jetbrains.kotlin:kotlin-serialization:${Versions.Project.kotlin_version}"
     const val AndroidBuildGradlePlugin =
         "com.android.tools.build:gradle:${Versions.Project.Android_Gradle_Plugin_version}"
+    const val RealmGradlePlugin =
+        "io.realm.kotlin:gradle-plugin:${Versions.Project.Realm_Gradle_Plugin_version}"
 //    const val KoinGradlePlugin =
 //        "io.insert-koin:koin-gradle-plugin:${Versions.Dependencies.KMM.koinVersion}"
 }

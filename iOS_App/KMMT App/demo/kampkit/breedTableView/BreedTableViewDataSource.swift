@@ -9,7 +9,7 @@ import UIKit
 import shared
 
 extension BreedViewController : UITableViewDataSource,BreedCellDelegate{
-    func toggleFavorite(_ breed: TBreed) {
+    func toggleFavorite(_ breed: Breed) {
         if(invertBreedFavouriteState != nil)
         {
             invertBreedFavouriteState!(breed)

@@ -23,6 +23,7 @@ kotlin {
             baseName = "shared"
             linkerOpts.add("-lsqlite3")
             export(project(":core"))
+            export(project(":persistence"))
         }
     }
 
@@ -30,6 +31,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(project(":core"))
+                api(project(":persistence"))
                 implementation(Dependencies.KMM.Coroutines.Core)
                 implementation(Dependencies.KMM.Koin.Core)
                 implementation(Dependencies.KMM.Ktor.Client.Core)

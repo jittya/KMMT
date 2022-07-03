@@ -4,10 +4,10 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jittyandiyan.androidApp.databinding.ActivityKampKitBinding
 import com.jittyandiyan.androidApp.demo.features.kampkit.adapter.BreedAdapter
-import com.jittyandiyan.mobile.TBreed
-import com.kmmt.core.architecture.view.KMMActivity
-import com.jittyandiyan.shared.demo.features.kampkit.BreedView
 import com.jittyandiyan.shared.demo.features.kampkit.BreedPresenter
+import com.jittyandiyan.shared.demo.features.kampkit.BreedView
+import com.kmmt.core.architecture.view.KMMActivity
+import com.kmmt.persistance.dataSources.breed.Breed
 import kotlin.reflect.KFunction1
 
 class BreedActivity : KMMActivity<BreedPresenter, ActivityKampKitBinding>(), BreedView {
@@ -29,7 +29,7 @@ class BreedActivity : KMMActivity<BreedPresenter, ActivityKampKitBinding>(), Bre
         return ActivityKampKitBinding.inflate(layoutInflater)
     }
 
-    override fun refreshBreedList(breedList: List<TBreed>) {
+    override fun refreshBreedList(breedList: List<Breed>) {
         breedAdapter.submitList(breedList)
 
     }
@@ -44,7 +44,7 @@ class BreedActivity : KMMActivity<BreedPresenter, ActivityKampKitBinding>(), Bre
         binding.swipeRefresh.isRefreshing = false
     }
 
-    override fun setBreedFavouriteClickAction(invertBreedFavouriteState: KFunction1<TBreed, Unit>) {
+    override fun setBreedFavouriteClickAction(invertBreedFavouriteState: KFunction1<Breed, Unit>) {
         breedAdapter.setBreedFavouriteClickAction(invertBreedFavouriteState)
     }
 }

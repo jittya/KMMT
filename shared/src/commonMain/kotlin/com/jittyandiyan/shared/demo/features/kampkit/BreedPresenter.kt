@@ -1,18 +1,20 @@
 package com.jittyandiyan.shared.demo.features.kampkit
 
-import com.jittyandiyan.mobile.TBreed
 import com.kmmt.core.architecture.presenter.BasePresenter
 import com.kmmt.core.functional.Either
 import com.kmmt.core.liveData.LiveDataObservable
 import com.kmmt.core.models.Failure
 import com.kmmt.core.platform.runOnAndroid
 import com.jittyandiyan.shared.demo.dataSources.cache.BreedListCache
-import com.jittyandiyan.shared.demo.dataSources.localDB.BreedTableHelper
+import com.kmmt.persistance.dataSources.breed.Breed
+import com.kmmt.persistance.dataSources.breed.BreedDataSource
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
-class BreedPresenter(view: BreedView) : BasePresenter<BreedView>(view) {
+class BreedPresenter(view: BreedView, ) : BasePresenter<BreedView>(view),KoinComponent {
 
-    private lateinit var breedTableHelper: BreedTableHelper
-    private lateinit var breedLiveDataObservable: LiveDataObservable<Either<List<TBreed>, Failure>>
+    private val breedDataSource: BreedDataSource by inject()
+    private lateinit var breedLiveDataObservable: LiveDataObservable<Either<List<Breed>, Failure>>
     private lateinit var breedListCache: BreedListCache
 
     override fun onStartPresenter() {
@@ -21,8 +23,7 @@ class BreedPresenter(view: BreedView) : BasePresenter<BreedView>(view) {
             getView()?.setPageTitle("Breed List")
         }
 
-        breedTableHelper = BreedTableHelper()
-        breedListCache = BreedListCache(getBackgroundCoroutineScope())
+        breedListCache = BreedListCache(getBackgroundCoroutineScope(),breedDataSource)
 
         breedLiveDataObservable = observe { breedList ->
             breedList.either({
@@ -54,16 +55,16 @@ class BreedPresenter(view: BreedView) : BasePresenter<BreedView>(view) {
         }
     }
 
-    private fun invertBreedFavouriteState(tBreed: TBreed) {
+    private fun invertBreedFavouriteState(tBreed: Breed) {
         runOnBackground {
-            breedTableHelper.updateFavorite(tBreed.id, tBreed.favorite.not())
+            breedDataSource.updateFavorite(tBreed.id, tBreed.favorite.not())
         }
     }
 
     private fun observeBreedsTable() {
         //get Data from db with observe (Flow)
         runOnBackground {
-            breedTableHelper.getAllBreeds().collect {
+            breedDataSource.getAllBreeds().collect {
                 println("data from DB : Size = ${it.size}")
                 breedLiveDataObservable.setValue(Either.Success(it))
             }

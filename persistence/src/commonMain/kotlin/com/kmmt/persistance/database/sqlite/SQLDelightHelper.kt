@@ -1,8 +1,7 @@
-package com.kmmt.core.localDB
+package com.kmmt.persistance.database.sqlite
 
-import com.jittyandiyan.mobile.KMMTDB
+import com.kmmt.persistance.expectations.Dispatchers_Default
 import com.squareup.sqldelight.Query
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.Channel.Factory.CONFLATED
 import kotlinx.coroutines.flow.Flow
@@ -10,15 +9,11 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.mapNotNull
 import kotlinx.coroutines.withContext
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.get
 import kotlin.coroutines.CoroutineContext
 import kotlin.jvm.JvmName
 import kotlin.jvm.JvmOverloads
 
-open class DBHelper : KoinComponent {
-    val localDB: KMMTDB
-        get() = get()
+open class SQLDelightHelper  {
 
     /** Turns this [Query] into a [Flow] which emits whenever the underlying result set changes. */
     @JvmName("toFlow")
@@ -44,7 +39,7 @@ open class DBHelper : KoinComponent {
 
     @JvmOverloads
     fun <T : Any> Flow<Query<T>>.mapToOne(
-        context: CoroutineContext = Dispatchers.Default
+        context: CoroutineContext = Dispatchers_Default
     ): Flow<T> = map {
         withContext(context) {
             it.executeAsOne()
@@ -54,7 +49,7 @@ open class DBHelper : KoinComponent {
     @JvmOverloads
     fun <T : Any> Flow<Query<T>>.mapToOneOrDefault(
         defaultValue: T,
-        context: CoroutineContext = Dispatchers.Default
+        context: CoroutineContext = Dispatchers_Default
     ): Flow<T> = map {
         withContext(context) {
             it.executeAsOneOrNull() ?: defaultValue
@@ -63,7 +58,7 @@ open class DBHelper : KoinComponent {
 
     @JvmOverloads
     fun <T : Any> Flow<Query<T>>.mapToOneOrNull(
-        context: CoroutineContext = Dispatchers.Default
+        context: CoroutineContext = Dispatchers_Default
     ): Flow<T?> = map {
         withContext(context) {
             it.executeAsOneOrNull()
@@ -72,7 +67,7 @@ open class DBHelper : KoinComponent {
 
     @JvmOverloads
     fun <T : Any> Flow<Query<T>>.mapToOneNotNull(
-        context: CoroutineContext = Dispatchers.Default
+        context: CoroutineContext = Dispatchers_Default
     ): Flow<T> = mapNotNull {
         withContext(context) {
             it.executeAsOneOrNull()
@@ -81,7 +76,7 @@ open class DBHelper : KoinComponent {
 
     @JvmOverloads
     fun <T : Any> Flow<Query<T>>.mapToList(
-        context: CoroutineContext = Dispatchers.Default
+        context: CoroutineContext = Dispatchers_Default
     ): Flow<List<T>> = map {
         withContext(context) {
             it.executeAsList()
