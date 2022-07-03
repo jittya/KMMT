@@ -2,6 +2,11 @@ package com.jittyandiyan.mobile
 
 import com.squareup.sqldelight.Query
 import com.squareup.sqldelight.Transacter
+import kotlin.Any
+import kotlin.Boolean
+import kotlin.Long
+import kotlin.String
+import kotlin.Unit
 
 public interface TBreedQueries : Transacter {
   public fun <T : Any> selectAll(mapper: (

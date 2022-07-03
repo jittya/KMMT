@@ -52,7 +52,7 @@ class BreedViewController: KMMUIViewController ,BreedView {
         breedTableView.refreshControl = refreshControl
     }
     
-    override func initializeViewModel() -> BaseViewModel<BaseView> {
-        return BreedViewModel(view: self).getViewModel()
+    override func initializePresenter() -> BasePresenter<BaseView> {
+        return BreedPresenter(view: self).getPresenter()
     }
 }

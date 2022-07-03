@@ -14,7 +14,7 @@ extension UIControl {
            static var clickAction_KoltinUnit = [String:(() -> KotlinUnit?)]()
           static var clickActions_Void = [String:(() -> Void?)]()
        }
-    
+    @objc 
     func getId() -> String {
         let tag=self.tag
             if tag==0 {

@@ -1,47 +1,49 @@
 package com.jittyandiyan.shared.core.architecture.view
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
-import com.jittyandiyan.shared.core.architecture.viewModel.BaseViewModel
+import com.jittyandiyan.shared.core.architecture.presenter.BasePresenter
 import com.jittyandiyan.shared.core.liveData.kLifecycle
 import com.jittyandiyan.shared.core.platform.expectations.BundleX
 
-abstract class KMMActivity<ViewModel,UIViewBinding> : AppCompatActivity() where ViewModel : BaseViewModel<*>,UIViewBinding:ViewBinding {
+abstract class KMMActivity<Presenter,UIViewBinding> : AppCompatActivity() where Presenter : BasePresenter<*>, UIViewBinding:ViewBinding {
 
-    private lateinit var viewModel: ViewModel
+    private lateinit var presenter: Presenter
     private var progressDialog: ProgressDialog? = null
     lateinit var binding:UIViewBinding
 
+    @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=viewBindingInflate()
-        viewModel = initializeViewModel()
-        viewModel.setLifeCycle(this.kLifecycle())
+        presenter = initializePresenter()
+        presenter.setLifeCycle(this.kLifecycle())
         intent.extras?.keySet()?.filterNotNull()?.forEach { key ->
-            getViewModel().setBundleValue(key, intent.extras!![key])
+            getPresenter().setBundleValue(key, intent.extras!![key])
         }
         setContentView(binding.root)
     }
 
     override fun onResume() {
         super.onResume()
-        viewModel.onInit()
+        presenter.onInit()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        viewModel.onDetached()
+        presenter.onDetached()
     }
 
-    fun getViewModel(): ViewModel {
-        return viewModel
+    fun getPresenter(): Presenter {
+        return presenter
     }
 
-    abstract fun initializeViewModel(): ViewModel
+    abstract fun initializePresenter(): Presenter
     abstract fun viewBindingInflate():UIViewBinding
 
     fun setPageTitle(title: String)
@@ -78,8 +80,8 @@ abstract class KMMActivity<ViewModel,UIViewBinding> : AppCompatActivity() where 
 
     fun openActivity(activity: Class<*>, bundle: BundleX) {
         var intent = Intent(this, activity)
-            intent.putExtras(bundle.bundle)
-            startActivity(intent)
+        intent.putExtras(bundle.bundle)
+        startActivity(intent)
     }
 
     fun openActivity(activity: Class<*>) {

@@ -1,16 +1,16 @@
 PODS:
-  - SkyFloatingLabelTextField (3.8.0)
+  - shared (0.1.1.21.4.26)
 
 DEPENDENCIES:
-  - SkyFloatingLabelTextField (~> 3.0)
+  - shared (from `../shared`)
 
-SPEC REPOS:
-  trunk:
-    - SkyFloatingLabelTextField
+EXTERNAL SOURCES:
+  shared:
+    :path: "../shared"
 
 SPEC CHECKSUMS:
-  SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
+  shared: c30e09608b840dbe13ad7395b758a07735f4664a
 
-PODFILE CHECKSUM: 7cec3058f362820b7c92a7845d9df557622c7cf6
+PODFILE CHECKSUM: 92244dc7dc2af438e7e067e558a04ed105ac8595
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.3

@@ -13,8 +13,7 @@ class JsonPlaceHolderServiceAPI : BaseAPI() {
         get() = "https://my-json-server.typicode.com/"
 
     suspend fun authenticate(credentails: CredentialsModel): Either<Boolean, NetworkFailure> {
-        var result = doGet<List<UserModel>> {
-            apiPath("jittya/jsonserver/users?username=${credentails.username}&password=${credentails.password}")
+        var result = doGet<List<UserModel>>("jittya/jsonserver/users?username=${credentails.username}&password=${credentails.password}") {
         }
 
         return result.flatMap {
@@ -24,15 +23,12 @@ class JsonPlaceHolderServiceAPI : BaseAPI() {
     }
 
     suspend fun getPosts(username: String): Either<List<PostModel>, NetworkFailure> {
-        return doGet {
-            apiPath("jittya/jsonserver/post?username=$username")
+        return doGet ("jittya/jsonserver/post?username=$username"){
         }
     }
 
     //Example POST Method
     private suspend fun setPost(post: PostModel): Either<PostModel, NetworkFailure> {
-        return doPost(post) {
-            apiPath("comments")
-        }
+        return doPost("comments",post)
     }
 }

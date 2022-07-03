@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26A9780A727172A93072BD3A /* Pods_KMMTAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C130946642AB0425595898 /* Pods_KMMTAppTests.framework */; };
 		3F2DAFDC263AB2BC0059A2C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2DAFDB263AB2BC0059A2C1 /* HomeViewController.swift */; };
 		3F2DAFE3263C3CD30059A2C1 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2DAFE2263C3CD30059A2C1 /* PostCell.swift */; };
 		3F2DAFE5263C3F570059A2C1 /* PostTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2DAFE4263C3F570059A2C1 /* PostTableViewDataSource.swift */; };
@@ -20,8 +19,6 @@
 		3F540594263717AC000AEA16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F540592263717AC000AEA16 /* LaunchScreen.storyboard */; };
 		3F54059F263717AD000AEA16 /* KMMT_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F54059E263717AD000AEA16 /* KMMT_AppTests.swift */; };
 		3F5405AA263717AD000AEA16 /* KMMT_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5405A9263717AD000AEA16 /* KMMT_AppUITests.swift */; };
-		3F5405C226371921000AEA16 /* shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5405C126371921000AEA16 /* shared.framework */; };
-		3F5405C326371921000AEA16 /* shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5405C126371921000AEA16 /* shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3F5405CB26371F00000AEA16 /* KMMUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5405CA26371F00000AEA16 /* KMMUIViewController.swift */; };
 		3F5405D42637F3CC000AEA16 /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5405D32637F3CC000AEA16 /* UIControlExtensions.swift */; };
 		3F540617263800A2000AEA16 /* UITextFieldX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F540616263800A2000AEA16 /* UITextFieldX.swift */; };
@@ -29,7 +26,11 @@
 		3F95EAAD263EE68700A8EDD4 /* BreedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95EAAC263EE68700A8EDD4 /* BreedViewController.swift */; };
 		3F95EAB2263FEE8800A8EDD4 /* BreedTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95EAB1263FEE8800A8EDD4 /* BreedTableViewDataSource.swift */; };
 		3F95EAB4263FF08300A8EDD4 /* BreedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F95EAB3263FF08300A8EDD4 /* BreedCell.swift */; };
-		95D5CEA2F5ED1E32250313CA /* Pods_KMMTApp_KMMTAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0BE59D9862A11021B0BCBC /* Pods_KMMTApp_KMMTAppUITests.framework */; };
+		9A4B5A9B2871C2CA00E35F44 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4B5A9A2871C2CA00E35F44 /* WelcomeViewController.swift */; };
+		9A4B5AA12871C31000E35F44 /* ShowTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4B5A9E2871C31000E35F44 /* ShowTableViewDataSource.swift */; };
+		9A4B5AA22871C31000E35F44 /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4B5A9F2871C31000E35F44 /* ShowCell.swift */; };
+		9A4B5AA32871C31000E35F44 /* TVShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4B5AA02871C31000E35F44 /* TVShowsViewController.swift */; };
+		9A4B5AA52871C4DE00E35F44 /* UITextFieldControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4B5AA42871C4DE00E35F44 /* UITextFieldControl.swift */; };
 		F0A114C1772BD32678BAEAD5 /* Pods_KMMTApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF2E1A10C4C547BA8C36935 /* Pods_KMMTApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,24 +51,8 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		3F5405C426371921000AEA16 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3F5405C326371921000AEA16 /* shared.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		0D798E672EE86F8FBDCB7F9C /* Pods-KMMT App-KMMT AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT App-KMMT AppUITests.release.xcconfig"; path = "Target Support Files/Pods-KMMT App-KMMT AppUITests/Pods-KMMT App-KMMT AppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		30C130946642AB0425595898 /* Pods_KMMTAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMTAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A0BE59D9862A11021B0BCBC /* Pods_KMMTApp_KMMTAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMTApp_KMMTAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2DAFDB263AB2BC0059A2C1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3F2DAFE2263C3CD30059A2C1 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		3F2DAFE4263C3F570059A2C1 /* PostTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewDataSource.swift; sourceTree = "<group>"; };
@@ -86,7 +71,6 @@
 		3F5405A5263717AD000AEA16 /* KMMTAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KMMTAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5405A9263717AD000AEA16 /* KMMT_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMMT_AppUITests.swift; sourceTree = "<group>"; };
 		3F5405AB263717AD000AEA16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F5405C126371921000AEA16 /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
 		3F5405CA26371F00000AEA16 /* KMMUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KMMUIViewController.swift; sourceTree = "<group>"; };
 		3F5405D32637F3CC000AEA16 /* UIControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtensions.swift; sourceTree = "<group>"; };
 		3F540616263800A2000AEA16 /* UITextFieldX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldX.swift; sourceTree = "<group>"; };
@@ -94,18 +78,19 @@
 		3F95EAAC263EE68700A8EDD4 /* BreedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewController.swift; sourceTree = "<group>"; };
 		3F95EAB1263FEE8800A8EDD4 /* BreedTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedTableViewDataSource.swift; sourceTree = "<group>"; };
 		3F95EAB3263FF08300A8EDD4 /* BreedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCell.swift; sourceTree = "<group>"; };
-		53A1C171B7C7CC3BC8E70C58 /* Pods-KMMTApp-KMMTAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTApp-KMMTAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-KMMTApp-KMMTAppUITests/Pods-KMMTApp-KMMTAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		53ED154DD5958B1E727CF6A0 /* Pods-KMMT AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT AppTests.release.xcconfig"; path = "Target Support Files/Pods-KMMT AppTests/Pods-KMMT AppTests.release.xcconfig"; sourceTree = "<group>"; };
-		69BE0FECDF673D684DC3023F /* Pods-KMMTApp-KMMTAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTApp-KMMTAppUITests.release.xcconfig"; path = "Target Support Files/Pods-KMMTApp-KMMTAppUITests/Pods-KMMTApp-KMMTAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		72665331961E469DE4AB2BBA /* Pods-KMMT App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT App.release.xcconfig"; path = "Target Support Files/Pods-KMMT App/Pods-KMMT App.release.xcconfig"; sourceTree = "<group>"; };
-		75E462A5B99A93CF74143462 /* Pods-KMMTAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTAppTests.release.xcconfig"; path = "Target Support Files/Pods-KMMTAppTests/Pods-KMMTAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		770C05B6D83F5BAA5DAAF8BF /* Pods-KMMT AppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT AppTests.debug.xcconfig"; path = "Target Support Files/Pods-KMMT AppTests/Pods-KMMT AppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9A4B5A9A2871C2CA00E35F44 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		9A4B5A9E2871C31000E35F44 /* ShowTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTableViewDataSource.swift; sourceTree = "<group>"; };
+		9A4B5A9F2871C31000E35F44 /* ShowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
+		9A4B5AA02871C31000E35F44 /* TVShowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVShowsViewController.swift; sourceTree = "<group>"; };
+		9A4B5AA42871C4DE00E35F44 /* UITextFieldControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldControl.swift; sourceTree = "<group>"; };
 		A111AAB282AA0ED95F139EF9 /* Pods-KMMT App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT App.debug.xcconfig"; path = "Target Support Files/Pods-KMMT App/Pods-KMMT App.debug.xcconfig"; sourceTree = "<group>"; };
 		A390526BD0BA338391A5D6A6 /* Pods-KMMT App-KMMT AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMT App-KMMT AppUITests.debug.xcconfig"; path = "Target Support Files/Pods-KMMT App-KMMT AppUITests/Pods-KMMT App-KMMT AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B4A7BBB3599BB8115A2E00AA /* Pods-KMMTApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTApp.release.xcconfig"; path = "Target Support Files/Pods-KMMTApp/Pods-KMMTApp.release.xcconfig"; sourceTree = "<group>"; };
 		BCF2E1A10C4C547BA8C36935 /* Pods_KMMTApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KMMTApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77D5821D2EE4AD0942140E3 /* Pods-KMMTApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTApp.debug.xcconfig"; path = "Target Support Files/Pods-KMMTApp/Pods-KMMTApp.debug.xcconfig"; sourceTree = "<group>"; };
-		DFD56CFD4CE45F0CE216BD3D /* Pods-KMMTAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KMMTAppTests.debug.xcconfig"; path = "Target Support Files/Pods-KMMTAppTests/Pods-KMMTAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +98,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F5405C226371921000AEA16 /* shared.framework in Frameworks */,
 				F0A114C1772BD32678BAEAD5 /* Pods_KMMTApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,7 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A9780A727172A93072BD3A /* Pods_KMMTAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95D5CEA2F5ED1E32250313CA /* Pods_KMMTApp_KMMTAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +122,7 @@
 		3F2DAFDD263BF12C0059A2C1 /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				9A4B5A992871C26B00E35F44 /* tvshows */,
 				3F95EAAB263EE66300A8EDD4 /* kampkit */,
 				3F2DAFE0263C37C90059A2C1 /* home */,
 				3F54058B263717AB000AEA16 /* LoginViewController.swift */,
@@ -223,10 +206,7 @@
 		3F5405C026371921000AEA16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3F5405C126371921000AEA16 /* shared.framework */,
 				BCF2E1A10C4C547BA8C36935 /* Pods_KMMTApp.framework */,
-				3A0BE59D9862A11021B0BCBC /* Pods_KMMTApp_KMMTAppUITests.framework */,
-				30C130946642AB0425595898 /* Pods_KMMTAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -253,6 +233,7 @@
 		3F5405D22637F39B000AEA16 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9A4B5AA42871C4DE00E35F44 /* UITextFieldControl.swift */,
 				3F5405D32637F3CC000AEA16 /* UIControlExtensions.swift */,
 				3F2DAFE6263C4BDF0059A2C1 /* UIFontExtensions.swift */,
 			);
@@ -293,6 +274,33 @@
 			path = breedTableView;
 			sourceTree = "<group>";
 		};
+		9A4B5A992871C26B00E35F44 /* tvshows */ = {
+			isa = PBXGroup;
+			children = (
+				9A4B5A9C2871C2CE00E35F44 /* showsearch */,
+				9A4B5A9A2871C2CA00E35F44 /* WelcomeViewController.swift */,
+			);
+			path = tvshows;
+			sourceTree = "<group>";
+		};
+		9A4B5A9C2871C2CE00E35F44 /* showsearch */ = {
+			isa = PBXGroup;
+			children = (
+				9A4B5A9D2871C31000E35F44 /* showresultTableView */,
+				9A4B5AA02871C31000E35F44 /* TVShowsViewController.swift */,
+			);
+			path = showsearch;
+			sourceTree = "<group>";
+		};
+		9A4B5A9D2871C31000E35F44 /* showresultTableView */ = {
+			isa = PBXGroup;
+			children = (
+				9A4B5A9E2871C31000E35F44 /* ShowTableViewDataSource.swift */,
+				9A4B5A9F2871C31000E35F44 /* ShowCell.swift */,
+			);
+			path = showresultTableView;
+			sourceTree = "<group>";
+		};
 		DFC8AB6293DC94FBB114B648 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,10 +312,6 @@
 				53ED154DD5958B1E727CF6A0 /* Pods-KMMT AppTests.release.xcconfig */,
 				D77D5821D2EE4AD0942140E3 /* Pods-KMMTApp.debug.xcconfig */,
 				B4A7BBB3599BB8115A2E00AA /* Pods-KMMTApp.release.xcconfig */,
-				53A1C171B7C7CC3BC8E70C58 /* Pods-KMMTApp-KMMTAppUITests.debug.xcconfig */,
-				69BE0FECDF673D684DC3023F /* Pods-KMMTApp-KMMTAppUITests.release.xcconfig */,
-				DFD56CFD4CE45F0CE216BD3D /* Pods-KMMTAppTests.debug.xcconfig */,
-				75E462A5B99A93CF74143462 /* Pods-KMMTAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -319,13 +323,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F5405AE263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMTApp" */;
 			buildPhases = (
-				3F5405C5263719D8000AEA16 /* ShellScript */,
 				A6A0311B0F713FADEE15328E /* [CP] Check Pods Manifest.lock */,
 				3F540580263717AB000AEA16 /* Sources */,
-				3F540581263717AB000AEA16 /* Frameworks */,
 				3F540582263717AB000AEA16 /* Resources */,
-				3F5405C426371921000AEA16 /* Embed Frameworks */,
-				1F897E16DED8380845862649 /* [CP] Embed Pods Frameworks */,
+				3F540581263717AB000AEA16 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -340,7 +341,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F5405B1263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMTAppTests" */;
 			buildPhases = (
-				92625A8364C32CC92810664C /* [CP] Check Pods Manifest.lock */,
 				3F540596263717AD000AEA16 /* Sources */,
 				3F540597263717AD000AEA16 /* Frameworks */,
 				3F540598263717AD000AEA16 /* Resources */,
@@ -359,11 +359,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F5405B4263717AD000AEA16 /* Build configuration list for PBXNativeTarget "KMMTAppUITests" */;
 			buildPhases = (
-				7AD19DFAD78342B15B43A103 /* [CP] Check Pods Manifest.lock */,
 				3F5405A1263717AD000AEA16 /* Sources */,
 				3F5405A2263717AD000AEA16 /* Frameworks */,
 				3F5405A3263717AD000AEA16 /* Resources */,
-				8ED1A479FADB99E218B180DD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -445,101 +443,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1F897E16DED8380845862649 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KMMTApp/Pods-KMMTApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KMMTApp/Pods-KMMTApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KMMTApp/Pods-KMMTApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3F5405C5263719D8000AEA16 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd \"$SRCROOT/..\"\n./gradlew :shared:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
-		};
-		7AD19DFAD78342B15B43A103 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KMMTApp-KMMTAppUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8ED1A479FADB99E218B180DD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KMMTApp-KMMTAppUITests/Pods-KMMTApp-KMMTAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KMMTApp-KMMTAppUITests/Pods-KMMTApp-KMMTAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KMMTApp-KMMTAppUITests/Pods-KMMTApp-KMMTAppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		92625A8364C32CC92810664C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KMMTAppTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A6A0311B0F713FADEE15328E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -569,17 +472,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A4B5AA22871C31000E35F44 /* ShowCell.swift in Sources */,
 				3F540617263800A2000AEA16 /* UITextFieldX.swift in Sources */,
 				3F54058C263717AB000AEA16 /* LoginViewController.swift in Sources */,
 				3F95EAB4263FF08300A8EDD4 /* BreedCell.swift in Sources */,
 				3F5405D42637F3CC000AEA16 /* UIControlExtensions.swift in Sources */,
 				3F2DAFDC263AB2BC0059A2C1 /* HomeViewController.swift in Sources */,
 				3F2DAFE7263C4BDF0059A2C1 /* UIFontExtensions.swift in Sources */,
+				9A4B5A9B2871C2CA00E35F44 /* WelcomeViewController.swift in Sources */,
 				3F2DAFE5263C3F570059A2C1 /* PostTableViewDataSource.swift in Sources */,
+				9A4B5AA32871C31000E35F44 /* TVShowsViewController.swift in Sources */,
 				3F95EAB2263FEE8800A8EDD4 /* BreedTableViewDataSource.swift in Sources */,
 				3F54062126380237000AEA16 /* Colors.swift in Sources */,
 				3F2DAFE3263C3CD30059A2C1 /* PostCell.swift in Sources */,
 				3F5405CB26371F00000AEA16 /* KMMUIViewController.swift in Sources */,
+				9A4B5AA12871C31000E35F44 /* ShowTableViewDataSource.swift in Sources */,
+				9A4B5AA52871C4DE00E35F44 /* UITextFieldControl.swift in Sources */,
 				3F540588263717AB000AEA16 /* AppDelegate.swift in Sources */,
 				3F54058A263717AB000AEA16 /* SceneDelegate.swift in Sources */,
 				3F95EAAD263EE68700A8EDD4 /* BreedViewController.swift in Sources */,
@@ -762,14 +670,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = PN98H5MA89;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../shared/build/xcode-frameworks",
 					"$(inherited)",
+					"\"${PODS_ROOT}/../../shared/build/cocoapods/framework\"",
 				);
 				INFOPLIST_FILE = "KMMT App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-framework",
+					"\"shared\"",
+					"-lsqlite3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jittyandiyan.mobile.KMMT-App.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -785,14 +703,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PN98H5MA89;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../shared/build/xcode-frameworks",
 					"$(inherited)",
+					"\"${PODS_ROOT}/../../shared/build/cocoapods/framework\"",
 				);
 				INFOPLIST_FILE = "KMMT App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-framework",
+					"\"shared\"",
+					"-lsqlite3",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jittyandiyan.mobile.KMMT-App.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -803,7 +730,6 @@
 		};
 		3F5405B2263717AD000AEA16 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFD56CFD4CE45F0CE216BD3D /* Pods-KMMTAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -825,7 +751,6 @@
 		};
 		3F5405B3263717AD000AEA16 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75E462A5B99A93CF74143462 /* Pods-KMMTAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -847,7 +772,6 @@
 		};
 		3F5405B5263717AD000AEA16 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53A1C171B7C7CC3BC8E70C58 /* Pods-KMMTApp-KMMTAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -867,7 +791,6 @@
 		};
 		3F5405B6263717AD000AEA16 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69BE0FECDF673D684DC3023F /* Pods-KMMTApp-KMMTAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

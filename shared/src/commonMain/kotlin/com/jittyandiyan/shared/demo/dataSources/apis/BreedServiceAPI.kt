@@ -13,8 +13,7 @@ class BreedServiceAPI : BaseAPI() {
         get() = "https://dog.ceo/"
 
     suspend fun getBreeds(): Either<List<TBreed>, NetworkFailure> {
-        return doGet<BreedResult> {
-            apiPath("api/breeds/list/all")
+        return doGet<BreedResult>("api/breeds/list/all") {
         }.flatMap { breedResult ->
             //Converting BreedResult to List<TBreed>
             Either.Success(

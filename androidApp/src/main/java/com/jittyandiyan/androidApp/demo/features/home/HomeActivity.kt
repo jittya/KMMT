@@ -7,16 +7,16 @@ import com.jittyandiyan.androidApp.demo.features.home.adapter.PostAdapter
 import com.jittyandiyan.androidApp.demo.features.kampkit.BreedActivity
 import com.jittyandiyan.shared.core.architecture.view.KMMActivity
 import com.jittyandiyan.shared.demo.features.home.HomeView
-import com.jittyandiyan.shared.demo.features.home.HomeViewModel
+import com.jittyandiyan.shared.demo.features.home.HomePresenter
 import com.jittyandiyan.shared.demo.models.PostModel
 import kotlin.reflect.KFunction0
 
-class HomeActivity : KMMActivity<HomeViewModel, ActivityHomeBinding>(), HomeView {
+class HomeActivity : KMMActivity<HomePresenter, ActivityHomeBinding>(), HomeView {
 
     private lateinit var adapter: PostAdapter
 
-    override fun initializeViewModel(): HomeViewModel {
-        return HomeViewModel(this)
+    override fun initializePresenter(): HomePresenter {
+        return HomePresenter(this)
     }
 
     override fun viewBindingInflate(): ActivityHomeBinding {

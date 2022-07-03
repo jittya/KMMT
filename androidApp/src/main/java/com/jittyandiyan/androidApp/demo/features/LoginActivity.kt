@@ -6,14 +6,14 @@ import com.jittyandiyan.shared.core.architecture.view.KMMActivity
 import com.jittyandiyan.shared.core.extensions.setClickAction
 import com.jittyandiyan.shared.core.platform.expectations.BundleX
 import com.jittyandiyan.shared.demo.features.login.LoginView
-import com.jittyandiyan.shared.demo.features.login.LoginViewModel
+import com.jittyandiyan.shared.demo.features.login.LoginPresenter
 import kotlin.reflect.KFunction0
 
-class LoginActivity : KMMActivity<LoginViewModel, ActivityMainBinding>(), LoginView {
+class LoginActivity : KMMActivity<LoginPresenter, ActivityMainBinding>(), LoginView {
 
     //Generated Methods from KMMActivity based on LoginViewModel
-    override fun initializeViewModel(): LoginViewModel {
-        return LoginViewModel(this)
+    override fun initializePresenter(): LoginPresenter {
+        return LoginPresenter(this)
     }
 
     override fun viewBindingInflate(): ActivityMainBinding {

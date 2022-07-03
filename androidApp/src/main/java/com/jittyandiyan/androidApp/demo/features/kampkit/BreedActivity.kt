@@ -7,10 +7,10 @@ import com.jittyandiyan.androidApp.demo.features.kampkit.adapter.BreedAdapter
 import com.jittyandiyan.mobile.TBreed
 import com.jittyandiyan.shared.core.architecture.view.KMMActivity
 import com.jittyandiyan.shared.demo.features.kampkit.BreedView
-import com.jittyandiyan.shared.demo.features.kampkit.BreedViewModel
+import com.jittyandiyan.shared.demo.features.kampkit.BreedPresenter
 import kotlin.reflect.KFunction1
 
-class BreedActivity : KMMActivity<BreedViewModel, ActivityKampKitBinding>(), BreedView {
+class BreedActivity : KMMActivity<BreedPresenter, ActivityKampKitBinding>(), BreedView {
 
     private lateinit var breedAdapter: BreedAdapter
 
@@ -21,8 +21,8 @@ class BreedActivity : KMMActivity<BreedViewModel, ActivityKampKitBinding>(), Bre
         binding.breedList.layoutManager = LinearLayoutManager(this)
     }
 
-    override fun initializeViewModel(): BreedViewModel {
-        return BreedViewModel(this)
+    override fun initializePresenter(): BreedPresenter {
+        return BreedPresenter(this)
     }
 
     override fun viewBindingInflate(): ActivityKampKitBinding {

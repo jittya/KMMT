@@ -17,8 +17,8 @@ class LoginViewController: KMMUIViewController ,LoginView {
     }
     
     
-    @IBOutlet weak var usernameTF: UITextFieldX!
-    @IBOutlet weak var passwordTF: UITextFieldX!
+    @IBOutlet weak var usernameTF: UITextField!
+    @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var textlabel: UILabel!
     @IBOutlet weak var loginBtn: UIButton!
     
@@ -41,7 +41,7 @@ class LoginViewController: KMMUIViewController ,LoginView {
     }
     
     func getEnteredUsername() -> String {
-        usernameTF.errorMessage=""
+        usernameTF.setError()
         return usernameTF.text ?? ""
     }
     
@@ -58,12 +58,12 @@ class LoginViewController: KMMUIViewController ,LoginView {
     }
     
     func showErrorMessageOnUsername(errorMsg: String) {
-        usernameTF.errorMessage=errorMsg
+        usernameTF.setError(errorMsg,show: true)
     }
     
     //Generated Methods from KMMUIViewController
-    override func initializeViewModel() -> BaseViewModel<BaseView> {
-        return LoginViewModel(view: self).getViewModel()
+    override func initializePresenter() -> BasePresenter<BaseView> {
+        return LoginPresenter(view: self).getPresenter()
     }
 
 }

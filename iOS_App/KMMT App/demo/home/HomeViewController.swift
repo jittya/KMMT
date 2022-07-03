@@ -47,8 +47,8 @@ class HomeViewController: KMMUIViewController,HomeView  {
     @IBOutlet weak var postTableView: UITableView!
     @IBOutlet weak var kampKitDemoBtn: UIButton!
     
-    override func initializeViewModel() -> BaseViewModel<BaseView> {
-        return HomeViewModel(view: self).getViewModel()
+    override func initializePresenter() -> BasePresenter<BaseView> {
+        return HomePresenter(view: self).getPresenter()
     }
     
 }

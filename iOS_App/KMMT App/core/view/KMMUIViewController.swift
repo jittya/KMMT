@@ -2,7 +2,7 @@
 //  BaseUIViewController.swift
 //  KMMT App
 //
-//  Created by Innovateq on 26/04/2021.
+//  Created by Jitty on 26/04/2021.
 //
 
 import Foundation
@@ -13,43 +13,43 @@ import shared
 
 class KMMUIViewController :UIViewController
 {
-    private var viewModel: BaseViewModel<BaseView>? = nil
+    private var presenter: BasePresenter<BaseView>? = nil
     var bundle:shared.BundleX? = nil
     private let kLifecycle = LiveDataLifecycle()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = initializeViewModel()
-        viewModel?.setLifeCycle(lifeCycle: kLifecycle)
+        presenter = initializePresenter()
+        presenter?.setLifeCycle(lifeCycle: kLifecycle)
         if (bundle != nil){
-            viewModel?.setBundle(bundle: bundle!.extras)
+            presenter?.setBundle(bundle: bundle!.extras)
         }
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel?.onInit()
+        presenter?.onInit()
     }
     
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        viewModel?.onDetached()
+        presenter?.onDetached()
     }
     
-    func getViewModel() -> BaseViewModel<BaseView>? {
-        return viewModel
+    func getPresenter() -> BasePresenter<BaseView>? {
+        return presenter
     }
     
-    func initializeViewModel() -> BaseViewModel<BaseView>
+    func initializePresenter() -> BasePresenter<BaseView>
     {
         preconditionFailure("This method must be overridden Eg: return LoginViewModel(view: self).getViewModel()")
     }
     
     @objc(setPageTitleTitle:) func setPageTitle(title: String)
     {
-        preconditionFailure("ViewModel is trying to set the page title. Please override this method in your ViewContoller")
+        preconditionFailure("Presenter is trying to set the page title. Please override this method in your ViewContoller")
     }
     
     @objc(showPopUpMessageMessage:) func showPopUpMessage(message: String) {

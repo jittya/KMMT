@@ -9,17 +9,21 @@ abstract class BaseAPI {
     abstract val baseUrl: String
     val httpHelper = HTTPHelper()
 
-    protected fun URLBuilder.apiPath(path: String) {
+    fun URLBuilder.apiPath(endPoint: String, urlBuilder: URLBuilder.() -> Unit) {
         takeFrom(baseUrl)
-        encodedPath = path
+        encodedPath = endPoint
+        apply(urlBuilder)
     }
 
     suspend inline fun <reified T> doGet(
-        urlBuilder: URLBuilder.() -> Unit
+        endPoint: String,
+        noinline urlBuilder: URLBuilder.() -> Unit = {}
     ): Either<T, NetworkFailure> {
         return try {
             val result = httpHelper.doGet<T> {
-                apply(urlBuilder)
+                apply {
+                    apiPath(endPoint,urlBuilder)
+                }
             }
             Either.Success(result)
         } catch (e: Exception) {
@@ -28,12 +32,15 @@ abstract class BaseAPI {
     }
 
     suspend inline fun <reified T> doPost(
+        endPoint: String,
         requestBody: Any = EmptyContent,
-        urlBuilder: URLBuilder.() -> Unit
+        noinline urlBuilder: URLBuilder.() -> Unit ={}
     ): Either<T, NetworkFailure> {
         return try {
             val result = httpHelper.doPost<T>(requestBody) {
-                apply(urlBuilder)
+                apply {
+                    apiPath(endPoint,urlBuilder)
+                }
             }
             Either.Success(result)
         } catch (e: Exception) {

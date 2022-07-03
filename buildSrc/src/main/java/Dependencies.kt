@@ -18,17 +18,21 @@ object Dependencies {
             object Client {
                 const val Core =
                     "io.ktor:ktor-client-core:${Versions.Dependencies.KMM.ktorVersion}"
-                val commonJson = "io.ktor:ktor-client-json:${Versions.Dependencies.KMM.ktorVersion}"
-                val commonLogging = "io.ktor:ktor-client-logging:${Versions.Dependencies.KMM.ktorVersion}"
-                val androidOKHttp = "io.ktor:ktor-client-okhttp:${Versions.Dependencies.KMM.ktorVersion}"
+                val contentNegotiation =
+                    "io.ktor:ktor-client-content-negotiation:${Versions.Dependencies.KMM.ktorVersion}"
+                val commonLogging =
+                    "io.ktor:ktor-client-logging:${Versions.Dependencies.KMM.ktorVersion}"
+                val androidOKHttp =
+                    "io.ktor:ktor-client-okhttp:${Versions.Dependencies.KMM.ktorVersion}"
                 val ios = "io.ktor:ktor-client-ios:${Versions.Dependencies.KMM.ktorVersion}"
                 val commonSerialization =
-                    "io.ktor:ktor-client-serialization:${Versions.Dependencies.KMM.ktorVersion}"
+                    "io.ktor:ktor-serialization-kotlinx-json:${Versions.Dependencies.KMM.ktorVersion}"
             }
         }
 
         object SQLDelight {
-            const val Runtime = "com.squareup.sqldelight:runtime:${Versions.Dependencies.KMM.SQLDelightVersion}"
+            const val Runtime =
+                "com.squareup.sqldelight:runtime:${Versions.Dependencies.KMM.SQLDelightVersion}"
             const val coroutinesExtensions =
                 "com.squareup.sqldelight:coroutines-extensions:${Versions.Dependencies.KMM.SQLDelightVersion}"
             const val AndroidDriver =
@@ -39,7 +43,8 @@ object Dependencies {
 
         object Koin {
             const val Core = "io.insert-koin:koin-core:${Versions.Dependencies.KMM.koinVersion}"
-            const val Android = "io.insert-koin:koin-android:${Versions.Dependencies.KMM.koinVersion}"
+            const val Android =
+                "io.insert-koin:koin-android:${Versions.Dependencies.KMM.koinVersion}"
         }
 
         object Settings {
@@ -50,12 +55,14 @@ object Dependencies {
         object Kermit {
             const val common = "co.touchlab:kermit:${Versions.Dependencies.KMM.kermit}"
         }
-        object DateTimeKotlin
-        {
-            const val common= "org.jetbrains.kotlinx:kotlinx-datetime:${Versions.Dependencies.KMM.DateTimeKotlinx}"
+
+        object DateTimeKotlin {
+            const val common =
+                "org.jetbrains.kotlinx:kotlinx-datetime:${Versions.Dependencies.KMM.DateTimeKotlinx}"
         }
-        object  Klock{
-            const val common= "com.soywiz.korlibs.klock:klock:${Versions.Dependencies.KMM.klock}"
+
+        object Klock {
+            const val common = "com.soywiz.korlibs.klock:klock:${Versions.Dependencies.KMM.klock}"
         }
     }
 

@@ -1,18 +1,20 @@
 package com.jittyandiyan.shared.core.network
 
+import com.jittyandiyan.shared.core.serialization.JsonSerializationHelper
 import io.ktor.client.*
-import io.ktor.client.features.json.*
-import io.ktor.client.features.json.serializer.*
-import io.ktor.client.features.logging.*
+import io.ktor.client.call.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.client.plugins.logging.*
 import io.ktor.client.request.*
 import io.ktor.client.utils.*
 import io.ktor.http.*
+import io.ktor.serialization.kotlinx.json.*
 
 class HTTPHelper {
 
     val client = HttpClient {
-        install(JsonFeature) {
-            serializer = KotlinxSerializer()
+        install(ContentNegotiation) {
+            json(JsonSerializationHelper.JsonX())
         }
         install(Logging) {
             logger = object : Logger {
@@ -29,7 +31,7 @@ class HTTPHelper {
     ): T {
         return client.get {
             url.apply(urlBuilder)
-        }
+        }.body()
     }
 
     suspend inline fun <reified T> doPost(
@@ -37,9 +39,9 @@ class HTTPHelper {
         urlBuilder: URLBuilder.()-> Unit
     ): T {
         return client.post {
-            this.body=requestBody
+            setBody(requestBody)
             url.apply(urlBuilder)
             contentType(ContentType.Application.Json)
-        }
+        }.body()
     }
 }

@@ -28,7 +28,7 @@ open class DBHelper : KoinComponent {
         val channel = Channel<Unit>(CONFLATED)
         val listener = object : Query.Listener {
             override fun queryResultsChanged() {
-                channel.offer(Unit)
+                channel.trySend(Unit).isSuccess
             }
         }
         addListener(listener)

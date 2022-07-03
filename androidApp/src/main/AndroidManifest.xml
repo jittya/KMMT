@@ -16,12 +16,23 @@
         </activity>
         <activity android:name=".demo.features.home.HomeActivity">
         </activity>
-        <activity android:name=".demo.features.LoginActivity">
+        <activity android:name=".demo.features.LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".demo.features.tvshows.shows.TVShowsSearchActivity">
+        </activity>
+        <activity android:name=".demo.features.tvshows.WelcomeActivity"
+            android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN"/>-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER"/>-->
+<!--            </intent-filter>-->
         </activity>
     </application>
 
