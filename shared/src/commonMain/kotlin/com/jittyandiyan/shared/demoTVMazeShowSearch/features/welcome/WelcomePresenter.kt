@@ -1,6 +1,6 @@
 package com.jittyandiyan.shared.demoTVMazeShowSearch.features.welcome
 
-import com.jittyandiyan.shared.core.architecture.presenter.BasePresenter
+import com.kmmt.core.architecture.presenter.BasePresenter
 
 
 class WelcomePresenter(view: WelcomeView) : BasePresenter<WelcomeView>(view) {

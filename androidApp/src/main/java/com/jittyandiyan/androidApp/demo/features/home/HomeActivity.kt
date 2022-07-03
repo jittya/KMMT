@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.jittyandiyan.androidApp.databinding.ActivityHomeBinding
 import com.jittyandiyan.androidApp.demo.features.home.adapter.PostAdapter
 import com.jittyandiyan.androidApp.demo.features.kampkit.BreedActivity
-import com.jittyandiyan.shared.core.architecture.view.KMMActivity
+import com.kmmt.core.architecture.view.KMMActivity
 import com.jittyandiyan.shared.demo.features.home.HomeView
 import com.jittyandiyan.shared.demo.features.home.HomePresenter
 import com.jittyandiyan.shared.demo.models.PostModel

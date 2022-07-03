@@ -1,10 +1,10 @@
 package com.jittyandiyan.shared.demo.dataSources.cache
 
 import com.jittyandiyan.mobile.TBreed
-import com.jittyandiyan.shared.core.dataSync.BaseDataCache
-import com.jittyandiyan.shared.core.functional.Either
-import com.jittyandiyan.shared.core.models.DataBaseFailure
-import com.jittyandiyan.shared.core.models.Failure
+import com.kmmt.core.dataSync.BaseDataCache
+import com.kmmt.core.functional.Either
+import com.kmmt.core.models.DataBaseFailure
+import com.kmmt.core.models.Failure
 import com.jittyandiyan.shared.demo.dataSources.apis.BreedServiceAPI
 import com.jittyandiyan.shared.demo.dataSources.localDB.BreedTableHelper
 import kotlinx.coroutines.CoroutineScope

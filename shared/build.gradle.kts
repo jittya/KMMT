@@ -1,10 +1,8 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("kotlinx-serialization")
-    id("com.squareup.sqldelight")
     kotlin("native.cocoapods")
 }
 
@@ -24,23 +22,18 @@ kotlin {
         framework {
             baseName = "shared"
             linkerOpts.add("-lsqlite3")
+            export(project(":core"))
         }
     }
 
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(Dependencies.KMM.Klock.common)
+                api(project(":core"))
                 implementation(Dependencies.KMM.Coroutines.Core)
-                implementation(Dependencies.KMM.Serialization.Json)
-                implementation(Dependencies.KMM.Ktor.Client.Core)
-//                implementation(Dependencies.KMM.Ktor.Client.commonJson)
-                implementation(Dependencies.KMM.Ktor.Client.commonLogging)
-                implementation(Dependencies.KMM.Ktor.Client.commonSerialization)
-                implementation(Dependencies.KMM.Ktor.Client.contentNegotiation)
-                implementation(Dependencies.KMM.SQLDelight.Runtime)
                 implementation(Dependencies.KMM.Koin.Core)
-                implementation(Dependencies.KMM.Settings.common)
+                implementation(Dependencies.KMM.Ktor.Client.Core)
+                implementation(Dependencies.KMM.Serialization.Json)
             }
         }
         val commonTest by getting {
@@ -50,11 +43,6 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation(Dependencies.Android.google_android_material_Material)
-                implementation(Dependencies.KMM.Ktor.Client.androidOKHttp)
-                implementation(Dependencies.KMM.Coroutines.Android)
-                implementation(Dependencies.KMM.SQLDelight.AndroidDriver)
-                implementation(Dependencies.KMM.Koin.Android)
             }
         }
         val androidTest by getting {
@@ -68,8 +56,6 @@ kotlin {
         val iosSimulatorArm64Main by getting
         val iosMain by creating {
             dependencies {
-                implementation(Dependencies.KMM.Ktor.Client.ios)
-                implementation(Dependencies.KMM.SQLDelight.NativeDriver)
             }
             dependsOn(commonMain)
             iosX64Main.dependsOn(this)
@@ -89,9 +75,6 @@ kotlin {
 }
 
 android {
-    buildFeatures {
-        viewBinding = true
-    }
     compileSdk = AppConfig.Android.compileSdkVersion
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
@@ -99,10 +82,3 @@ android {
         targetSdk = AppConfig.Android.targetSdkVersion
     }
 }
-
-sqldelight {
-    database(AppConfig.dbName) {
-        packageName = AppConfig.group
-    }
-}
-

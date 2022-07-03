@@ -1,6 +1,6 @@
 package com.jittyandiyan.shared.demoTVMazeShowSearch.features.tvshows
 
-import com.jittyandiyan.shared.core.architecture.view.BaseView
+import com.kmmt.core.architecture.view.BaseView
 import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TVShowInfo
 import kotlin.reflect.KFunction1
 

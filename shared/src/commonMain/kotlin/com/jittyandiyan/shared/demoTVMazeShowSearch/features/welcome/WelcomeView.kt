@@ -1,6 +1,6 @@
 package com.jittyandiyan.shared.demoTVMazeShowSearch.features.welcome
 
-import com.jittyandiyan.shared.core.architecture.view.BaseView
+import com.kmmt.core.architecture.view.BaseView
 import kotlin.reflect.KFunction0
 
 interface WelcomeView : BaseView {

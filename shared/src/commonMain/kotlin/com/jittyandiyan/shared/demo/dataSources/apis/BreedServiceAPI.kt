@@ -1,11 +1,11 @@
 package com.jittyandiyan.shared.demo.dataSources.apis
 
 import com.jittyandiyan.mobile.TBreed
-import com.jittyandiyan.shared.core.extensions.toWordCaps
-import com.jittyandiyan.shared.core.functional.Either
-import com.jittyandiyan.shared.core.functional.flatMap
-import com.jittyandiyan.shared.core.models.NetworkFailure
-import com.jittyandiyan.shared.core.network.BaseAPI
+import com.kmmt.core.extensions.toWordCaps
+import com.kmmt.core.functional.Either
+import com.kmmt.core.functional.flatMap
+import com.kmmt.core.models.NetworkFailure
+import com.kmmt.core.network.BaseAPI
 import com.jittyandiyan.shared.demo.models.Breed.BreedResult
 
 class BreedServiceAPI : BaseAPI() {

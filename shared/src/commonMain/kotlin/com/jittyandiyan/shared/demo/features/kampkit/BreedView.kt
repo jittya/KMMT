@@ -1,7 +1,7 @@
 package com.jittyandiyan.shared.demo.features.kampkit
 
 import com.jittyandiyan.mobile.TBreed
-import com.jittyandiyan.shared.core.architecture.view.BaseView
+import com.kmmt.core.architecture.view.BaseView
 import kotlin.reflect.KFunction1
 
 interface BreedView:BaseView {

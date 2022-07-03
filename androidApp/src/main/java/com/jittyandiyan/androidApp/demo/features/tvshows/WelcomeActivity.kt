@@ -2,8 +2,8 @@ package com.jittyandiyan.androidApp.demo.features.tvshows
 
 import com.jittyandiyan.androidApp.databinding.ActivityWelcomeBinding
 import com.jittyandiyan.androidApp.demo.features.tvshows.shows.TVShowsSearchActivity
-import com.jittyandiyan.shared.core.architecture.view.KMMActivity
-import com.jittyandiyan.shared.core.extensions.setClickAction
+import com.kmmt.core.architecture.view.KMMActivity
+import com.kmmt.core.extensions.setClickAction
 import com.jittyandiyan.shared.demoTVMazeShowSearch.features.welcome.WelcomePresenter
 import com.jittyandiyan.shared.demoTVMazeShowSearch.features.welcome.WelcomeView
 import kotlin.reflect.KFunction0

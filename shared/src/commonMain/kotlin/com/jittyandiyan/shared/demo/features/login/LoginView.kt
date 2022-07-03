@@ -1,7 +1,7 @@
 package com.jittyandiyan.shared.demo.features.login
 
-import com.jittyandiyan.shared.core.architecture.view.BaseView
-import com.jittyandiyan.shared.core.platform.expectations.BundleX
+import com.kmmt.core.architecture.view.BaseView
+import com.kmmt.core.platform.expectations.BundleX
 import kotlin.reflect.KFunction0
 
 interface LoginView : BaseView {

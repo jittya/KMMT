@@ -6,7 +6,7 @@ import android.text.TextWatcher
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.jittyandiyan.androidApp.databinding.ActivityTvshowsBinding
 import com.jittyandiyan.androidApp.demo.features.tvshows.shows.adapter.TVShowsAdapter
-import com.jittyandiyan.shared.core.architecture.view.KMMActivity
+import com.kmmt.core.architecture.view.KMMActivity
 import com.jittyandiyan.shared.demoTVMazeShowSearch.features.tvshows.TVShowsSearchPresenter
 import com.jittyandiyan.shared.demoTVMazeShowSearch.features.tvshows.TVShowsSearchView
 import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TVShowInfo

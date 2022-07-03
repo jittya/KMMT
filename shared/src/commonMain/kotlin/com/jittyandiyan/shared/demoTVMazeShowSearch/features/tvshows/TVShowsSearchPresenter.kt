@@ -1,8 +1,7 @@
 package com.jittyandiyan.shared.demoTVMazeShowSearch.features.tvshows
 
-import com.jittyandiyan.shared.demoTVMazeShowSearch.dataSources.apis.TVMazeAPI
 import com.jittyandiyan.shared.demoTVMazeShowSearch.dataSources.repository.TVShowSearchRepositoryTVMazeAPI
-import com.jittyandiyan.shared.core.architecture.presenter.BasePresenter
+import com.kmmt.core.architecture.presenter.BasePresenter
 
 class TVShowsSearchPresenter(
     view: TVShowsSearchView,

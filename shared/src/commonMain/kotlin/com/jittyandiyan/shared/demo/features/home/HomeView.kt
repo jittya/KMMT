@@ -1,6 +1,6 @@
 package com.jittyandiyan.shared.demo.features.home
 
-import com.jittyandiyan.shared.core.architecture.view.BaseView
+import com.kmmt.core.architecture.view.BaseView
 import com.jittyandiyan.shared.demo.models.PostModel
 import kotlin.reflect.KFunction0
 

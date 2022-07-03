@@ -12,3 +12,4 @@ rootProject.name = "KMMT"
 
 include(":androidApp")
 include(":shared")
+include(":core")

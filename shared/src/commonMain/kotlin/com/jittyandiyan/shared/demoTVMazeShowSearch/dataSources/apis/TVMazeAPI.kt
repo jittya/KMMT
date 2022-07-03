@@ -1,12 +1,11 @@
 package com.jittyandiyan.shared.demoTVMazeShowSearch.dataSources.apis
 
-import com.jittyandiyan.shared.core.functional.Either
-import com.jittyandiyan.shared.core.functional.map
-import com.jittyandiyan.shared.core.models.NetworkFailure
-import com.jittyandiyan.shared.core.network.BaseAPI
+import com.kmmt.core.functional.Either
+import com.kmmt.core.functional.map
+import com.kmmt.core.models.NetworkFailure
+import com.kmmt.core.network.BaseAPI
 import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TMDBResult
 import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TVShowInfo
-import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TVShowsDTOItem
 import io.ktor.http.*
 
 class TVMazeAPI : BaseAPI() {

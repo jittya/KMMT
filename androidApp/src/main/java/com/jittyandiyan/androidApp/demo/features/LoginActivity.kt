@@ -2,9 +2,9 @@ package com.jittyandiyan.androidApp.demo.features
 
 import com.jittyandiyan.androidApp.databinding.ActivityMainBinding
 import com.jittyandiyan.androidApp.demo.features.home.HomeActivity
-import com.jittyandiyan.shared.core.architecture.view.KMMActivity
-import com.jittyandiyan.shared.core.extensions.setClickAction
-import com.jittyandiyan.shared.core.platform.expectations.BundleX
+import com.kmmt.core.architecture.view.KMMActivity
+import com.kmmt.core.extensions.setClickAction
+import com.kmmt.core.platform.expectations.BundleX
 import com.jittyandiyan.shared.demo.features.login.LoginView
 import com.jittyandiyan.shared.demo.features.login.LoginPresenter
 import kotlin.reflect.KFunction0

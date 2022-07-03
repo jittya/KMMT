@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.jittyandiyan.androidApp.databinding.ActivityKampKitBinding
 import com.jittyandiyan.androidApp.demo.features.kampkit.adapter.BreedAdapter
 import com.jittyandiyan.mobile.TBreed
-import com.jittyandiyan.shared.core.architecture.view.KMMActivity
+import com.kmmt.core.architecture.view.KMMActivity
 import com.jittyandiyan.shared.demo.features.kampkit.BreedView
 import com.jittyandiyan.shared.demo.features.kampkit.BreedPresenter
 import kotlin.reflect.KFunction1

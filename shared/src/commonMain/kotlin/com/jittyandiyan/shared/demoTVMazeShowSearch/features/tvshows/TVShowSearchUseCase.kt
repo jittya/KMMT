@@ -3,10 +3,10 @@ package com.jittyandiyan.shared.demoTVMazeShowSearch.features.tvshows
 import com.jittyandiyan.shared.demoTVMazeShowSearch.dataSources.apis.TVMazeAPI
 import com.jittyandiyan.shared.demoTVMazeShowSearch.dataSources.repository.ITVShowSearchRepository
 import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TVShowInfo
-import com.jittyandiyan.shared.core.architecture.usecase.BaseUseCase
-import com.jittyandiyan.shared.core.architecture.usecase.BaseRepositoryUseCase
-import com.jittyandiyan.shared.core.functional.Either
-import com.jittyandiyan.shared.core.models.Failure
+import com.kmmt.core.architecture.usecase.BaseUseCase
+import com.kmmt.core.architecture.usecase.BaseRepositoryUseCase
+import com.kmmt.core.functional.Either
+import com.kmmt.core.models.Failure
 
 class TVShowSearchUseCase() : BaseUseCase<String, List<TVShowInfo>>() {
     override suspend fun run(params: String): Either<List<TVShowInfo>, Failure> {

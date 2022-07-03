@@ -2,9 +2,9 @@ package com.jittyandiyan.shared.demoTVMazeShowSearch.dataSources.repository
 
 import com.jittyandiyan.shared.demoTVMazeShowSearch.dataSources.apis.TVMazeAPI
 import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TVShowInfo
-import com.jittyandiyan.shared.core.architecture.repository.BaseRepository
-import com.jittyandiyan.shared.core.functional.Either
-import com.jittyandiyan.shared.core.models.Failure
+import com.kmmt.core.architecture.repository.BaseRepository
+import com.kmmt.core.functional.Either
+import com.kmmt.core.models.Failure
 
 
 interface ITVShowSearchRepository : BaseRepository<String, List<TVShowInfo>>

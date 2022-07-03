@@ -1,11 +1,11 @@
 package com.jittyandiyan.shared.demo.features.kampkit
 
 import com.jittyandiyan.mobile.TBreed
-import com.jittyandiyan.shared.core.architecture.presenter.BasePresenter
-import com.jittyandiyan.shared.core.functional.Either
-import com.jittyandiyan.shared.core.liveData.LiveDataObservable
-import com.jittyandiyan.shared.core.models.Failure
-import com.jittyandiyan.shared.core.platform.runOnAndroid
+import com.kmmt.core.architecture.presenter.BasePresenter
+import com.kmmt.core.functional.Either
+import com.kmmt.core.liveData.LiveDataObservable
+import com.kmmt.core.models.Failure
+import com.kmmt.core.platform.runOnAndroid
 import com.jittyandiyan.shared.demo.dataSources.cache.BreedListCache
 import com.jittyandiyan.shared.demo.dataSources.localDB.BreedTableHelper
 

@@ -1,12 +1,12 @@
 package com.jittyandiyan.androidApp
 
 import android.app.Application
-import com.jittyandiyan.shared.core.KMMTApp
+import com.kmmt.core.KMMTApp
 
 class KMMTApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        KMMTApp.init(this)
+        com.kmmt.core.KMMTApp.init(this)
     }
 }
