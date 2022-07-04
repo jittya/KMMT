@@ -1,6 +1,6 @@
 package com.kmmt.core.models
 
-import com.kmmt.core.extensions.toJsonString
+import com.kmmt.common.extensions.toJsonString
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.builtins.ListSerializer
 import kotlinx.serialization.builtins.serializer

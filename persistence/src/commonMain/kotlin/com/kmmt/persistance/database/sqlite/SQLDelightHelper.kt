@@ -1,6 +1,6 @@
 package com.kmmt.persistance.database.sqlite
 
-import com.kmmt.persistance.expectations.Dispatchers_Default
+import com.kmmt.common.expectations.DispatcherDefault
 import com.squareup.sqldelight.Query
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.Channel.Factory.CONFLATED
@@ -39,7 +39,7 @@ open class SQLDelightHelper  {
 
     @JvmOverloads
     fun <T : Any> Flow<Query<T>>.mapToOne(
-        context: CoroutineContext = Dispatchers_Default
+        context: CoroutineContext = DispatcherDefault
     ): Flow<T> = map {
         withContext(context) {
             it.executeAsOne()
@@ -49,7 +49,7 @@ open class SQLDelightHelper  {
     @JvmOverloads
     fun <T : Any> Flow<Query<T>>.mapToOneOrDefault(
         defaultValue: T,
-        context: CoroutineContext = Dispatchers_Default
+        context: CoroutineContext = DispatcherDefault
     ): Flow<T> = map {
         withContext(context) {
             it.executeAsOneOrNull() ?: defaultValue
@@ -58,7 +58,7 @@ open class SQLDelightHelper  {
 
     @JvmOverloads
     fun <T : Any> Flow<Query<T>>.mapToOneOrNull(
-        context: CoroutineContext = Dispatchers_Default
+        context: CoroutineContext = DispatcherDefault
     ): Flow<T?> = map {
         withContext(context) {
             it.executeAsOneOrNull()
@@ -67,7 +67,7 @@ open class SQLDelightHelper  {
 
     @JvmOverloads
     fun <T : Any> Flow<Query<T>>.mapToOneNotNull(
-        context: CoroutineContext = Dispatchers_Default
+        context: CoroutineContext = DispatcherDefault
     ): Flow<T> = mapNotNull {
         withContext(context) {
             it.executeAsOneOrNull()
@@ -76,7 +76,7 @@ open class SQLDelightHelper  {
 
     @JvmOverloads
     fun <T : Any> Flow<Query<T>>.mapToList(
-        context: CoroutineContext = Dispatchers_Default
+        context: CoroutineContext = DispatcherDefault
     ): Flow<List<T>> = map {
         withContext(context) {
             it.executeAsList()

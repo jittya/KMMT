@@ -1,6 +1,6 @@
 package com.kmmt.persistance.database.realm
 
-import com.kmmt.persistance.expectations.Dispatchers_Default
+import com.kmmt.common.expectations.DispatcherDefault
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 import io.realm.kotlin.notifications.ResultsChange
@@ -23,7 +23,7 @@ open class RealmHelper {
 
     @JvmOverloads
     fun <T : BaseRealmObject> Flow<ResultsChange<T>>.mapToList(
-        context: CoroutineContext = Dispatchers_Default
+        context: CoroutineContext = DispatcherDefault
     ): Flow<List<T>> = map {
         withContext(context) {
             it.list

@@ -1,10 +1,10 @@
 package com.kmmt.core.architecture.presenter
 
+import com.kmmt.common.extensions.toObject
 import com.kmmt.core.architecture.usecase.BaseUseCase
 import com.kmmt.core.architecture.view.BaseView
 import com.kmmt.core.architecture.presenter.async.Async
 import com.kmmt.core.architecture.presenter.viewState.ViewState
-import com.kmmt.core.extensions.toObject
 import com.kmmt.core.liveData.LiveDataObservable
 import com.kmmt.core.liveData.lifecycle.LiveDataLifecycle
 import com.kmmt.core.models.BundleExtras

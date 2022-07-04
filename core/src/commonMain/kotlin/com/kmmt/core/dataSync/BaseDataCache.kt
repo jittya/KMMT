@@ -1,8 +1,8 @@
 package com.kmmt.core.dataSync
 
 import com.kmmt.core.functional.Either
-import com.kmmt.core.keyValueStore.getStoreValue
-import com.kmmt.core.keyValueStore.storeValue
+import com.kmmt.persistance.keyValueStore.settings.getStoreValue
+import com.kmmt.persistance.keyValueStore.settings.storeValue
 import com.kmmt.core.models.Failure
 import com.soywiz.klock.DateTime
 import kotlinx.coroutines.CoroutineScope

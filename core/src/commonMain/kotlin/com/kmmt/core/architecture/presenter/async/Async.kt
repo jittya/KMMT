@@ -1,7 +1,8 @@
 package com.kmmt.core.architecture.presenter.async
 
-import com.kmmt.core.platform.expectations.ApplicationDispatcher
-import com.kmmt.core.platform.expectations.Dispatchers_Default
+
+import com.kmmt.common.expectations.DispatcherDefault
+import com.kmmt.common.expectations.DispatcherMain
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -13,8 +14,8 @@ abstract class Async {
         throw throwable
     }
 
-    private val backgroundCoroutineScope = CoroutineScope(Dispatchers_Default + exceptionHandler)
-    private val uiCoroutineScope = CoroutineScope(ApplicationDispatcher + exceptionHandler)
+    private val backgroundCoroutineScope = CoroutineScope(DispatcherDefault + exceptionHandler)
+    private val uiCoroutineScope = CoroutineScope(DispatcherMain + exceptionHandler)
 
 
     fun getBackgroundCoroutineScope(): CoroutineScope {

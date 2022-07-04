@@ -29,9 +29,9 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(Dependencies.KMM.SQLDelight.Runtime)
-                implementation(Dependencies.KMM.Coroutines.Core)
-                implementation(Dependencies.KMM.Koin.Core)
                 implementation(Dependencies.KMM.Realm.LibraryBase)
+                implementation(Dependencies.KMM.Settings.common)
+                implementation(project(":common"))
             }
         }
         val commonTest by getting {
@@ -41,7 +41,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation(Dependencies.KMM.SQLDelight.AndroidDriver)
+                api(Dependencies.KMM.SQLDelight.AndroidDriver)
             }
         }
         val androidTest by getting
@@ -54,7 +54,7 @@ kotlin {
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
             dependencies {
-                implementation(Dependencies.KMM.SQLDelight.NativeDriver)
+                api(Dependencies.KMM.SQLDelight.NativeDriver)
             }
         }
         val iosX64Test by getting

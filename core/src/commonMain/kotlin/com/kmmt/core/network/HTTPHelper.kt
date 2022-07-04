@@ -1,6 +1,6 @@
 package com.kmmt.core.network
 
-import com.kmmt.core.serialization.JsonSerializationHelper
+import com.kmmt.common.serialization.JsonSerializationHelper
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.plugins.contentnegotiation.*

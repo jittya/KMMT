@@ -2,20 +2,12 @@ package com.kmmt.core.platform.expectations
 
 import android.content.Context
 import android.os.Bundle
-import com.kmmt.core.dependencyInjection.AndroidKoinComponents
 import com.kmmt.core.models.BundleExtras
-import com.kmmt.core.platform.Android
+import com.kmmt.core.platform.AndroidPlatform
 import com.kmmt.core.platform.Platform
-import com.russhwolf.settings.AndroidSettings
-import com.russhwolf.settings.Settings
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
- actual val ApplicationDispatcher: CoroutineDispatcher = Dispatchers.Main
-
- actual val Dispatchers_Default: CoroutineDispatcher=Dispatchers.Default
 
 actual fun getAppContextAsKoinBean(appContext: Any): Module {
     appContext as Context
@@ -59,7 +51,5 @@ actual class BundleX  {
     }
 }
 
-actual val platform:Platform = Android("Android",android.os.Build.VERSION.SDK_INT)
+actual val platform:Platform = AndroidPlatform("Android",android.os.Build.VERSION.SDK_INT)
 
-actual val keyValueStore: Settings
-    get() = AndroidSettings(AndroidKoinComponents().androidContext.getSharedPreferences("KeyValueStore", Context.MODE_PRIVATE))

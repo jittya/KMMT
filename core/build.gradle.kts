@@ -3,7 +3,6 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("kotlinx-serialization")
-    id("com.squareup.sqldelight")
 }
 
 group = AppConfig.group
@@ -29,15 +28,12 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(project(":persistence"))
+                implementation(project(":common"))
                 implementation(Dependencies.KMM.Klock.common)
-                implementation(Dependencies.KMM.Coroutines.Core)
-                implementation(Dependencies.KMM.Serialization.Json)
                 implementation(Dependencies.KMM.Ktor.Client.Core)
                 implementation(Dependencies.KMM.Ktor.Client.commonLogging)
                 implementation(Dependencies.KMM.Ktor.Client.commonSerialization)
                 implementation(Dependencies.KMM.Ktor.Client.contentNegotiation)
-                implementation(Dependencies.KMM.Koin.Core)
-                implementation(Dependencies.KMM.Settings.common)
             }
         }
         val commonTest by getting {
