@@ -1,12 +1,7 @@
 package com.kmmt.core.platform.expectations
 
-import com.kmmt.core.models.BundleExtras
-import com.kmmt.core.platform.Platform
-import org.koin.core.module.Module
+import com.kmmt.core.models.BundleValues
 
 
-expect fun getAppContextAsKoinBean(appContext: Any): Module
+expect class BundleParcel(extras: BundleValues)
 
-expect class BundleX(extras: BundleExtras)
-
-expect val platform:Platform

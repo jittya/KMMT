@@ -1,4 +1,4 @@
-package com.kmmt.core.functional
+package com.kmmt.common.functional
 
 
 /**

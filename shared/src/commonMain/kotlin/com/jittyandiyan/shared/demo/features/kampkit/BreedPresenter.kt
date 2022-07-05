@@ -1,11 +1,11 @@
 package com.jittyandiyan.shared.demo.features.kampkit
 
 import com.kmmt.core.architecture.presenter.BasePresenter
-import com.kmmt.core.functional.Either
+import com.kmmt.common.functional.Either
 import com.kmmt.core.liveData.LiveDataObservable
 import com.kmmt.core.models.Failure
-import com.kmmt.core.platform.runOnAndroid
 import com.jittyandiyan.shared.demo.dataSources.cache.BreedListCache
+import com.kmmt.common.platforms.runOnAndroid
 import com.kmmt.persistance.dataSources.breed.Breed
 import com.kmmt.persistance.dataSources.breed.BreedDataSource
 import org.koin.core.component.KoinComponent

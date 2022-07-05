@@ -1,10 +1,7 @@
-package com.kmmt.core.platform
+package com.kmmt.common.platforms
 
-import com.kmmt.core.platform.expectations.platform
+import com.kmmt.common.expectations.platform
 
-sealed class Platform(val osName: String)
-class AndroidPlatform(osName: String, val apiVersion: Int):Platform (osName)
-class IOSPlatform(osName: String, val osVersion: Double):Platform (osName)
 
 fun runOnAndroid(
     androidPlatform: AndroidPlatform.() -> Unit

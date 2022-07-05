@@ -2,7 +2,7 @@ package com.kmmt.core.architecture.usecase
 
 import com.kmmt.core.architecture.repository.BaseRepository
 import com.kmmt.core.architecture.presenter.async.Async
-import com.kmmt.core.functional.Either
+import com.kmmt.common.functional.Either
 import com.kmmt.core.models.Failure
 
 open class BaseRepositoryUseCase<in InputParamsType, ReturnType>(

@@ -4,7 +4,7 @@ import com.jittyandiyan.androidApp.databinding.ActivityMainBinding
 import com.jittyandiyan.androidApp.demo.features.home.HomeActivity
 import com.kmmt.core.architecture.view.KMMActivity
 import com.kmmt.core.extensions.setClickAction
-import com.kmmt.core.platform.expectations.BundleX
+import com.kmmt.core.platform.expectations.BundleParcel
 import com.jittyandiyan.shared.demo.features.login.LoginView
 import com.jittyandiyan.shared.demo.features.login.LoginPresenter
 import kotlin.reflect.KFunction0
@@ -53,8 +53,8 @@ class LoginActivity : KMMActivity<LoginPresenter, ActivityMainBinding>(), LoginV
         binding.usernameET.error = errorMsg
     }
 
-    override fun navigateToHomePage(bundle: BundleX) {
-        openActivity(HomeActivity::class.java,bundle)
+    override fun navigateToHomePage(bundleParcel: BundleParcel) {
+        openActivity(HomeActivity::class.java,bundleParcel)
         finish()
     }
 

@@ -7,8 +7,8 @@ import com.kmmt.core.architecture.presenter.async.Async
 import com.kmmt.core.architecture.presenter.viewState.ViewState
 import com.kmmt.core.liveData.LiveDataObservable
 import com.kmmt.core.liveData.lifecycle.LiveDataLifecycle
-import com.kmmt.core.models.BundleExtras
-import com.kmmt.core.platform.expectations.BundleX
+import com.kmmt.core.models.BundleValues
+import com.kmmt.core.platform.expectations.BundleParcel
 import kotlin.collections.set
 
 abstract class BasePresenter<View>(private var view: View, vararg useCases:BaseUseCase<*,*>) : Async() where View : BaseView {
@@ -60,7 +60,7 @@ abstract class BasePresenter<View>(private var view: View, vararg useCases:BaseU
 
     var bundlesValues = mutableMapOf<String, Any?>()
 
-    fun setBundle(bundle: BundleExtras) {
+    fun setBundle(bundle: BundleValues) {
         bundlesValues = bundle.extras
     }
 
@@ -86,9 +86,9 @@ abstract class BasePresenter<View>(private var view: View, vararg useCases:BaseU
     }
 
     fun Bundle(
-        bundle: BundleExtras.() -> Unit
-    ): BundleX {
-        return BundleX(BundleExtras().also(bundle))
+        bundle: BundleValues.() -> Unit
+    ): BundleParcel {
+        return BundleParcel(BundleValues().also(bundle))
     }
 
     fun setLifeCycle(lifeCycle: LiveDataLifecycle) {

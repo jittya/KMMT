@@ -1,7 +1,7 @@
 package com.jittyandiyan.shared.demo.dataSources.cache
 
 import com.kmmt.core.dataSync.BaseDataCache
-import com.kmmt.core.functional.Either
+import com.kmmt.common.functional.Either
 import com.kmmt.core.models.DataBaseFailure
 import com.kmmt.core.models.Failure
 import com.jittyandiyan.shared.demo.dataSources.apis.BreedServiceAPI

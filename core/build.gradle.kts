@@ -28,7 +28,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(project(":persistence"))
-                implementation(project(":common"))
+                api(project(":common"))
                 implementation(Dependencies.KMM.Klock.common)
                 implementation(Dependencies.KMM.Ktor.Client.Core)
                 implementation(Dependencies.KMM.Ktor.Client.commonLogging)

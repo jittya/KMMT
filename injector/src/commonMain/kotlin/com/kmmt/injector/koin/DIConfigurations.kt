@@ -1,7 +1,7 @@
-package com.kmmt.core.dependencyInjection
+package com.kmmt.injector.koin
 
 import com.jittyandiyan.mobile.KMMTDB
-import com.kmmt.core.platform.expectations.getAppContextAsKoinBean
+import com.kmmt.common.expectations.Application
 import com.kmmt.persistance.dataSources.breed.BreedDataSource
 import com.kmmt.persistance.dataSources.breed.BreedRealmDataSource
 import com.kmmt.persistance.dataSources.breed.BreedSQLiteDataSource
@@ -12,14 +12,20 @@ import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 import org.koin.dsl.module
 
+object Injector {
 
-fun initKoin(context: Any): KoinApplication {
-    return startKoin {
-        modules(
-            getAppContextAsKoinBean(context),
-            persistenceModule,
-            coreModules
-        )
+    lateinit var koinApplication: KoinApplication
+
+    fun initKoin(application: Application) {
+        koinApplication = startKoin {
+            modules(
+                module {
+                    single { application }
+                },
+                persistenceModule,
+                sqliteDataSource
+            )
+        }
     }
 }
 
@@ -28,14 +34,11 @@ val persistenceModule = module {
     single { settings }
 }
 
-val coreModules = module {
+val sqliteDataSource = module {
     single { KMMTDB(get()) }
-    //Switch the datasource
-    var useSQLite = true
-    if (useSQLite) {
-        single<BreedDataSource> { BreedSQLiteDataSource(get()) }
-    } else {
-        single<BreedDataSource> { BreedRealmDataSource(BreedR()) }
-    }
+    single<BreedDataSource> { BreedSQLiteDataSource(get()) }
+}
 
+val realmDataSource = module {
+    single<BreedDataSource> { BreedRealmDataSource(BreedR()) }
 }

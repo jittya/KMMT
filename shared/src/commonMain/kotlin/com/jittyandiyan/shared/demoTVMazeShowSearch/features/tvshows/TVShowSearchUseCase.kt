@@ -5,7 +5,7 @@ import com.jittyandiyan.shared.demoTVMazeShowSearch.dataSources.repository.ITVSh
 import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TVShowInfo
 import com.kmmt.core.architecture.usecase.BaseUseCase
 import com.kmmt.core.architecture.usecase.BaseRepositoryUseCase
-import com.kmmt.core.functional.Either
+import com.kmmt.common.functional.Either
 import com.kmmt.core.models.Failure
 
 class TVShowSearchUseCase() : BaseUseCase<String, List<TVShowInfo>>() {

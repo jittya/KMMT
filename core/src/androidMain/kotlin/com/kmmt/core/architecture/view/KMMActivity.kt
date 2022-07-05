@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.kmmt.core.architecture.presenter.BasePresenter
 import com.kmmt.core.liveData.kLifecycle
-import com.kmmt.core.platform.expectations.BundleX
+import com.kmmt.core.platform.expectations.BundleParcel
 
 abstract class KMMActivity<Presenter,UIViewBinding> : AppCompatActivity() where Presenter : BasePresenter<*>, UIViewBinding:ViewBinding {
 
@@ -78,9 +78,9 @@ abstract class KMMActivity<Presenter,UIViewBinding> : AppCompatActivity() where 
         progressDialog?.dismiss()
     }
 
-    fun openActivity(activity: Class<*>, bundle: BundleX) {
+    fun openActivity(activity: Class<*>, bundleParcel: BundleParcel) {
         var intent = Intent(this, activity)
-        intent.putExtras(bundle.bundle)
+        intent.putExtras(bundleParcel.bundle)
         startActivity(intent)
     }
 

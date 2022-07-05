@@ -38,15 +38,11 @@ class JsonPlaceHolderServiceAPI : BaseAPI() {
         get() = "https://jsonplaceholder.typicode.com/"
 
     suspend fun getPosts(postId: Int): Either<List<PostModel>, NetworkFailure> {
-        return doGet {
-            apiPath("comments?postId=$postId")
-        }
+        return doGet("comments?postId=$postId")
     }
 
     suspend fun setPost(post: PostModel): Either<PostModel, NetworkFailure> {
-        return doPost(post) {
-            apiPath("comments")
-        }
+        return doPost("comments", post)
     }
 }
 ```
@@ -56,15 +52,13 @@ class BreedServiceAPI : BaseAPI() {
     override val baseUrl: String
         get() = "https://dog.ceo/"
 
-    suspend fun getBreeds(): Either<List<TBreed>, NetworkFailure> {
-        return doGet<BreedResult> {
-            apiPath("api/breeds/list/all")
-        }.flatMap { breedResult ->
+    suspend fun getBreeds(): Either<List<Breed>, NetworkFailure> {
+        return doGet<BreedResult>("api/breeds/list/all").flatMap { breedResult ->
             //Converting BreedResult to List<TBreed>
             Either.Success(
                 breedResult.message.keys
                     .sorted().toList()
-                    .map { TBreed(0L, name = it.toWordCaps(), false) }
+                    .map { Breed(0L, name = it.toWordCaps(), false) }
             )
         }
     }

@@ -6,4 +6,4 @@ import com.russhwolf.settings.AndroidSettings
 import com.russhwolf.settings.Settings
 
 actual val settings: Settings
-    get() = AndroidSettings(Android.androidContext.getSharedPreferences("KeyValueStore", Context.MODE_PRIVATE))
+    get() = AndroidSettings(Android.application.application.getSharedPreferences("KeyValueStore", Context.MODE_PRIVATE))

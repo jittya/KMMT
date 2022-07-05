@@ -12,8 +12,8 @@ class LoginViewController: KMMUIViewController ,LoginView {
     
 
     
-    func navigateToHomePage(bundle: BundleX) {
-        openViewController(newViewControllerName: "HomeViewController",bundle: bundle)
+    func navigateToHomePage(bundleParcel: shared.BundleParcel) {
+        openViewController(newViewControllerName: "HomeViewController",bundle: bundleParcel)
     }
     
     

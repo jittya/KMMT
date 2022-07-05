@@ -3,7 +3,7 @@ package com.jittyandiyan.shared.demoTVMazeShowSearch.dataSources.repository
 import com.jittyandiyan.shared.demoTVMazeShowSearch.dataSources.apis.TVMazeAPI
 import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TVShowInfo
 import com.kmmt.core.architecture.repository.BaseRepository
-import com.kmmt.core.functional.Either
+import com.kmmt.common.functional.Either
 import com.kmmt.core.models.Failure
 
 

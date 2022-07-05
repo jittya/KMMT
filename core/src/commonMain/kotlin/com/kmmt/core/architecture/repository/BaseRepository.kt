@@ -1,6 +1,6 @@
 package com.kmmt.core.architecture.repository
 
-import com.kmmt.core.functional.Either
+import com.kmmt.common.functional.Either
 import com.kmmt.core.models.Failure
 
 interface BaseRepository<in InputParamsType, ReturnType> {

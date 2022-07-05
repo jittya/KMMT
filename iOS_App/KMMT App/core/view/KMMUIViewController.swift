@@ -14,7 +14,7 @@ import shared
 class KMMUIViewController :UIViewController
 {
     private var presenter: BasePresenter<BaseView>? = nil
-    var bundle:shared.BundleX? = nil
+    var bundle:BundleParcel? = nil
     private let kLifecycle = LiveDataLifecycle()
     
     override func viewDidLoad() {
@@ -72,12 +72,12 @@ class KMMUIViewController :UIViewController
         showSpinner(onView: self.view,message: loadingLabel)
     }
     
-    func openViewController(newViewControllerName: String,bundle: BundleX? = nil)
+    func openViewController(newViewControllerName: String,bundle: BundleParcel? = nil)
     {
         getViewController(newViewControllerName: newViewControllerName, bundle: bundle)
     }
     
-    private func getViewController(storyboardName:String="Main", newViewControllerName:String, bundle: BundleX? = nil)
+    private func getViewController(storyboardName:String="Main", newViewControllerName:String, bundle: BundleParcel? = nil)
     {
         let storyBoard: UIStoryboard = UIStoryboard(name: storyboardName, bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: newViewControllerName)

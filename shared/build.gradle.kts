@@ -24,6 +24,8 @@ kotlin {
             linkerOpts.add("-lsqlite3")
             export(project(":core"))
             export(project(":persistence"))
+            export(project(":injector"))
+            export(project(":common"))
         }
     }
 
@@ -32,6 +34,8 @@ kotlin {
             dependencies {
                 api(project(":core"))
                 api(project(":persistence"))
+                api(project(":common"))
+                api(project(":injector"))
                 implementation(Dependencies.KMM.Coroutines.Core)
                 implementation(Dependencies.KMM.Koin.Core)
                 implementation(Dependencies.KMM.Ktor.Client.Core)

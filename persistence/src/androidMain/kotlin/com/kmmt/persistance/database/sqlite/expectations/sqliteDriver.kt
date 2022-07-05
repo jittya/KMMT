@@ -6,4 +6,4 @@ import com.squareup.sqldelight.android.AndroidSqliteDriver
 import com.squareup.sqldelight.db.SqlDriver
 
 actual val sqliteDriver: SqlDriver
-    get() = AndroidSqliteDriver(KMMTDB.Schema, Android.androidContext, "KMMTB.db")
+    get() = AndroidSqliteDriver(KMMTDB.Schema, Android.application.application, "KMMTB.db")

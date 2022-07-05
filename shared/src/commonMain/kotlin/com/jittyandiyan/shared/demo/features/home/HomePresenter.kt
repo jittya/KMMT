@@ -1,9 +1,9 @@
 package com.jittyandiyan.shared.demo.features.home
 
 import com.kmmt.core.architecture.presenter.BasePresenter
-import com.kmmt.core.platform.runOnAndroid
 import com.jittyandiyan.shared.demo.dataSources.apis.JsonPlaceHolderServiceAPI
 import com.jittyandiyan.shared.demo.models.UserModel
+import com.kmmt.common.platforms.runOnAndroid
 
 class HomePresenter(view: HomeView) : BasePresenter<HomeView>(view) {
 

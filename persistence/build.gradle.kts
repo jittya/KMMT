@@ -28,10 +28,10 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(Dependencies.KMM.SQLDelight.Runtime)
-                implementation(Dependencies.KMM.Realm.LibraryBase)
-                implementation(Dependencies.KMM.Settings.common)
-                implementation(project(":common"))
+                api(Dependencies.KMM.SQLDelight.Runtime)
+                api(Dependencies.KMM.Realm.LibraryBase)
+                api(Dependencies.KMM.Settings.common)
+                api(project(":common"))
             }
         }
         val commonTest by getting {

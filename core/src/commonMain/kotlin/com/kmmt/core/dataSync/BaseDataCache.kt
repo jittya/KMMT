@@ -1,6 +1,6 @@
 package com.kmmt.core.dataSync
 
-import com.kmmt.core.functional.Either
+import com.kmmt.common.functional.Either
 import com.kmmt.persistance.keyValueStore.settings.getStoreValue
 import com.kmmt.persistance.keyValueStore.settings.storeValue
 import com.kmmt.core.models.Failure

@@ -1,6 +1,6 @@
 package com.kmmt.core.network
 
-import com.kmmt.core.functional.Either
+import com.kmmt.common.functional.Either
 import com.kmmt.core.models.NetworkFailure
 import io.ktor.client.utils.*
 import io.ktor.http.*

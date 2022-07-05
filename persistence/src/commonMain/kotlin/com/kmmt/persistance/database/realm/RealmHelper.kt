@@ -15,8 +15,8 @@ import kotlin.jvm.JvmOverloads
 open class RealmHelper {
     val realm: Realm
 
-    constructor(emptyRealmObject: RealmObject) {
-        val config = RealmConfiguration.Builder(schema = setOf(emptyRealmObject::class))
+    constructor(realmObject: RealmObject) {
+        val config = RealmConfiguration.Builder(schema = setOf(realmObject::class))
             .build()
         realm = Realm.open(config)
     }

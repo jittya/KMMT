@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        KMMTApp.Companion().doInit(context: self)
+//        KMMTApp.Companion().doInit(context: self)
+        Injector.shared.doInitKoin(application: Application(uiApplication: application))
         return true
     }
 

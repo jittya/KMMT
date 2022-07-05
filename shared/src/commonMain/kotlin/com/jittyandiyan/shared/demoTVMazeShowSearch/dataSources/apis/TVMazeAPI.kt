@@ -1,7 +1,7 @@
 package com.jittyandiyan.shared.demoTVMazeShowSearch.dataSources.apis
 
-import com.kmmt.core.functional.Either
-import com.kmmt.core.functional.map
+import com.kmmt.common.functional.Either
+import com.kmmt.common.functional.map
 import com.kmmt.core.models.NetworkFailure
 import com.kmmt.core.network.BaseAPI
 import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TMDBResult

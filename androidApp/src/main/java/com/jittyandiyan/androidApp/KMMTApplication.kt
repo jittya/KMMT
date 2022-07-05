@@ -1,12 +1,12 @@
 package com.jittyandiyan.androidApp
 
 import android.app.Application
-import com.kmmt.core.KMMTApp
+import com.kmmt.injector.koin.Injector
 
 class KMMTApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        com.kmmt.core.KMMTApp.init(this)
+        Injector.initKoin(com.kmmt.common.expectations.Application(this))
     }
 }

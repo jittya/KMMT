@@ -1,9 +1,9 @@
 package com.kmmt.common.dependencyInjection
 
-import android.content.Context
+import com.kmmt.common.expectations.Application
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 object Android : KoinComponent {
-        val androidContext: Context by inject ()
+        val application: Application by inject ()
 }
