@@ -2,9 +2,10 @@ package com.kmmt.persistance.dataSources.breed
 
 import com.jittyandiyan.mobile.KMMTDB
 import com.kmmt.common.expectations.DispatcherDefault
-import com.kmmt.persistance.database.sqlite.SQLDelightHelper
-import com.kmmt.persistance.database.sqlite.extensions.transactionWithContext
-import com.kmmt.persistance.database.sqlite.mapToBreed
+import com.kmmt.models.demo.domain.Breed
+import com.kmmt.persistance.storage.sqlite.SQLDelightHelper
+import com.kmmt.persistance.storage.sqlite.extensions.transactionWithContext
+import com.kmmt.persistance.storage.sqlite.mapToBreed
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map

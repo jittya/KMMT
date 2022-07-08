@@ -2,8 +2,8 @@ package com.kmmt.core.architecture.usecase
 
 import com.kmmt.core.architecture.presenter.async.Async
 import com.kmmt.common.functional.Either
-import com.kmmt.core.models.Failure
-import io.ktor.utils.io.*
+import com.kmmt.common.models.Failure
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.Flow

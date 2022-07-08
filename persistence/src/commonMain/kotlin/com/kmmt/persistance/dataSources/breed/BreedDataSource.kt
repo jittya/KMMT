@@ -1,5 +1,6 @@
 package com.kmmt.persistance.dataSources.breed
 
+import com.kmmt.models.demo.domain.Breed
 import kotlinx.coroutines.flow.Flow
 
 interface BreedDataSource {

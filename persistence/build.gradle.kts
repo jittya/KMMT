@@ -32,6 +32,7 @@ kotlin {
                 api(Dependencies.KMM.Realm.LibraryBase)
                 api(Dependencies.KMM.Settings.common)
                 api(project(":common"))
+                api(project(":models"))
             }
         }
         val commonTest by getting {

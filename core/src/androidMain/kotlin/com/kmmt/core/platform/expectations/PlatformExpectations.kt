@@ -1,7 +1,7 @@
 package com.kmmt.core.platform.expectations
 
 import android.os.Bundle
-import com.kmmt.core.models.BundleValues
+import com.kmmt.core.bundle.BundleValues
 
 
 actual class BundleParcel(val bundle: Bundle) {

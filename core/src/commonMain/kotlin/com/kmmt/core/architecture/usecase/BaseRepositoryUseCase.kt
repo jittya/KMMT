@@ -3,7 +3,7 @@ package com.kmmt.core.architecture.usecase
 import com.kmmt.core.architecture.repository.BaseRepository
 import com.kmmt.core.architecture.presenter.async.Async
 import com.kmmt.common.functional.Either
-import com.kmmt.core.models.Failure
+import com.kmmt.common.models.Failure
 
 open class BaseRepositoryUseCase<in InputParamsType, ReturnType>(
     private val repository: BaseRepository<InputParamsType, ReturnType>,

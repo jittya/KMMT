@@ -7,86 +7,80 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		8777C9F6889E59EFFD631D80AEE9048B /* shared */ = {
+		89EE285ACCA59DB13DF35EFEC8CC8C3E /* presenter */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 4A85E56EFB3170251B1CB14EB8485EF5 /* Build configuration list for PBXAggregateTarget "shared" */;
+			buildConfigurationList = 17A8C5F452F9533EC51D74A0AC5C1483 /* Build configuration list for PBXAggregateTarget "presenter" */;
 			buildPhases = (
-				179B9B8F4A300C109F0453B82420AE1B /* [CP-User] Build shared */,
+				B44C1416AB01B9699ABA3EB735E283F4 /* [CP-User] Build presenter */,
 			);
 			dependencies = (
 			);
-			name = shared;
+			name = presenter;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		3F8FDD572C50E21238859330D78D9F8E /* Pods-KMMTApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA47A1CB7C6E5EEE1EBB37BFF7D5AE11 /* Pods-KMMTApp-dummy.m */; };
-		49E02BB426A2278A71D32DA59CCAE1AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		EE6EAF9B2567696482EC5D9B2736C1D6 /* Pods-KMMTApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5269077A420091E9F6436A855B3A6925 /* Pods-KMMTApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18B2758BA714E296BDB7277DF73AB0FA /* Pods-KMMTApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA47A1CB7C6E5EEE1EBB37BFF7D5AE11 /* Pods-KMMTApp-dummy.m */; };
+		E6B12D13C664F674D3751EA86BDD3F2C /* Pods-KMMTApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5269077A420091E9F6436A855B3A6925 /* Pods-KMMTApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FCBE40F250594094075F5DFD1C3791CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		70ABD65D6EEAC47BF7A702A34EB937F5 /* PBXContainerItemProxy */ = {
+		F565A7F8F7245720C854CB3716083E42 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8777C9F6889E59EFFD631D80AEE9048B;
-			remoteInfo = shared;
+			remoteGlobalIDString = 89EE285ACCA59DB13DF35EFEC8CC8C3E;
+			remoteInfo = presenter;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		246E11135DE261D7605EBA51568783B7 /* presenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = presenter.release.xcconfig; sourceTree = "<group>"; };
 		2775B4C9F8118660A418E49CA83DCE24 /* Pods-KMMTApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KMMTApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		2FDAA74CA4D0B3799547ADEAC5795354 /* shared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = shared.debug.xcconfig; sourceTree = "<group>"; };
+		4303970D46C1C398C949CA7C1F163E37 /* presenter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = presenter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		47589291953D9185284332921CF00E77 /* Pods-KMMTApp */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-KMMTApp"; path = Pods_KMMTApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5269077A420091E9F6436A855B3A6925 /* Pods-KMMTApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KMMTApp-umbrella.h"; sourceTree = "<group>"; };
 		6E1F64298379DD7525F7B6587967C7E7 /* Pods-KMMTApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KMMTApp-Info.plist"; sourceTree = "<group>"; };
-		7042A76BC31ADD53E49E9AD664CC47D8 /* shared.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = shared.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		92DC74A629420A4B20586B3E3BB4FBCD /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = build/cocoapods/framework/shared.framework; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BCCCD41E15D04B200AFD80B991F30F2B /* Pods-KMMTApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KMMTApp.release.xcconfig"; sourceTree = "<group>"; };
-		BD3829696BEBDC127FF3E34F9DBE9958 /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = build/cocoapods/framework/shared.framework; sourceTree = "<group>"; };
+		C2B7A2B83B1B814B915876270313C375 /* presenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = presenter.debug.xcconfig; sourceTree = "<group>"; };
 		DA47A1CB7C6E5EEE1EBB37BFF7D5AE11 /* Pods-KMMTApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KMMTApp-dummy.m"; sourceTree = "<group>"; };
 		DD6A4AF6357B22E569A56BC7B6B922A0 /* Pods-KMMTApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KMMTApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E6E02A3D2C13086FDFC64F247BBF8288 /* Pods-KMMTApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-KMMTApp.modulemap"; sourceTree = "<group>"; };
-		F55739539C9E2EE210DC8972B6B1F36B /* shared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = shared.release.xcconfig; sourceTree = "<group>"; };
 		FD3D458BAD7585EA2D39ACBF4D178A7F /* Pods-KMMTApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KMMTApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E8C460392BF2BABE33090F4E2264BFD3 /* Frameworks */ = {
+		2FE5D5A78381416090329DDF1784A24C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E02BB426A2278A71D32DA59CCAE1AB /* Foundation.framework in Frameworks */,
+				FCBE40F250594094075F5DFD1C3791CB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0059E112DBCAF91F122854C9466FA18E /* Pod */ = {
+		092E22055952F11B86D10C331B11486E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7042A76BC31ADD53E49E9AD664CC47D8 /* shared.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		313FE5FE915A4A924C55AAC02A910D61 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				59E40E4761FE134D537B9B0DD634874E /* shared */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		4D14DE247617E60FC8019C4FF946C0D1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BD3829696BEBDC127FF3E34F9DBE9958 /* shared.framework */,
+				92DC74A629420A4B20586B3E3BB4FBCD /* shared.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		16797203FB0D18448DEFBF68602D19A5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C2B7A2B83B1B814B915876270313C375 /* presenter.debug.xcconfig */,
+				246E11135DE261D7605EBA51568783B7 /* presenter.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../iOS_App/Pods/Target Support Files/presenter";
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -95,17 +89,6 @@
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		59E40E4761FE134D537B9B0DD634874E /* shared */ = {
-			isa = PBXGroup;
-			children = (
-				4D14DE247617E60FC8019C4FF946C0D1 /* Frameworks */,
-				0059E112DBCAF91F122854C9466FA18E /* Pod */,
-				87388D8DE5DCF8A8763A1FED5DCCCF7E /* Support Files */,
-			);
-			name = shared;
-			path = ../../shared;
 			sourceTree = "<group>";
 		};
 		5DF266E93EAF4C748B853F1911A05171 /* Pods-KMMTApp */ = {
@@ -132,21 +115,30 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		87388D8DE5DCF8A8763A1FED5DCCCF7E /* Support Files */ = {
+		8E4406FE105AF96FE6118E78784C795E /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				2FDAA74CA4D0B3799547ADEAC5795354 /* shared.debug.xcconfig */,
-				F55739539C9E2EE210DC8972B6B1F36B /* shared.release.xcconfig */,
+				4303970D46C1C398C949CA7C1F163E37 /* presenter.podspec */,
 			);
-			name = "Support Files";
-			path = "../iOS_App/Pods/Target Support Files/shared";
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		A14AACE7F9988FC3038090AC1EF5221E /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				092E22055952F11B86D10C331B11486E /* Frameworks */,
+				8E4406FE105AF96FE6118E78784C795E /* Pod */,
+				16797203FB0D18448DEFBF68602D19A5 /* Support Files */,
+			);
+			name = presenter;
+			path = ../../presenter;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				313FE5FE915A4A924C55AAC02A910D61 /* Development Pods */,
+				EFF797663652488BB44E73CC323A70EE /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				D419F75BD82019F1B2E511040DDCDF48 /* Products */,
 				5E788CDC94AB11DAAB98134AE991BC07 /* Targets Support Files */,
@@ -169,14 +161,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		EFF797663652488BB44E73CC323A70EE /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A14AACE7F9988FC3038090AC1EF5221E /* presenter */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		11CAE8B92C5CB6F8E0E7CB8BAFED7276 /* Headers */ = {
+		A3CF9CDE0AD4EFCC8C503435E540E14D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE6EAF9B2567696482EC5D9B2736C1D6 /* Pods-KMMTApp-umbrella.h in Headers */,
+				E6B12D13C664F674D3751EA86BDD3F2C /* Pods-KMMTApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,17 +185,17 @@
 /* Begin PBXNativeTarget section */
 		D291D286BACF60F16A1BC8D9A959AD66 /* Pods-KMMTApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A71A9C5A0EEB99DE461A93BBAF9FD71 /* Build configuration list for PBXNativeTarget "Pods-KMMTApp" */;
+			buildConfigurationList = BF763C69C90C3409A1EE5AD24BBFB7E0 /* Build configuration list for PBXNativeTarget "Pods-KMMTApp" */;
 			buildPhases = (
-				11CAE8B92C5CB6F8E0E7CB8BAFED7276 /* Headers */,
-				55C089B69FA3527F53E147C6C6908749 /* Sources */,
-				E8C460392BF2BABE33090F4E2264BFD3 /* Frameworks */,
-				7C04E0259449C7B406E802D2B1BFB1E6 /* Resources */,
+				A3CF9CDE0AD4EFCC8C503435E540E14D /* Headers */,
+				82ED488487B64C2289E54E7066813006 /* Sources */,
+				2FE5D5A78381416090329DDF1784A24C /* Frameworks */,
+				69028793DB6F18874F32AFF82D3E47C9 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6716CD2370275BDFE35310DF9E6CA31F /* PBXTargetDependency */,
+				A8C0F2262349948BDD5B28E614A4C595 /* PBXTargetDependency */,
 			);
 			name = "Pods-KMMTApp";
 			productName = Pods_KMMTApp;
@@ -225,13 +225,13 @@
 			projectRoot = "";
 			targets = (
 				D291D286BACF60F16A1BC8D9A959AD66 /* Pods-KMMTApp */,
-				8777C9F6889E59EFFD631D80AEE9048B /* shared */,
+				89EE285ACCA59DB13DF35EFEC8CC8C3E /* presenter */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7C04E0259449C7B406E802D2B1BFB1E6 /* Resources */ = {
+		69028793DB6F18874F32AFF82D3E47C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -241,12 +241,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		179B9B8F4A300C109F0453B82420AE1B /* [CP-User] Build shared */ = {
+		B44C1416AB01B9699ABA3EB735E283F4 /* [CP-User] Build presenter */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			name = "[CP-User] Build shared";
+			name = "[CP-User] Build presenter";
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "                if [ \"YES\" = \"$COCOAPODS_SKIP_KOTLIN_BUILD\" ]; then\n                  echo \"Skipping Gradle build task invocation due to COCOAPODS_SKIP_KOTLIN_BUILD environment variable set to \"YES\"\"\n                  exit 0\n                fi\n                set -ev\n                REPO_ROOT=\"$PODS_TARGET_SRCROOT\"\n                \"$REPO_ROOT/../gradlew\" -p \"$REPO_ROOT\" $KOTLIN_PROJECT_PATH:syncFramework                     -Pkotlin.native.cocoapods.platform=$PLATFORM_NAME                     -Pkotlin.native.cocoapods.archs=\"$ARCHS\"                     -Pkotlin.native.cocoapods.configuration=\"$CONFIGURATION\"\n";
@@ -254,29 +254,47 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		55C089B69FA3527F53E147C6C6908749 /* Sources */ = {
+		82ED488487B64C2289E54E7066813006 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F8FDD572C50E21238859330D78D9F8E /* Pods-KMMTApp-dummy.m in Sources */,
+				18B2758BA714E296BDB7277DF73AB0FA /* Pods-KMMTApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6716CD2370275BDFE35310DF9E6CA31F /* PBXTargetDependency */ = {
+		A8C0F2262349948BDD5B28E614A4C595 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = shared;
-			target = 8777C9F6889E59EFFD631D80AEE9048B /* shared */;
-			targetProxy = 70ABD65D6EEAC47BF7A702A34EB937F5 /* PBXContainerItemProxy */;
+			name = presenter;
+			target = 89EE285ACCA59DB13DF35EFEC8CC8C3E /* presenter */;
+			targetProxy = F565A7F8F7245720C854CB3716083E42 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3066F7A489148C939EF53B3A8E6B8340 /* Debug */ = {
+		02E8B61AB106AC27DA1A1D2BD7CBA212 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FDAA74CA4D0B3799547ADEAC5795354 /* shared.debug.xcconfig */;
+			baseConfigurationReference = 246E11135DE261D7605EBA51568783B7 /* presenter.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		48A7841C13D223963FE47F91FE974EC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2B7A2B83B1B814B915876270313C375 /* presenter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,44 +308,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
-		};
-		4D53FD80D91D8D32D433CC3BC7AC1E65 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCCCD41E15D04B200AFD80B991F30F2B /* Pods-KMMTApp.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-KMMTApp/Pods-KMMTApp-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-KMMTApp/Pods-KMMTApp.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		593F10BFFA94DAC7D6E17FB8A7F32D72 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -391,9 +371,9 @@
 			};
 			name = Release;
 		};
-		6EA5720EBF25F4FC267E1073BCB1B30B /* Debug */ = {
+		9C221EC2F45EC81CF15E8788109CC664 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD6A4AF6357B22E569A56BC7B6B922A0 /* Pods-KMMTApp.debug.xcconfig */;
+			baseConfigurationReference = BCCCD41E15D04B200AFD80B991F30F2B /* Pods-KMMTApp.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -423,10 +403,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		A0374B8CF9A7D6A45F6D116D698D1C19 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -494,32 +475,51 @@
 			};
 			name = Debug;
 		};
-		CB19B582990BFAF5DB94DC6DB89853A9 /* Release */ = {
+		E3F8AF6EA8DA9EBFEA5C3B953CFA2EAF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F55739539C9E2EE210DC8972B6B1F36B /* shared.release.xcconfig */;
+			baseConfigurationReference = DD6A4AF6357B22E569A56BC7B6B922A0 /* Pods-KMMTApp.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-KMMTApp/Pods-KMMTApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KMMTApp/Pods-KMMTApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1A71A9C5A0EEB99DE461A93BBAF9FD71 /* Build configuration list for PBXNativeTarget "Pods-KMMTApp" */ = {
+		17A8C5F452F9533EC51D74A0AC5C1483 /* Build configuration list for PBXAggregateTarget "presenter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6EA5720EBF25F4FC267E1073BCB1B30B /* Debug */,
-				4D53FD80D91D8D32D433CC3BC7AC1E65 /* Release */,
+				48A7841C13D223963FE47F91FE974EC6 /* Debug */,
+				02E8B61AB106AC27DA1A1D2BD7CBA212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -533,11 +533,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A85E56EFB3170251B1CB14EB8485EF5 /* Build configuration list for PBXAggregateTarget "shared" */ = {
+		BF763C69C90C3409A1EE5AD24BBFB7E0 /* Build configuration list for PBXNativeTarget "Pods-KMMTApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3066F7A489148C939EF53B3A8E6B8340 /* Debug */,
-				CB19B582990BFAF5DB94DC6DB89853A9 /* Release */,
+				E3F8AF6EA8DA9EBFEA5C3B953CFA2EAF /* Debug */,
+				9C221EC2F45EC81CF15E8788109CC664 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

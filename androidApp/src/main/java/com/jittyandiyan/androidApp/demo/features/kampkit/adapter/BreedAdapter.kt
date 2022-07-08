@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.jittyandiyan.androidApp.databinding.ItemBreedBinding
-import com.kmmt.persistance.dataSources.breed.Breed
+import com.kmmt.models.demo.domain.Breed
 import kotlin.reflect.KFunction1
 
 class BreedAdapter : ListAdapter<Breed, BreedViewHolder>(postCallback) {

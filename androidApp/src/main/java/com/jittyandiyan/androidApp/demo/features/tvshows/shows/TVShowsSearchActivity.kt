@@ -9,7 +9,7 @@ import com.jittyandiyan.androidApp.demo.features.tvshows.shows.adapter.TVShowsAd
 import com.kmmt.core.architecture.view.KMMActivity
 import com.jittyandiyan.shared.demoTVMazeShowSearch.features.tvshows.TVShowsSearchPresenter
 import com.jittyandiyan.shared.demoTVMazeShowSearch.features.tvshows.TVShowsSearchView
-import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TVShowInfo
+import com.kmmt.models.demotvshowsearch.domain.TVShowInfo
 import kotlin.reflect.KFunction1
 
 class TVShowsSearchActivity : KMMActivity<TVShowsSearchPresenter, ActivityTvshowsBinding>(),

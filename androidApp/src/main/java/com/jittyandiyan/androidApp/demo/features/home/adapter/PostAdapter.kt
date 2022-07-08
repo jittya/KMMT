@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.jittyandiyan.androidApp.databinding.PostAdapterItemBinding
-import com.jittyandiyan.shared.demo.models.PostModel
+import com.kmmt.models.demo.domain.PostModel
 
 class PostAdapter : ListAdapter<PostModel, PostViewHolder>(postCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {

@@ -11,8 +11,11 @@ rootProject.name = "KMMT"
 
 
 include(":androidApp")
-include(":shared")
+include(":presenter")
 include(":core")
 include(":persistence")
 include(":injector")
 include(":common")
+include(":network")
+include(":models")
+include(":domain")

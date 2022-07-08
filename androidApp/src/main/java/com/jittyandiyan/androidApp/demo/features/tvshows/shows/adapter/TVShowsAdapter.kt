@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.jittyandiyan.androidApp.databinding.TvshowAdapterItemBinding
-import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TVShowInfo
+import com.kmmt.models.demotvshowsearch.domain.TVShowInfo
 
 class TVShowsAdapter : ListAdapter<TVShowInfo, TVShowViewHolder>(postCallback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TVShowViewHolder {

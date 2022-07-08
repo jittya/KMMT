@@ -7,7 +7,7 @@ import com.kmmt.core.architecture.presenter.async.Async
 import com.kmmt.core.architecture.presenter.viewState.ViewState
 import com.kmmt.core.liveData.LiveDataObservable
 import com.kmmt.core.liveData.lifecycle.LiveDataLifecycle
-import com.kmmt.core.models.BundleValues
+import com.kmmt.core.bundle.BundleValues
 import com.kmmt.core.platform.expectations.BundleParcel
 import kotlin.collections.set
 

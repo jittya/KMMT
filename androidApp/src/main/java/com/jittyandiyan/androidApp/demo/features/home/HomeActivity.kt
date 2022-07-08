@@ -8,7 +8,7 @@ import com.jittyandiyan.androidApp.demo.features.kampkit.BreedActivity
 import com.kmmt.core.architecture.view.KMMActivity
 import com.jittyandiyan.shared.demo.features.home.HomeView
 import com.jittyandiyan.shared.demo.features.home.HomePresenter
-import com.jittyandiyan.shared.demo.models.PostModel
+import com.kmmt.models.demo.domain.PostModel
 import kotlin.reflect.KFunction0
 
 class HomeActivity : KMMActivity<HomePresenter, ActivityHomeBinding>(), HomeView {

@@ -7,7 +7,7 @@ import com.jittyandiyan.androidApp.demo.features.kampkit.adapter.BreedAdapter
 import com.jittyandiyan.shared.demo.features.kampkit.BreedPresenter
 import com.jittyandiyan.shared.demo.features.kampkit.BreedView
 import com.kmmt.core.architecture.view.KMMActivity
-import com.kmmt.persistance.dataSources.breed.Breed
+import com.kmmt.models.demo.domain.Breed
 import kotlin.reflect.KFunction1
 
 class BreedActivity : KMMActivity<BreedPresenter, ActivityKampKitBinding>(), BreedView {

@@ -2,7 +2,6 @@ plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
     id("com.android.library")
-    id("kotlinx-serialization")
 }
 
 group = AppConfig.group
@@ -30,10 +29,7 @@ kotlin {
                 api(project(":persistence"))
                 api(project(":common"))
                 implementation(Dependencies.KMM.Klock.common)
-                implementation(Dependencies.KMM.Ktor.Client.Core)
-                implementation(Dependencies.KMM.Ktor.Client.commonLogging)
-                implementation(Dependencies.KMM.Ktor.Client.commonSerialization)
-                implementation(Dependencies.KMM.Ktor.Client.contentNegotiation)
+
             }
         }
         val commonTest by getting {
@@ -44,7 +40,6 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation(Dependencies.Android.google_android_material_Material)
-                implementation(Dependencies.KMM.Ktor.Client.androidOKHttp)
                 implementation(Dependencies.KMM.Coroutines.Android)
                 implementation(Dependencies.KMM.Koin.Android)
             }
@@ -59,7 +54,6 @@ kotlin {
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
             dependencies {
-                implementation(Dependencies.KMM.Ktor.Client.ios)
             }
         }
         val iosX64Test by getting

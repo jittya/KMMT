@@ -3,7 +3,7 @@ package com.jittyandiyan.androidApp.demo.features.kampkit.adapter
 import androidx.recyclerview.widget.RecyclerView
 import com.jittyandiyan.androidApp.R
 import com.jittyandiyan.androidApp.databinding.ItemBreedBinding
-import com.kmmt.persistance.dataSources.breed.Breed
+import com.kmmt.models.demo.domain.Breed
 
 class BreedViewHolder(binding: ItemBreedBinding) : RecyclerView.ViewHolder(binding.root) {
     private val nameTextView = binding.breedNameTextView

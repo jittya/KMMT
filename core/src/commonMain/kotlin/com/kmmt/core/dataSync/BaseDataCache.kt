@@ -3,7 +3,7 @@ package com.kmmt.core.dataSync
 import com.kmmt.common.functional.Either
 import com.kmmt.persistance.keyValueStore.settings.getStoreValue
 import com.kmmt.persistance.keyValueStore.settings.storeValue
-import com.kmmt.core.models.Failure
+import com.kmmt.common.models.Failure
 import com.soywiz.klock.DateTime
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch

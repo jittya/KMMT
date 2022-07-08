@@ -3,7 +3,7 @@ package com.jittyandiyan.androidApp.demo.features.tvshows.shows.adapter
 import android.text.Html
 import androidx.recyclerview.widget.RecyclerView
 import com.jittyandiyan.androidApp.databinding.TvshowAdapterItemBinding
-import com.jittyandiyan.shared.demoTVMazeShowSearch.models.TVShowInfo
+import com.kmmt.models.demotvshowsearch.domain.TVShowInfo
 
 class TVShowViewHolder(binding: TvshowAdapterItemBinding) : RecyclerView.ViewHolder(binding.root) {
     private val showDescTV = binding.showDescTV
