@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/persistence" />
             <option value="$PROJECT_DIR$/presenter" />
+            <option value="$PROJECT_DIR$/resources" />
           </set>
         </option>
       </GradleProjectSettings>

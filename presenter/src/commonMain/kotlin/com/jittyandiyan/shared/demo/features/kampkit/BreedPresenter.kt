@@ -8,6 +8,8 @@ import com.kmmt.domain.demo.cache.BreedListCache
 import com.kmmt.common.platforms.runOnAndroid
 import com.kmmt.models.demo.domain.Breed
 import com.kmmt.persistance.dataSources.breed.BreedDataSource
+import com.kmmt.resources.Resources
+import com.kmmt.resources.expectations.localized
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
@@ -20,7 +22,7 @@ class BreedPresenter(view: BreedView, ) : BasePresenter<BreedView>(view),KoinCom
     override fun onStartPresenter() {
 
         runOnAndroid {
-            getView()?.setPageTitle("Breed List")
+            getView()?.setPageTitle(Resources.strings.breedList.localized())
         }
 
         breedListCache = BreedListCache(getBackgroundCoroutineScope(),breedDataSource)

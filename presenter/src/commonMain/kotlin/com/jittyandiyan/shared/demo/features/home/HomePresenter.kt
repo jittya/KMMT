@@ -4,6 +4,8 @@ import com.kmmt.core.architecture.presenter.BasePresenter
 import com.kmmt.models.demo.domain.UserModel
 import com.kmmt.common.platforms.runOnAndroid
 import com.kmmt.network.apis.JsonPlaceHolderServiceAPI
+import com.kmmt.resources.Resources
+import com.kmmt.resources.expectations.localized
 
 class HomePresenter(view: HomeView) : BasePresenter<HomeView>(view) {
 
@@ -14,7 +16,7 @@ class HomePresenter(view: HomeView) : BasePresenter<HomeView>(view) {
 
     override fun onStartPresenter() {
         runOnAndroid {
-            getView()?.setPageTitle("KMM : Home")
+            getView()?.setPageTitle(Resources.strings.kmmHome.localized())
         }
         getView()?.setKampKitPageButtonLabel("KampKit Demo")
         getView()?.setKampKitBtnClickAction(this::kampKitDemoBtnClicked)

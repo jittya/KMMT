@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- format: #RRGGBB[AA] or 0xRRGGBB[AA] or RRGGBB[AA] where [AA] - optional -->
+
+    <color name="backgroundLight">#FFFFFF</color>
+    <color name="backgroundDark">#111111</color>
+    <!--themed-->
+    <color name="background">
+        <light>@color/backgroundLight</light>
+        <dark>@color/backgroundDark</dark>
+    </color>
+
+</resources>

@@ -19,6 +19,7 @@
             const val kermit="1.1.3"
             const val DateTimeKotlinx = "0.4.0"
             const val klock = "2.4.13"
+            const val mokoVersion = "0.20.1"
         }
 
         //All Android libraries
@@ -28,6 +29,10 @@
             const val androidx_appcompat_version="1.2.0"
             const val androidx_constraintlayout_version="2.0.4"
             const val swipeRefresh = "1.1.0"
+            object Compose {
+                const val compose = "1.2.0-alpha03"
+                const val activity = "1.4.0"
+            }
         }
 
         //All iOS libraries

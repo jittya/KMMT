@@ -7,14 +7,16 @@ import com.kmmt.core.architecture.presenter.BasePresenter
 import com.kmmt.models.demo.domain.CredentialsModel
 import com.kmmt.models.demo.domain.UserModel
 import com.kmmt.network.apis.JsonPlaceHolderServiceAPI
+import com.kmmt.resources.Resources
+import com.kmmt.resources.expectations.localized
 
 
 class LoginPresenter(view: LoginView) : BasePresenter<LoginView>(view) {
     override fun onStartPresenter() {
         runOnAndroid {
-            getView()?.setPageTitle("KMM Login")
+            getView()?.setPageTitle(Resources.strings.kmmLogin.localized())
         }
-        getView()?.setLoginPageLabel("Login : ${Platform().platform}")
+        getView()?.setLoginPageLabel("${Resources.strings.login.localized()} : ${Platform().platform}")
         getView()?.setUsernameLabel("Enter Username")
         getView()?.setPasswordLabel("Enter Password")
         getView()?.setLoginButtonLabel("Login")

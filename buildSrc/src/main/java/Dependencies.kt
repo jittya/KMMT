@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.provideDelegate
+
 object Dependencies {
     //All multiplatform libraries
     object KMM {
@@ -68,6 +70,15 @@ object Dependencies {
         object Klock {
             const val common = "com.soywiz.korlibs.klock:klock:${Versions.Dependencies.KMM.klock}"
         }
+
+        object MOKO {
+            const val resources_generator =
+                "dev.icerock.moko:resources-generator:${Versions.Dependencies.KMM.mokoVersion}"
+            const val resources =
+                "dev.icerock.moko:resources:${Versions.Dependencies.KMM.mokoVersion}"
+            const val resources_compose =
+                "dev.icerock.moko:resources-compose:${Versions.Dependencies.KMM.mokoVersion}"
+        }
     }
 
     //All Android libraries
@@ -82,6 +93,14 @@ object Dependencies {
             "androidx.constraintlayout:constraintlayout:${Versions.Dependencies.Android.androidx_constraintlayout_version}"
         const val swipeRefresh =
             "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.Dependencies.Android.swipeRefresh}"
+        object Compose {
+           const val ui =  "androidx.compose.ui:ui:${Versions.Dependencies.Android.Compose.compose}"
+            val uiTooling = "androidx.compose.ui:ui-tooling:${Versions.Dependencies.Android.Compose.compose}"
+            val uiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.Dependencies.Android.Compose.compose}"
+            val material = "androidx.compose.material:material:${Versions.Dependencies.Android.Compose.compose}"
+            val activity = "androidx.activity:activity-compose:${Versions.Dependencies.Android.Compose.activity}"
+            val liveData = "androidx.compose.runtime:runtime-livedata:${Versions.Dependencies.Android.Compose.compose}"
+        }
     }
 
     //All iOS libraries

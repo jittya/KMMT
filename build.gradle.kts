@@ -10,6 +10,7 @@ buildscript {
         classpath(Plugins.kotlinSerializationGradlePlugin)
         classpath(Plugins.SQLDelightGradlePlugin)
         classpath(Plugins.RealmGradlePlugin)
+        classpath(Plugins.MokoResourceGenerator)
     }
 }
 

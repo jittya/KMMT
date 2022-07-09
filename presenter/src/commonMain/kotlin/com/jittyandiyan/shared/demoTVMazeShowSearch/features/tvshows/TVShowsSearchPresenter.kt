@@ -3,6 +3,8 @@ package com.jittyandiyan.shared.demoTVMazeShowSearch.features.tvshows
 import com.kmmt.domain.demotvshowsearch.repository.TVShowSearchRepositoryTVMazeAPI
 import com.kmmt.core.architecture.presenter.BasePresenter
 import com.kmmt.domain.demotvshowsearch.usecase.TVShowSearchRepoUseCase
+import com.kmmt.resources.Resources
+import com.kmmt.resources.expectations.localized
 
 class TVShowsSearchPresenter(
     view: TVShowsSearchView,
@@ -13,7 +15,7 @@ class TVShowsSearchPresenter(
 
 
     override fun onStartPresenter() {
-        getView()?.setPageTitle("TV Shows")
+        getView()?.setPageTitle(Resources.strings.tvShows.localized())
         getView()?.setSearchQueryChangeListener(this::searchTVShows)
     }
 

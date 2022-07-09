@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<resources>
+    <string name="testString">Test String</string>
+    <string name="login">Login</string>
+    <string name="kmmLogin">KMM Login</string>
+    <string name="kmmHome">KMM : Home</string>
+    <string name="breedList">Breed List</string>
+    <string name="tvShows">TV Shows</string>
+    <string name="codeChallenge">Code Challenge</string>
+</resources>

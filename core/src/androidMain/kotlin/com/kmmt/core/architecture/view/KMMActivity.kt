@@ -11,16 +11,17 @@ import com.kmmt.core.architecture.presenter.BasePresenter
 import com.kmmt.core.liveData.kLifecycle
 import com.kmmt.core.platform.expectations.BundleParcel
 
-abstract class KMMActivity<Presenter,UIViewBinding> : AppCompatActivity() where Presenter : BasePresenter<*>, UIViewBinding:ViewBinding {
+abstract class KMMActivity<Presenter, UIViewBinding> :
+    AppCompatActivity() where Presenter : BasePresenter<*>, UIViewBinding : ViewBinding {
 
     private lateinit var presenter: Presenter
     private var progressDialog: ProgressDialog? = null
-    lateinit var binding:UIViewBinding
+    lateinit var binding: UIViewBinding
 
     @SuppressLint("MissingSuperCall")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=viewBindingInflate()
+        binding = viewBindingInflate()
         presenter = initializePresenter()
         presenter.setLifeCycle(this.kLifecycle())
         intent.extras?.keySet()?.filterNotNull()?.forEach { key ->
@@ -44,11 +45,10 @@ abstract class KMMActivity<Presenter,UIViewBinding> : AppCompatActivity() where 
     }
 
     abstract fun initializePresenter(): Presenter
-    abstract fun viewBindingInflate():UIViewBinding
+    abstract fun viewBindingInflate(): UIViewBinding
 
-    fun setPageTitle(title: String)
-    {
-        this.title=title
+    fun setPageTitle(title: String) {
+        this.title = title
     }
 
     fun showPopUpMessage(message: String) {

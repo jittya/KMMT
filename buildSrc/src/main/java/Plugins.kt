@@ -9,6 +9,5 @@ object Plugins {
         "com.android.tools.build:gradle:${Versions.Project.Android_Gradle_Plugin_version}"
     const val RealmGradlePlugin =
         "io.realm.kotlin:gradle-plugin:${Versions.Project.Realm_Gradle_Plugin_version}"
-//    const val KoinGradlePlugin =
-//        "io.insert-koin:koin-gradle-plugin:${Versions.Dependencies.KMM.koinVersion}"
+    const val MokoResourceGenerator = Dependencies.KMM.MOKO.resources_generator
 }

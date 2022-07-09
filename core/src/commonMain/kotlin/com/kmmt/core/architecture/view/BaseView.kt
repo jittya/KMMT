@@ -1,5 +1,7 @@
 package com.kmmt.core.architecture.view
 
+import dev.icerock.moko.resources.StringResource
+
 
 interface BaseView{
     fun showPopUpMessage(message: String)
