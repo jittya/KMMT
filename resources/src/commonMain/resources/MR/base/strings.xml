@@ -8,4 +8,20 @@
     <string name="breedList">Breed List</string>
     <string name="tvShows">TV Shows</string>
     <string name="codeChallenge">Code Challenge</string>
+    <string name="kampKitDemo">KampKit Demo</string>
+    <string name="user">User</string>
+    <string name="enterUsername">Enter Username</string>
+    <string name="enterPassword">Enter Password</string>
+    <string name="authenticating">Authenticating...</string>
+    <string name="loginFailed">Login Failed</string>
+    <string name="pleaseEnterUsername">Please enter username</string>
+    <string name="validationFailed">Validation Failed</string>
+    <string name="usernameOrPasswordIsEmpty">Username or Password is empty</string>
+    <string name="codeChallengeTVShowSearch">Code Challenge : Search TV Shows
+
+        by
+
+        Jitty Andiyan</string>
+    <string name="searchTVShows">Search TV Shows</string>
+
 </resources>

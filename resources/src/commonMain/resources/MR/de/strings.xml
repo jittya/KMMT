@@ -8,4 +8,20 @@
     <string name="breedList">Liste der Rassen</string>
     <string name="tvShows">TV-Sendungen</string>
     <string name="codeChallenge">Code-Herausforderung</string>
+    <string name="kampKitDemo">KampKit Demo</string>
+    <string name="user">Benutzer</string>
+    <string name="enterUsername">Benutzername eingeben</string>
+    <string name="enterPassword">Passwort eingeben</string>
+    <string name="authenticating">Authentifizierung...</string>
+    <string name="loginFailed">Anmeldung fehlgeschlagen</string>
+    <string name="pleaseEnterUsername">Bitte Benutzernamen eingeben</string>
+    <string name="validationFailed">Validierung fehlgeschlagen</string>
+    <string name="usernameOrPasswordIsEmpty">Benutzername oder Passwort ist leer</string>
+    <string name="codeChallengeTVShowSearch">Code Challenge: TV-Sendungen suchen
+
+        von
+
+        Jitty Andiyan</string>
+    <string name="searchTVShows">TV-Sendungen suchen</string>
+
 </resources>

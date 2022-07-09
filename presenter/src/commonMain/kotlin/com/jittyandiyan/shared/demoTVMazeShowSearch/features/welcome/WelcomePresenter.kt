@@ -9,8 +9,8 @@ class WelcomePresenter(view: WelcomeView) : BasePresenter<WelcomeView>(view) {
     override fun onStartPresenter() {
 
         getView()?.setPageTitle(Resources.strings.codeChallenge.localized())
-        getView()?.setWelcomePageLabel("Code Challenge : Search TV Shows \n\nby\n\n Jitty Andiyan")
-        getView()?.setTVShowsButtonLabel("Search TV Shows")
+        getView()?.setWelcomePageLabel(Resources.strings.codeChallengeTVShowSearch.localized())
+        getView()?.setTVShowsButtonLabel(Resources.strings.searchTVShows.localized())
         getView()?.setTVShowsButtonClickAction(this::onLoginButtonClick)
     }
 

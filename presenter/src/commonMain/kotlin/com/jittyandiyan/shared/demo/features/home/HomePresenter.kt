@@ -18,11 +18,11 @@ class HomePresenter(view: HomeView) : BasePresenter<HomeView>(view) {
         runOnAndroid {
             getView()?.setPageTitle(Resources.strings.kmmHome.localized())
         }
-        getView()?.setKampKitPageButtonLabel("KampKit Demo")
+        getView()?.setKampKitPageButtonLabel(Resources.strings.kampKitDemo.localized())
         getView()?.setKampKitBtnClickAction(this::kampKitDemoBtnClicked)
         getBundleValue<String>(USER_NAME)?.let { username ->
             getBundleValue<UserModel>(USER_OBJECT)?.let { userModel ->
-                getView()?.showUsername(" User : " + userModel.firstname + " " + userModel.lastname)
+                getView()?.showUsername(" ${Resources.strings.user.localized()} : " + userModel.firstname + " " + userModel.lastname)
             }
             runOnBackgroundWithResult {
                 JsonPlaceHolderServiceAPI().getPosts(username)

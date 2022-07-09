@@ -17,14 +17,14 @@ class LoginPresenter(view: LoginView) : BasePresenter<LoginView>(view) {
             getView()?.setPageTitle(Resources.strings.kmmLogin.localized())
         }
         getView()?.setLoginPageLabel("${Resources.strings.login.localized()} : ${Platform().platform}")
-        getView()?.setUsernameLabel("Enter Username")
-        getView()?.setPasswordLabel("Enter Password")
-        getView()?.setLoginButtonLabel("Login")
+        getView()?.setUsernameLabel(Resources.strings.enterUsername.localized())
+        getView()?.setPasswordLabel(Resources.strings.enterPassword.localized())
+        getView()?.setLoginButtonLabel(Resources.strings.login.localized())
         getView()?.setLoginButtonClickAction(this::onLoginButtonClick)
     }
 
     private fun onLoginButtonClick() {
-        getView()?.showLoading("authenticating...")
+        getView()?.showLoading(Resources.strings.authenticating.localized())
         val username = getView()?.getEnteredUsername()
         val password = getView()?.getEnteredPassword()
         checkValidation(username, password)
@@ -53,7 +53,7 @@ class LoginPresenter(view: LoginView) : BasePresenter<LoginView>(view) {
                         getView()?.navigateToHomePage(bundle)
                     } else {
                         getView()?.showPopUpMessage(
-                            "Login Failed"
+                            Resources.strings.loginFailed.localized()
                         )
                     }
                 })
@@ -61,9 +61,9 @@ class LoginPresenter(view: LoginView) : BasePresenter<LoginView>(view) {
             }
         } else {
             if (username.isNullOrBlank()) {
-                getView()?.showErrorMessageOnUsername("Please enter username")
+                getView()?.showErrorMessageOnUsername(Resources.strings.pleaseEnterUsername.localized())
             }
-            getView()?.showPopUpMessage("Validation Failed", "Username or Password is empty")
+            getView()?.showPopUpMessage(Resources.strings.validationFailed.localized(), Resources.strings.usernameOrPasswordIsEmpty.localized())
         }
     }
 }
