@@ -11,12 +11,24 @@ import shared
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let appInfo = AppInfo(
+        deviceID: "DeviceID",
+        deviceName: "DeviceName",
+        deviceModel: "test",
+        IP: "IP",
+        OS: "IOS",
+        OSVersion: "deviceOsVersion",
+        appID: "BuildConfig.APPLICATION_ID",
+        appVersion: "123",
+        appVersionCode: "123",
+        appBuildType: "BuildConfig.BUILD_TYPE",
+        appBuildFlavor: "BuildConfig.FLAVOR"
+    )
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 //        KMMTApp.Companion().doInit(context: self)
-        Injector.shared.doInitKoin(application: Application(uiApplication: application))
+        Injector.shared.doInitKoin(application: Application(uiApplication: application),appInfo: appInfo)
         return true
     }
 

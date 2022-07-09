@@ -1,12 +1,12 @@
 package com.kmmt.core.dataSync
 
 import com.kmmt.common.functional.Either
+import com.kmmt.common.models.Failure
 import com.kmmt.persistance.keyValueStore.settings.getStoreValue
 import com.kmmt.persistance.keyValueStore.settings.storeValue
-import com.kmmt.common.models.Failure
-import com.soywiz.klock.DateTime
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import kotlinx.datetime.Clock
 
 abstract class BaseDataCache<in RequestParamType, DataType>(
     private val backgroundCoroutineScope: CoroutineScope,
@@ -31,7 +31,7 @@ abstract class BaseDataCache<in RequestParamType, DataType>(
                         saveData(it).either({
                             resultFunction.invoke(Either.Failure(it))
                         }, {
-                            storeValue { putLong(SYNC_KEY, DateTime.nowLocal().local.unixMillisLong) }
+                            storeValue { putLong(SYNC_KEY, Clock.System.now().toEpochMilliseconds()) }
                             resultFunction.invoke(Either.Success(it))
                         })
                     }
@@ -44,7 +44,7 @@ abstract class BaseDataCache<in RequestParamType, DataType>(
         val lastSyncTime = getStoreValue<Long>(SYNC_KEY)
         if (lastSyncTime != null) {
             val oneHourMS = 30 * 1000
-            return ((lastSyncTime + oneHourMS) < DateTime.nowLocal().local.unixMillisLong)
+            return ((lastSyncTime + oneHourMS) < Clock.System.now().toEpochMilliseconds())
         } else {
             return true
         }

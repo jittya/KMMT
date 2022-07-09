@@ -50,7 +50,8 @@ object Dependencies {
         }
 
         object Realm {
-            const val LibraryBase = "io.realm.kotlin:library-base:${Versions.Dependencies.KMM.realmVersion}"
+            const val LibraryBase =
+                "io.realm.kotlin:library-base:${Versions.Dependencies.KMM.realmVersion}"
         }
 
         object Settings {
@@ -65,10 +66,6 @@ object Dependencies {
         object DateTimeKotlin {
             const val common =
                 "org.jetbrains.kotlinx:kotlinx-datetime:${Versions.Dependencies.KMM.DateTimeKotlinx}"
-        }
-
-        object Klock {
-            const val common = "com.soywiz.korlibs.klock:klock:${Versions.Dependencies.KMM.klock}"
         }
 
         object MOKO {
@@ -93,13 +90,25 @@ object Dependencies {
             "androidx.constraintlayout:constraintlayout:${Versions.Dependencies.Android.androidx_constraintlayout_version}"
         const val swipeRefresh =
             "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.Dependencies.Android.swipeRefresh}"
+
         object Compose {
-           const val ui =  "androidx.compose.ui:ui:${Versions.Dependencies.Android.Compose.compose}"
-            val uiTooling = "androidx.compose.ui:ui-tooling:${Versions.Dependencies.Android.Compose.compose}"
-            val uiToolingPreview = "androidx.compose.ui:ui-tooling-preview:${Versions.Dependencies.Android.Compose.compose}"
-            val material = "androidx.compose.material:material:${Versions.Dependencies.Android.Compose.compose}"
-            val activity = "androidx.activity:activity-compose:${Versions.Dependencies.Android.Compose.activity}"
-            val liveData = "androidx.compose.runtime:runtime-livedata:${Versions.Dependencies.Android.Compose.compose}"
+            const val ui = "androidx.compose.ui:ui:${Versions.Dependencies.Android.Compose.compose}"
+            val uiTooling =
+                "androidx.compose.ui:ui-tooling:${Versions.Dependencies.Android.Compose.compose}"
+            val uiToolingPreview =
+                "androidx.compose.ui:ui-tooling-preview:${Versions.Dependencies.Android.Compose.compose}"
+            val material =
+                "androidx.compose.material:material:${Versions.Dependencies.Android.Compose.compose}"
+            val activity =
+                "androidx.activity:activity-compose:${Versions.Dependencies.Android.Compose.activity}"
+            val liveData =
+                "androidx.compose.runtime:runtime-livedata:${Versions.Dependencies.Android.Compose.compose}"
+        }
+
+        object Analvtics {
+            const val mixpanel =
+                "com.mixpanel.android:mixpanel-android:${Versions.Dependencies.Android.Analytics.mixpanel}"
+            const val uxcam = "com.uxcam:uxcam:${Versions.Dependencies.Android.Analytics.uxcam}"
         }
     }
 

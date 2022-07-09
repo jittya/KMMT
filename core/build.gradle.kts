@@ -28,7 +28,7 @@ kotlin {
             dependencies {
                 api(project(":persistence"))
                 api(project(":common"))
-                implementation(Dependencies.KMM.Klock.common)
+                implementation(Dependencies.KMM.DateTimeKotlin.common)
                 api(Dependencies.KMM.MOKO.resources)
 
             }

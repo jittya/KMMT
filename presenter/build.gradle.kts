@@ -29,6 +29,13 @@ kotlin {
             export(project(":models"))
             export(project(":domain"))
             export(project(":resources"))
+            export(project(":analytics"))
+        }
+        pod("Mixpanel") {
+            version = Versions.Dependencies.iOS.Analytics.mixpanel
+        }
+        pod("UXCam") {
+            version = Versions.Dependencies.iOS.Analytics.uxcam
         }
     }
 
@@ -43,6 +50,7 @@ kotlin {
                 api(project(":models"))
                 api(project(":domain"))
                 api(project(":resources"))
+                api(project(":analytics"))
             }
         }
         val commonTest by getting {

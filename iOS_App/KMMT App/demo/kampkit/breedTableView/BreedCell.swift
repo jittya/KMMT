@@ -9,7 +9,7 @@
 import UIKit
 import shared
 
-protocol BreedCellDelegate: class {
+protocol BreedCellDelegate: AnyObject {
     func toggleFavorite(_ breed: Breed)
 }
 

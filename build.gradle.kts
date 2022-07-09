@@ -21,5 +21,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven(url = "https://sdk.uxcam.com/android/")
     }
 }
