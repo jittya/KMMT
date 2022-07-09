@@ -29,7 +29,7 @@ class WelcomeViewController: KMMUIViewController ,WelcomeView {
     }
     
     func setTVShowsButtonClickAction(onLoginClick: @escaping () -> KotlinUnit) {
-        welcomeBtn.setClickAction(action: onLoginClick)
+        welcomeBtn.addActionOnPress(handler: onLoginClick)
     }
     
     func setTVShowsButtonLabel(tvShowsBtnLbl: String) {

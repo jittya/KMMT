@@ -50,7 +50,7 @@ class LoginViewController: KMMUIViewController ,LoginView {
     }
     
     func setLoginButtonClickAction(onLoginClick: @escaping () -> KotlinUnit) {
-        loginBtn.setClickAction(action: onLoginClick)
+        loginBtn.addActionOnPress(handler: onLoginClick)
     }
     
     func setLoginButtonLabel(loginLabel: String) {

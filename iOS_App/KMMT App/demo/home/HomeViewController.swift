@@ -16,7 +16,7 @@ class HomeViewController: KMMUIViewController,HomeView  {
     }
     
     func setKampKitBtnClickAction(btnClickAction: @escaping () -> KotlinUnit) {
-        kampKitDemoBtn.setClickAction(action: btnClickAction)
+        kampKitDemoBtn.addActionOnPress(handler: btnClickAction)
     }
     
     func setKampKitPageButtonLabel(btnLabel: String) {

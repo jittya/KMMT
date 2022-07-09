@@ -31,7 +31,7 @@ class TVShowsViewController: KMMUIViewController,TVShowsSearchView  {
     }
     
     func setSearchQueryChangeListener(onSearchQueryStringChanged: @escaping (String) -> KotlinUnit) {
-        searchTF.addTextChangedListener(action: onSearchQueryStringChanged)
+        searchTF.onTextChanged(handler: onSearchQueryStringChanged)
     }
     
     func showTVShowsList(tvShowList: [TVShowInfo]) {
