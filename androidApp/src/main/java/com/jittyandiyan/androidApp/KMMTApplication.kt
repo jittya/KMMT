@@ -4,6 +4,9 @@ import android.app.Application
 import android.os.Build
 import android.provider.Settings
 import com.kmmt.analytics.core.AppInfo
+import com.kmmt.analytics.core.BuildType
+import com.kmmt.analytics.event.log.events.EventAppOpened
+import com.kmmt.analytics.event.log.logEvent
 import com.kmmt.injector.koin.Injector
 
 class KMMTApplication : Application() {
@@ -12,6 +15,8 @@ class KMMTApplication : Application() {
         super.onCreate()
 
         Injector.initKoin(com.kmmt.common.expectations.Application(this),getAppInfo())
+
+        EventAppOpened().logEvent()
     }
 
     private fun getAppInfo(): AppInfo {
@@ -57,7 +62,7 @@ class KMMTApplication : Application() {
             BuildConfig.APPLICATION_ID,
             BuildConfig.VERSION_NAME,
             BuildConfig.VERSION_CODE.toString(),
-            BuildConfig.BUILD_TYPE,
+            if (BuildConfig.BUILD_TYPE == "release") BuildType.RELEASE else BuildType.DEBUG,
             BuildConfig.BUILD_TYPE
         )
     }

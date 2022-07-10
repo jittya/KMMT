@@ -11,6 +11,15 @@ data class AppInfo(
     val appID: String,
     val appVersion: String,
     val appVersionCode: String,
-    val appBuildType: String,
+    val appBuildType: BuildType,
     val appBuildFlavor: String
-)
+) {
+    fun isRelease(): Boolean {
+        return appBuildType == BuildType.RELEASE
+    }
+}
+
+enum class BuildType(buildType:String){
+    DEBUG("debug"),
+    RELEASE("release")
+}

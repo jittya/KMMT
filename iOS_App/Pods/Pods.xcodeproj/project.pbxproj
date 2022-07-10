@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -16,7 +16,6 @@
 			dependencies = (
 			);
 			name = UXCam;
-			productName = UXCam;
 		};
 		89EE285ACCA59DB13DF35EFEC8CC8C3E /* presenter */ = {
 			isa = PBXAggregateTarget;
@@ -29,7 +28,6 @@
 				496721729B112B23925D3A2FB27AB8EB /* PBXTargetDependency */,
 			);
 			name = presenter;
-			productName = presenter;
 		};
 /* End PBXAggregateTarget section */
 
@@ -126,7 +124,7 @@
 		171182F1DDB978FE44C136E7D6F441DC /* MPDB.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPDB.m; path = Sources/MPDB.m; sourceTree = "<group>"; };
 		1727A7EAC2A4914BFF4160EE9B5B8C5A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		1A4950F44CEBA54CC96ABC9CD4D1EB39 /* AutomaticEvents.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AutomaticEvents.m; path = Sources/AutomaticEvents.m; sourceTree = "<group>"; };
-		1C230361F74CF7214D3D9A1CB61B5FF9 /* Mixpanel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mixpanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C230361F74CF7214D3D9A1CB61B5FF9 /* Mixpanel */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Mixpanel; path = Mixpanel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD9999A436D1475E1505FB984E756C4 /* Mixpanel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mixpanel-umbrella.h"; sourceTree = "<group>"; };
 		22119EFD232C3413E88A448134B46804 /* Pods-KMMTApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KMMTApp.debug.xcconfig"; sourceTree = "<group>"; };
 		246E11135DE261D7605EBA51568783B7 /* presenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = presenter.release.xcconfig; sourceTree = "<group>"; };
@@ -136,7 +134,7 @@
 		32B5A3354DC31611D5B93495D113EBFA /* Pods-KMMTApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KMMTApp-umbrella.h"; sourceTree = "<group>"; };
 		41700AB808EB13AABCE2FC58E1DEBDFC /* UXCam-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "UXCam-xcframeworks.sh"; sourceTree = "<group>"; };
 		42BFAF6F70AF7D6F2A1099C38740C394 /* Mixpanel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Mixpanel-dummy.m"; sourceTree = "<group>"; };
-		4303970D46C1C398C949CA7C1F163E37 /* presenter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = presenter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4303970D46C1C398C949CA7C1F163E37 /* presenter.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = presenter.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		436DED0F33382F20FE9E3F98DD596287 /* Pods-KMMTApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KMMTApp-frameworks.sh"; sourceTree = "<group>"; };
 		43EDAF08164A993229466EEFEA49A5D0 /* Mixpanel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Mixpanel.modulemap; sourceTree = "<group>"; };
 		4506CD30160ACADAF833A5F0726D23E9 /* UXCam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UXCam.release.xcconfig; sourceTree = "<group>"; };
@@ -151,7 +149,7 @@
 		6949D72DE87727770ACD5A30820F9B36 /* Mixpanel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Mixpanel.debug.xcconfig; sourceTree = "<group>"; };
 		6F032D287F845F71C668C3F7377C6928 /* MixpanelPersistence.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MixpanelPersistence.h; path = Sources/MixpanelPersistence.h; sourceTree = "<group>"; };
 		6FC463631A39FEA406619CA7159A7801 /* MixpanelType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MixpanelType.h; path = Sources/MixpanelType.h; sourceTree = "<group>"; };
-		73F06F70FE24071354EB1B9287A7BC32 /* UXCam.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcframework; path = UXCam.xcframework; sourceTree = "<group>"; };
+		73F06F70FE24071354EB1B9287A7BC32 /* UXCam.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = UXCam.xcframework; sourceTree = "<group>"; };
 		79DE8A56B8CBCE25F3610F82259F309D /* Mixpanel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Mixpanel.release.xcconfig; sourceTree = "<group>"; };
 		7C35CA9EAEE476044EF0E11FD53F4CA3 /* Mixpanel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Mixpanel.h; path = Sources/Mixpanel.h; sourceTree = "<group>"; };
 		822274E676BDBACEEA492F33068BDE94 /* MixpanelIdentity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MixpanelIdentity.m; path = Sources/MixpanelIdentity.m; sourceTree = "<group>"; };
@@ -162,7 +160,7 @@
 		92DC74A629420A4B20586B3E3BB4FBCD /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = build/cocoapods/framework/shared.framework; sourceTree = "<group>"; };
 		9655C3C5B7F6EC2FF3EB88ACF4C49173 /* SessionMetadata.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SessionMetadata.m; path = Sources/SessionMetadata.m; sourceTree = "<group>"; };
 		9B15571D1A10BFC6339C18E64925DA80 /* MixpanelExceptionHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MixpanelExceptionHandler.h; path = Sources/MixpanelExceptionHandler.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F355CC5597EF8D7150B44D77243D191 /* MixpanelPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MixpanelPrivate.h; path = Sources/MixpanelPrivate.h; sourceTree = "<group>"; };
 		9F6272AA982616815617C7EC0ADFAF14 /* MPNetworkPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPNetworkPrivate.h; path = Sources/MPNetworkPrivate.h; sourceTree = "<group>"; };
 		A95E0A6BA0BF4CE7FA9570A73264E469 /* MPNetwork.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPNetwork.m; path = Sources/MPNetwork.m; sourceTree = "<group>"; };
@@ -235,7 +233,7 @@
 		1E4CD84F6DF2FB194236501540778465 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1C230361F74CF7214D3D9A1CB61B5FF9 /* Mixpanel.framework */,
+				1C230361F74CF7214D3D9A1CB61B5FF9 /* Mixpanel */,
 				47589291953D9185284332921CF00E77 /* Pods-KMMTApp */,
 			);
 			name = Products;
@@ -285,6 +283,7 @@
 				9655C3C5B7F6EC2FF3EB88ACF4C49173 /* SessionMetadata.m */,
 				B0123178A0503EE6132FF9D476176661 /* Support Files */,
 			);
+			name = Mixpanel;
 			path = Mixpanel;
 			sourceTree = "<group>";
 		};
@@ -294,6 +293,7 @@
 				28414C852C5A333DB9489E610DFB56A9 /* Frameworks */,
 				518392F0FB2DFD67328F354D5F62A9D8 /* Support Files */,
 			);
+			name = UXCam;
 			path = UXCam;
 			sourceTree = "<group>";
 		};
@@ -474,7 +474,7 @@
 			);
 			name = Mixpanel;
 			productName = Mixpanel;
-			productReference = 1C230361F74CF7214D3D9A1CB61B5FF9 /* Mixpanel.framework */;
+			productReference = 1C230361F74CF7214D3D9A1CB61B5FF9 /* Mixpanel */;
 			productType = "com.apple.product-type.framework";
 		};
 		D291D286BACF60F16A1BC8D9A959AD66 /* Pods-KMMTApp */ = {
@@ -505,7 +505,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -665,7 +665,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -682,7 +682,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

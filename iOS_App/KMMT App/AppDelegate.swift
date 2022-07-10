@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appID: "BuildConfig.APPLICATION_ID",
         appVersion: "123",
         appVersionCode: "123",
-        appBuildType: "BuildConfig.BUILD_TYPE",
+        appBuildType: BuildType.debug,
         appBuildFlavor: "BuildConfig.FLAVOR"
     )
 
@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //        KMMTApp.Companion().doInit(context: self)
         Injector.shared.doInitKoin(application: Application(uiApplication: application),appInfo: appInfo)
+        EventAppOpened().logEvent()
         return true
     }
 
