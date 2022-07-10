@@ -49,6 +49,6 @@ val realmDataSource = module {
 
 fun analyticsModule(appInfo: AppInfo) = module {
     single { appInfo }
-    analyticsMixpanelModule(this)
-    analyticsUXCamModule(this)
+    analyticsMixpanelModule(this,key ="KEY")
+    analyticsUXCamModule(this,key = "KEY")
 }

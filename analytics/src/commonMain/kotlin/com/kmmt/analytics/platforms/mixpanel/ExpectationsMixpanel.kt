@@ -5,5 +5,5 @@ import org.koin.core.module.KoinDefinition
 import org.koin.core.module.Module
 
 
-expect fun analyticsMixpanelModule(module: Module): KoinDefinition<AnalyticsMixpanel>
+expect fun analyticsMixpanelModule(module: Module, key: String): KoinDefinition<AnalyticsMixpanel>
 

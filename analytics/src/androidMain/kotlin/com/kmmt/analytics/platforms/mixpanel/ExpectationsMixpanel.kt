@@ -5,11 +5,11 @@ import org.koin.core.module.KoinDefinition
 import org.koin.core.module.Module
 
 
-actual fun analyticsMixpanelModule(module: Module): KoinDefinition<AnalyticsMixpanel>
+actual fun analyticsMixpanelModule(module: Module, key: String): KoinDefinition<AnalyticsMixpanel>
 {
     return module.single { AnalyticsMixpanel(
         AnalyticsContext(
-            "KEY",
+            key,
         get()
     )
     ) }

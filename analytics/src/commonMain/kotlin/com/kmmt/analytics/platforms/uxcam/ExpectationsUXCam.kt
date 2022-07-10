@@ -4,5 +4,5 @@ import org.koin.core.module.KoinDefinition
 import org.koin.core.module.Module
 
 
-expect fun analyticsUXCamModule(module: Module): KoinDefinition<AnalyticsUXCam>
+expect fun analyticsUXCamModule(module: Module, key: String): KoinDefinition<AnalyticsUXCam>
 
