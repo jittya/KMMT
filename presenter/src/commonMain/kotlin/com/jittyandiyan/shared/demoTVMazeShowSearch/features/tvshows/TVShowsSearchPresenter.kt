@@ -1,16 +1,14 @@
 package com.jittyandiyan.shared.demoTVMazeShowSearch.features.tvshows
 
-import com.kmmt.domain.demotvshowsearch.repository.TVShowSearchRepositoryTVMazeAPI
 import com.kmmt.core.architecture.presenter.BasePresenter
 import com.kmmt.domain.demotvshowsearch.usecase.TVShowSearchRepoUseCase
+import com.kmmt.injector.koin.Injector
 import com.kmmt.resources.Resources
 import com.kmmt.resources.expectations.localized
 
 class TVShowsSearchPresenter(
     view: TVShowsSearchView,
-    private val tvShowSearchUseCase: TVShowSearchRepoUseCase = TVShowSearchRepoUseCase(
-        TVShowSearchRepositoryTVMazeAPI()
-    )
+    private val tvShowSearchUseCase: TVShowSearchRepoUseCase = Injector.get()
 ) : BasePresenter<TVShowsSearchView>(view, tvShowSearchUseCase) {
 
 

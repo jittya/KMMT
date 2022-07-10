@@ -12,20 +12,19 @@ import com.kmmt.resources.Resources
 import com.kmmt.resources.expectations.localized
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
+import org.koin.core.parameter.parametersOf
 
 class BreedPresenter(view: BreedView, ) : BasePresenter<BreedView>(view),KoinComponent {
 
     private val breedDataSource: BreedDataSource by inject()
     private lateinit var breedLiveDataObservable: LiveDataObservable<Either<List<Breed>, Failure>>
-    private lateinit var breedListCache: BreedListCache
+    private val breedListCache: BreedListCache by inject { parametersOf(getBackgroundCoroutineScope()) }
 
     override fun onStartPresenter() {
 
         runOnAndroid {
             getView()?.setPageTitle(Resources.strings.breedList.localized())
         }
-
-        breedListCache = BreedListCache(getBackgroundCoroutineScope(),breedDataSource)
 
         breedLiveDataObservable = observe { breedList ->
             breedList.either({

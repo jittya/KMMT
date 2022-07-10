@@ -28,6 +28,7 @@ kotlin {
                 implementation(Dependencies.KMM.Koin.Core)
                 implementation(project(":persistence"))
                 api(project(":analytics"))
+                api(project(":domain"))
             }
         }
         val commonTest by getting {
