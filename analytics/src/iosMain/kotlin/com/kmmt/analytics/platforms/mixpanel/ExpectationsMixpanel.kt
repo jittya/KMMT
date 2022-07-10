@@ -9,7 +9,7 @@ actual fun analyticsMixpanelModule(module: Module): KoinDefinition<AnalyticsMixp
 {
     return module.single { AnalyticsMixpanel(
         AnalyticsContext(
-        "0f62f9d5e372aa87a1c5515c6b73269c"
+        "KEY"
     )
     ) }
 }

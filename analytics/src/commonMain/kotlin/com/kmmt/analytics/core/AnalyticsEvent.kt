@@ -35,8 +35,8 @@ data class AnalyticsEvent(
     }
 
     fun logAnalyticsEvent() {
+        println("logAnalyticsEvent > $this")
         if (appInfo.appBuildType == "release") {
-            println("logAnalyticsEvent > $this")
             mixpanel.track(this)
             uxCam.track(this)
         }

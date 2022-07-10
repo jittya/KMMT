@@ -9,7 +9,7 @@ actual fun analyticsUXCamModule(module: Module): KoinDefinition<AnalyticsUXCam> 
     return module.single {
         AnalyticsUXCam(
             AnalyticsContext(
-                "zq9bczqjyhwi4zd", get()
+                "KEY", get()
             )
         )
     }
