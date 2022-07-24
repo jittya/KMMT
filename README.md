@@ -13,6 +13,10 @@ _Primary objective of this project is to help KMM Developers & promote KMM techn
 
 [![image](https://kotlinlang.org/lp/mobile/static/sdk-392342a1bb7fde8faa08e60b07d5c802.svg)](https://kotlinlang.org/lp/mobile/)
 
+#### KMMT Module Structure
+
+![img.png](img.png)
+
 Credits : [KaMP Kit]
 
 https://user-images.githubusercontent.com/9760688/116871405-d2815b80-ac31-11eb-89cd-cbc92dd42d8c.mp4
