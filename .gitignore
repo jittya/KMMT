@@ -2,3 +2,6 @@
 /.gradle/
 /buildSrc/.gradle/
 /buildSrc/build/
+/build/
+/*/build/
+*.podspec
