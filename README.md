@@ -7,7 +7,7 @@
 [![Platform](https://img.shields.io/badge/Platform-Android_&_iOS-green.svg)](https://kotlinlang.org/lp/mobile/)
 
 KMMT is a Multi-Module KMM based project template designed to simplify the KMM development. It uses a simplified approach that can be
-shared both in android and iOS easily.
+shared both in android and iOS easily. This template include network module, persistence module, resource module, analytics module ( with ios native library integration), domain module, presenter module etc.
 
 _Primary objective of this project is to help KMM Developers & promote KMM technology_
 
