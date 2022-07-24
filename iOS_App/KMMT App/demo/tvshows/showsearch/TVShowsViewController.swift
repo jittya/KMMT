@@ -27,7 +27,7 @@ class TVShowsViewController: KMMUIViewController,TVShowsSearchView  {
     @IBOutlet weak var postTableView: UITableView!
     
     override func initializePresenter() -> BasePresenter<BaseView> {
-        return TVShowsSearchPresenter(view: self,tvShowSearchUseCase: TVShowSearchRepoUseCase(repository: TVShowSearchRepositoryTVMazeAPI())).getPresenter()
+        return TVShowsSearchPresenter.companion.getTVShowsSearchPresenterInstance(view: self).getPresenter()
     }
     
     func setSearchQueryChangeListener(onSearchQueryStringChanged: @escaping (String) -> KotlinUnit) {

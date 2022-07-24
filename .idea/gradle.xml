@@ -10,18 +10,19 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/analytics" />
+            <option value="$PROJECT_DIR$/kmmtshared/analytics" />
             <option value="$PROJECT_DIR$/androidApp" />
             <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/common" />
-            <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/domain" />
-            <option value="$PROJECT_DIR$/injector" />
-            <option value="$PROJECT_DIR$/models" />
-            <option value="$PROJECT_DIR$/network" />
-            <option value="$PROJECT_DIR$/persistence" />
-            <option value="$PROJECT_DIR$/presenter" />
-            <option value="$PROJECT_DIR$/resources" />
+            <option value="$PROJECT_DIR$/kmmtshared/common" />
+            <option value="$PROJECT_DIR$/kmmtshared/core" />
+            <option value="$PROJECT_DIR$/kmmtshared/domain" />
+            <option value="$PROJECT_DIR$/kmmtshared/injector" />
+            <option value="$PROJECT_DIR$/kmmtshared" />
+            <option value="$PROJECT_DIR$/kmmtshared/models" />
+            <option value="$PROJECT_DIR$/kmmtshared/network" />
+            <option value="$PROJECT_DIR$/kmmtshared/persistence" />
+            <option value="$PROJECT_DIR$/kmmtshared/presenter" />
+            <option value="$PROJECT_DIR$/kmmtshared/resources" />
           </set>
         </option>
       </GradleProjectSettings>

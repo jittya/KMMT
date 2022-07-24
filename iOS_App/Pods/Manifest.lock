@@ -1,12 +1,12 @@
 PODS:
-  - Mixpanel (4.2.0)
-  - presenter (0.1.1.21.4.26):
+  - kmmtshared (0.1.1.21.4.26):
     - Mixpanel (~> 4.2.0)
     - UXCam (~> 3.4.1)
+  - Mixpanel (4.2.0)
   - UXCam (3.4.1)
 
 DEPENDENCIES:
-  - presenter (from `../presenter`)
+  - kmmtshared (from `../kmmtshared`)
 
 SPEC REPOS:
   trunk:
@@ -14,14 +14,14 @@ SPEC REPOS:
     - UXCam
 
 EXTERNAL SOURCES:
-  presenter:
-    :path: "../presenter"
+  kmmtshared:
+    :path: "../kmmtshared"
 
 SPEC CHECKSUMS:
+  kmmtshared: f69809ba308e96dac6b34bc35fabda1c89853e6d
   Mixpanel: 10a8acdddfa4026b51a69c82ed0d573cc1e70120
-  presenter: b9b3ec57fa6a4243bdcf75b225ae0e1398e8f949
   UXCam: eda9b3c43b59508bbb241d2c0a04e35df6856872
 
-PODFILE CHECKSUM: 3ab727b9bf4e61f49185f8d02714a5c41096729b
+PODFILE CHECKSUM: 0997650e4f3cf515ad75c7936f38f0e1f17eaf2b
 
 COCOAPODS: 1.11.3

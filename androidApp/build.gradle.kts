@@ -7,7 +7,7 @@ group = AppConfig.group
 version = AppConfig.version
 
 dependencies {
-    implementation(project(":presenter"))
+    implementation(project(Modules.kmmtshared))
     implementation("org.conscrypt:conscrypt-android:2.5.2")
     implementation(Dependencies.Android.google_android_material_Material)
     implementation(Dependencies.Android.androidx_appcompat_Appcompat)
