@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Platform](https://img.shields.io/badge/Platform-Android_&_iOS-green.svg)](https://kotlinlang.org/lp/mobile/)
 
-KMMT is a KMM based project template designed to simplify the KMM development. It uses a simplified approach that can be
+KMMT is a Multi-Module KMM based project template designed to simplify the KMM development. It uses a simplified approach that can be
 shared both in android and iOS easily.
 
 _Primary objective of this project is to help KMM Developers & promote KMM technology_
@@ -28,6 +28,21 @@ Xcode - iOS Project
 ## ✨Features ✨
 
 #### 1. Simple Networking API  ( [Ktor] )
+#### 2. Async Task Helper ( [Kotlinx.Coroutines] )
+#### 3. Multiplatform Bundle : Object Passing B/W Activities or ViewControllers
+#### 4. Platform Blocks
+#### 5. Object Serialization Helper ( [Kotlinx.Serialization] )
+#### 6. Key Value Store ( [Multiplatform Settings] )
+#### 7. LiveData & LiveDataObservable ( [LiveData] )
+#### 8. Observe with DBHelper ( Local Database : SQLite - [SQLDelight] )
+#### 9. Useful Functional Programming
+#### 10. Data Cache Helper
+#### 11. Persistence Module - Database ( [Realm] & [SQLDelight] ) and Key Value Store ( [Multiplatform Settings] )
+#### 12. Injector Module - Dependency Injection ( [Koin] )
+#### 13. Resource Module - strings and colors ( [MokoResources] )
+#### 14. Analytics Module - _Mixpanel_ and _UXCam_ ( iOS & Android Native Library Integrated )
+
+### 1. Simple Networking API  ( [Ktor] )
 
 Create API Services using BaseAPI class. All network responses are wrapped in *Either* data type
 
@@ -65,7 +80,7 @@ class BreedServiceAPI : BaseAPI() {
 }
 ```
 
-#### 2. Async Task Helper ( [Kotlinx.Coroutines] )
+### 2. Async Task Helper ( [Kotlinx.Coroutines] )
 
 Run code (Networking calls, Heavy calculations, Large dataSets from local DB, etc..) in Background thread and get the
 result in UI thread.
@@ -124,7 +139,7 @@ class PostViewModel(view: LoginView) : BaseViewModel<LoginView>(view) {
 }
 ```
 
-#### 3. Multiplatform Bundle : Object Passing B/W Activities or ViewControllers
+### 3. Multiplatform Bundle : Object Passing B/W Activities or ViewControllers
 
 View Model can pass objects & values from Activity to Activity (Android) or ViewController to ViewController (iOS)
 
@@ -187,7 +202,7 @@ class HomeViewModel(view: HomeView) : BaseViewModel<HomeView>(view) {
 }
 ```
 
-#### 4. Platform Blocks
+### 4. Platform Blocks
 
 Execute anything specific to a particular platform using Platform Blocks
 
@@ -203,7 +218,7 @@ runOniOS {
 
 ```
 
-#### 5. Object Serialization Helper ( [Kotlinx.Serialization] )
+### 5. Object Serialization Helper ( [Kotlinx.Serialization] )
 
 Use **_toJsonString_** and **_toObject_** functions for instant serialization.
 
@@ -229,7 +244,7 @@ _String to Object Serialization_
         var userModel = jsonString.toObject(UserModel.serializer())
 ```
 
-#### 6. Key Value Store ( [Multiplatform Settings] )
+### 6. Key Value Store ( [Multiplatform Settings] )
 
 Use **_storeValue_** and **_getStoreValue_** functions for storing and retrieving Key-Value respectively
 
@@ -259,7 +274,7 @@ _Retrieve **Value** using **Key**_
         var userModel = getStoreValue<UserModel>("Key3",UserModel.serializer())
 ```
 
-#### 7. LiveData & LiveDataObservable ( [LiveData] )
+### 7. LiveData & LiveDataObservable ( [LiveData] )
 
 LiveData follows the observer pattern. LiveData notifies Observer objects when underlying data changes. You can
 consolidate your code to update the UI in these Observer objects. That way, you don't need to update the UI every time
@@ -336,7 +351,7 @@ class PremiumManagerBoolean {
 }
 ```
 
-#### 8. Observe with DBHelper ( Local Database : SQLite - [SQLDelight] )
+### 8. Observe with DBHelper ( Local Database : SQLite - [SQLDelight] )
 
 Use 'asFlow()' extension from DBHelper class to observe a query data
 
@@ -427,7 +442,7 @@ class BreedViewModel(view: BreedView) : BaseViewModel<BreedView>(view) {
 }
 ```
 
-#### 9. Useful Functional Programming
+### 9. Useful Functional Programming
 
 use *Either* data type to represent a value of one of two possible types (a disjoint union). Instances of *Either* are
 either an instance of *Failure* or *Success*
@@ -475,7 +490,7 @@ functionalities
 })
 ```
 
-#### 10. Data Cache Helper
+### 10. Data Cache Helper
 
 Use *BaseDataCache<RequestParamType, DataType>* to implement data caching (remote to local). call *cacheData* function
 to get and save data
@@ -747,6 +762,8 @@ class LoginViewController : KMMUIViewController, LoginView {
 
 [SQLDelight]:<https://github.com/cashapp/sqldelight>
 
+[Realm]:<https://github.com/realm/realm-kotlin>
+
 [kotlinx.serialization]:<https://github.com/Kotlin/kotlinx.serialization>
 
 [Multiplatform Settings]:<https://github.com/russhwolf/multiplatform-settings>
@@ -754,3 +771,7 @@ class LoginViewController : KMMUIViewController, LoginView {
 [LiveData]:<https://github.com/florent37/Multiplatform-LiveData>
 
 [KaMP Kit]:<https://github.com/touchlab/KaMPKit>
+
+[Koin]:<https://github.com/InsertKoinIO/koin>
+
+[MokoResources]:<https://github.com/icerockdev/moko-resources>
